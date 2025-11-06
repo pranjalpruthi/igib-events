@@ -18,11 +18,7 @@ export default defineConfig({
     tsConfigPaths({
       projects: ['./tsconfig.json'],
     }),
-    tanstackStart({
-      deployment: {
-        preset: 'vercel-static',
-      },
-    }),
+    tanstackStart(),
     react(),
   ],
 });
