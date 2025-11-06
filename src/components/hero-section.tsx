@@ -10,7 +10,7 @@ export default function HeroSection() {
             <HeroHeader />
             <main className="overflow-x-hidden">
                 <section className="relative">
-                    <div className="py-24 md:pb-32 lg:pb-36 lg:pt-64">
+                    <div className="py-20 md:py-24 lg:py-32">
                         <div className="relative mx-auto flex max-w-7xl flex-col px-6 lg:px-12">
                             <motion.div 
                                 initial={{ opacity: 0, y: 20 }}
@@ -23,9 +23,9 @@ export default function HeroSection() {
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: 0.2 }}
-                                    className="mb-6 inline-flex items-center gap-2 rounded-full border bg-background/80 backdrop-blur-sm px-4 py-2 text-sm font-medium"
+                                    className="mb-4 inline-flex items-center gap-2 rounded-full border bg-background/80 backdrop-blur-sm px-4 py-1.5 text-xs font-medium"
                                 >
-                                    <span className="size-2 rounded-full bg-primary animate-pulse" />
+                                    <span className="size-1.5 rounded-full bg-primary animate-pulse" />
                                     <span>ONE HEALTH · GENOMICS · AMR · BIOINFORMATICS</span>
                                 </motion.div>
 
@@ -96,11 +96,21 @@ export default function HeroSection() {
                                     <Button
                                         asChild
                                         size="lg"
-                                        className="h-12 rounded-xl px-8 text-base font-semibold shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all"
+                                        variant="outline"
+                                        className="h-12 rounded-xl px-8 text-base font-semibold bg-white text-black border-2 border-white hover:bg-white/90 hover:text-black shadow-lg shadow-white/30 hover:shadow-xl hover:shadow-white/40 transition-all dark:bg-white dark:text-black dark:hover:bg-white/90"
                                     >
                                         <a href="https://subpyramidic-lewis-luminously.ngrok-free.dev" target="_blank" rel="noopener noreferrer">
                                             <span>Access Resource Cockpit</span>
                                             <ChevronRight className="ml-1 size-5" />
+                                        </a>
+                                    </Button>
+                                    <Button
+                                        asChild
+                                        size="lg"
+                                        className="h-12 rounded-xl px-8 text-base font-semibold bg-[#F9AB00] text-black hover:bg-[#F9AB00]/90 shadow-lg shadow-[#F9AB00]/30 hover:shadow-xl hover:shadow-[#F9AB00]/40 transition-all"
+                                    >
+                                        <a href="https://colab.research.google.com" target="_blank" rel="noopener noreferrer">
+                                            <span>Open Colab</span>
                                         </a>
                                     </Button>
                                     <Button

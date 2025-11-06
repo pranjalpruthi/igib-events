@@ -133,7 +133,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <html suppressHydrationWarning>
+    <html className="light" style={{ colorScheme: 'light' }}>
       <head>
         <HeadContent />
         <script

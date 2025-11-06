@@ -83,11 +83,13 @@ export const HeroHeader = () => {
                                 <Button
                                     asChild
                                     size="sm"
-                                    className="shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all">
+                                    variant="outline"
+                                    className="bg-white text-black border-2 border-white hover:bg-white/90 hover:text-black shadow-md shadow-white/20 hover:shadow-lg hover:shadow-white/30 transition-all dark:bg-white dark:text-black dark:hover:bg-white/90">
                                     <a href="https://subpyramidic-lewis-luminously.ngrok-free.dev" target="_blank" rel="noopener noreferrer">
                                         <span>Resource Cockpit</span>
                                     </a>
                                 </Button>
+
                                 <Button
                                     asChild
                                     variant="outline"
