@@ -9,6 +9,9 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  build: {
+    target: 'esnext',
+  },
   plugins: [
     mdx(await import('./source.config')),
     tailwindcss(),
@@ -16,8 +19,8 @@ export default defineConfig({
       projects: ['./tsconfig.json'],
     }),
     tanstackStart({
-      prerender: {
-        enabled: true,
+      deployment: {
+        preset: 'vercel-static',
       },
     }),
     react(),

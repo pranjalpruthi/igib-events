@@ -1,0 +1,17 @@
+{
+  "buildCommand": "pnpm run build",
+  "installCommand": "pnpm install",
+  "outputDirectory": "dist/client",
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/index"
+    }
+  ]
+}
+

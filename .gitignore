@@ -6,7 +6,6 @@ node_modules
 .output
 .nitro
 /build/
-/api/
 /server/build
 /public/build
 /test-results/
@@ -14,7 +13,6 @@ node_modules
 /blob-report/
 /playwright/.cache/
 .tanstack
-
 src/routeTree.gen.ts
 .source
 /dist/
