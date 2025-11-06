@@ -12,6 +12,7 @@ export default defineConfig({
   build: {
     target: 'esnext',
   },
+  publicDir: 'src/public',
   plugins: [
     mdx(await import('./source.config')),
     tailwindcss(),
