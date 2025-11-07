@@ -136,7 +136,7 @@ function CopyButton({ text }: { text: string }) {
 
 export function SessionsSection() {
     return (
-        <section className="py-24 bg-muted/30">
+        <section className="py-24 bg-gradient-to-b from-blue-50/50 via-purple-50/30 to-pink-50/50 dark:from-blue-950/20 dark:via-purple-950/10 dark:to-pink-950/20">
             <div className="mx-auto max-w-7xl px-6 lg:px-12">
                 <div className="text-center">
                     <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl">
@@ -157,7 +157,7 @@ export function SessionsSection() {
                             transition={{ delay: index * 0.05 }}
                             className="h-full"
                         >
-                            <Card className="h-full flex flex-col transition-all hover:shadow-lg">
+                            <Card className="h-full flex flex-col transition-all hover:shadow-xl hover:shadow-primary/20 bg-white/80 backdrop-blur-sm dark:bg-gray-900/80 border-2 hover:border-primary/30">
                                 <CardHeader>
                                     <div className="flex items-start justify-between gap-2">
                                         <div>

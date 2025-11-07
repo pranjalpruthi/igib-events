@@ -89,7 +89,14 @@ export const HeroHeader = () => {
                                         <span>Resource Cockpit</span>
                                     </a>
                                 </Button>
-
+                                <Button
+                                    asChild
+                                    size="sm"
+                                    className="bg-lime-600 hover:bg-lime-700 text-white shadow-md shadow-lime-600/20 hover:shadow-lg hover:shadow-lime-600/30 transition-all">
+                                    <a href="https://drive.google.com/drive/folders/1ILlIgXQZw2-ADOgwDm2aiJodZ-JN2vOH" target="_blank" rel="noopener noreferrer">
+                                        <span>Sample Data</span>
+                                    </a>
+                                </Button>
                                 <Button
                                     asChild
                                     variant="outline"
