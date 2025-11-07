@@ -76,8 +76,8 @@ const sessions = [
         title: 'Genome Annotation & Functional Enrichment',
         tools: ['Prokka', 'getEnrich'],
         objective: 'Annotate bacterial genomes and interpret gene functions through pathway analysis.',
-        colabLink: null,
-        available: false,
+        colabLink: 'https://colab.research.google.com/drive/1w9ThIz4xlhG_mwYVFx-iAfYLOPp10ztr?usp=sharing',
+        available: true,
         installCmd: 'mamba install -c bioconda prokka'
     },
     {
@@ -85,8 +85,8 @@ const sessions = [
         title: 'Pan-genome & Structural Variation Analysis',
         tools: ['Chitra', 'Roary', 'CrossRoads'],
         objective: 'Compare multiple genomes to identify conserved and unique genes, chromosomal breakpoints, and genome rearrangements.',
-        colabLink: null,
-        available: false,
+        colabLink: 'https://colab.research.google.com/drive/1w9ThIz4xlhG_mwYVFx-iAfYLOPp10ztr?usp=sharing',
+        available: true,
         installCmd: 'mamba install -c bioconda roary'
     },
     {
@@ -94,8 +94,8 @@ const sessions = [
         title: 'Pathogen Genome Analysis',
         tools: ['Minimap2', 'BWA-MEM', 'SAMtools', 'Bcftools', 'Medaka', 'Flye', 'Canu', 'SPAdes'],
         objective: 'Construct complete pathogen genomes and compare reference-based and de-novo assemblies.',
-        colabLink: null,
-        available: false,
+        colabLink: 'https://colab.research.google.com/drive/1w9ThIz4xlhG_mwYVFx-iAfYLOPp10ztr?usp=sharing',
+        available: true,
         installCmd: 'mamba install -c bioconda minimap2 bwa samtools bcftools flye canu spades'
     },
     {
@@ -103,8 +103,8 @@ const sessions = [
         title: 'Host Response Analysis',
         tools: ['DESeq2', 'limma', 'Enrichr', 'STRING', 'Cytoscape', 'R/ggplot2'],
         objective: 'Analyze host transcriptional changes during infection and visualize gene interaction networks.',
-        colabLink: null,
-        available: false,
+        colabLink: 'https://colab.research.google.com/drive/1w9ThIz4xlhG_mwYVFx-iAfYLOPp10ztr?usp=sharing',
+        available: true,
         installCmd: 'mamba install -c bioconda bioconductor-deseq2 bioconductor-limma r-ggplot2'
     },
 ]
