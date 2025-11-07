@@ -155,8 +155,9 @@ export function SessionsSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.05 }}
+                            className="h-full"
                         >
-                            <Card className="h-full transition-all hover:shadow-lg">
+                            <Card className="h-full flex flex-col transition-all hover:shadow-lg">
                                 <CardHeader>
                                     <div className="flex items-start justify-between gap-2">
                                         <div>
@@ -174,7 +175,7 @@ export function SessionsSection() {
                                         )}
                                     </div>
                                 </CardHeader>
-                                <CardContent className="space-y-4">
+                                <CardContent className="flex-1 flex flex-col space-y-4">
                                     {/* Tools */}
                                     <div>
                                         <p className="text-sm font-semibold mb-2">Tools:</p>
@@ -207,7 +208,7 @@ export function SessionsSection() {
                                     </div>
 
                                     {/* Action Buttons */}
-                                    <div className="space-y-2">
+                                    <div className="mt-auto space-y-2">
                                         {/* Colab Link */}
                                         {session.available && session.colabLink ? (
                                             <Button
@@ -250,6 +251,61 @@ export function SessionsSection() {
                             </Card>
                         </motion.div>
                     ))}
+                </div>
+
+                {/* Sample Data & Resources */}
+                <div className="mt-16 space-y-6">
+                    {/* Sample Data Repository */}
+                    <div className="rounded-2xl border bg-gradient-to-br from-primary/5 to-primary/10 p-8">
+                        <div className="flex items-start gap-4">
+                            <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                                <svg className="size-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <div className="flex-1">
+                                <h3 className="text-xl font-bold mb-2">📦 Sample Data Repository</h3>
+                                <p className="text-muted-foreground mb-4">
+                                    Access all workshop sample datasets in one central location. This Google Drive folder contains data for all training sessions.
+                                </p>
+                                <div className="flex flex-col sm:flex-row gap-3">
+                                    <Button asChild size="lg" className="shadow-lg">
+                                        <a href="https://drive.google.com/drive/folders/1ILlIgXQZw2-ADOgwDm2aiJodZ-JN2vOH" target="_blank" rel="noopener noreferrer">
+                                            <span>Open Sample Data Drive</span>
+                                            <ExternalLink className="ml-2 size-4" />
+                                        </a>
+                                    </Button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* HPC Access Info */}
+                    <div className="rounded-2xl border bg-gradient-to-br from-blue-500/5 to-blue-500/10 p-8">
+                        <div className="flex items-start gap-4">
+                            <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-white">
+                                <svg className="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                                </svg>
+                            </div>
+                            <div className="flex-1">
+                                <h3 className="text-xl font-bold mb-2">🖥️ HPC Access - Tejas Supercomputer</h3>
+                                <p className="text-muted-foreground mb-4">
+                                    Workshop materials are available on Tejas HPC. Access via the Resource Cockpit using the path below:
+                                </p>
+                                <div className="flex items-center gap-2 rounded-lg bg-muted p-3 mb-4 font-mono text-sm">
+                                    <code className="flex-1">/home/workshop/</code>
+                                    <CopyButton text="/home/workshop/" />
+                                </div>
+                                <Button asChild variant="outline" size="lg">
+                                    <a href="https://subpyramidic-lewis-luminously.ngrok-free.dev" target="_blank" rel="noopener noreferrer">
+                                        <span>Access Resource Cockpit</span>
+                                        <ExternalLink className="ml-2 size-4" />
+                                    </a>
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Quick Access Links */}
