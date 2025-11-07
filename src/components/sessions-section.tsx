@@ -11,8 +11,8 @@ const sessions = [
         title: 'Linux Basics for Bioinformatics',
         tools: ['Linux / Unix', 'Bash scripting', 'grep, awk, sed', 'File handling'],
         objective: 'Learn essential terminal operations, environment setup, and basic automation to support downstream analysis.',
-        
-        Link: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
+        colabLink: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
+        pptLink: 'https://unix-linux-basics-rrducqu.gamma.site/',
         available: true,
         installCmd: 'mamba install -c bioconda bash coreutils'
     },
@@ -58,6 +58,7 @@ const sessions = [
         tools: ['ResFinder', 'CARD', 'AMRFinderPlus'],
         objective: 'Predict antimicrobial resistance and virulence factors from genome sequences.',
         colabLink: 'https://colab.research.google.com/drive/1kD92SJYlGRyVvTrQUog6x7CxqXcD0sag?usp=sharing',
+        pptLink: 'https://amr-virulence-yv2bo1e.gamma.site/',
         available: true,
         installCmd: 'mamba install -c bioconda ncbi-amrfinderplus'
     },
@@ -205,28 +206,46 @@ export function SessionsSection() {
                                         </div>
                                     </div>
 
-                                    {/* Colab Link */}
-                                    {session.available && session.colabLink ? (
-                                        <Button
-                                            asChild
-                                            className="w-full"
-                                            size="sm"
-                                        >
-                                            <a href={session.colabLink} target="_blank" rel="noopener noreferrer">
-                                                <span>Open Colab Notebook</span>
-                                                <ExternalLink className="ml-2 size-4" />
-                                            </a>
-                                        </Button>
-                                    ) : (
-                                        <Button
-                                            disabled
-                                            className="w-full"
-                                            size="sm"
-                                            variant="secondary"
-                                        >
-                                            Notebook Coming Soon
-                                        </Button>
-                                    )}
+                                    {/* Action Buttons */}
+                                    <div className="space-y-2">
+                                        {/* Colab Link */}
+                                        {session.available && session.colabLink ? (
+                                            <Button
+                                                asChild
+                                                className="w-full bg-[#F9AB00] text-black hover:bg-[#F9AB00]/90 shadow-md shadow-[#F9AB00]/20 hover:shadow-lg hover:shadow-[#F9AB00]/30 transition-all"
+                                                size="sm"
+                                            >
+                                                <a href={session.colabLink} target="_blank" rel="noopener noreferrer">
+                                                    <span>Open Colab Notebook</span>
+                                                    <ExternalLink className="ml-2 size-4" />
+                                                </a>
+                                            </Button>
+                                        ) : (
+                                            <Button
+                                                disabled
+                                                className="w-full"
+                                                size="sm"
+                                                variant="secondary"
+                                            >
+                                                Notebook Coming Soon
+                                            </Button>
+                                        )}
+                                        
+                                        {/* PPT Link */}
+                                        {session.pptLink && (
+                                            <Button
+                                                asChild
+                                                className="w-full"
+                                                size="sm"
+                                                variant="outline"
+                                            >
+                                                <a href={session.pptLink} target="_blank" rel="noopener noreferrer">
+                                                    <span>View Presentation</span>
+                                                    <ExternalLink className="ml-2 size-4" />
+                                                </a>
+                                            </Button>
+                                        )}
+                                    </div>
                                 </CardContent>
                             </Card>
                         </motion.div>
