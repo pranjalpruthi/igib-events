@@ -5,74 +5,6 @@ import { Button } from '@/components/ui/button'
 import { Calendar, Users, Award, ExternalLink, BookOpen, Microscope, Brain, Database } from 'lucide-react'
 import { motion } from 'motion/react'
 
-const speakers = [
-    {
-        name: 'Dr. Jitendra Narayan',
-        role: 'Principal Scientist, CSIR-IGIB',
-        expertise: 'Bioinformatics & Big Data Analytics',
-        talks: [
-            { title: 'One Health Framework & Sequencing Technologies', day: 'Monday, Nov 3', time: '10:15 AM' },
-            { title: 'Genome Assembly', day: 'Tuesday, Nov 4', time: '9:30 AM' }
-        ]
-    },
-    {
-        name: 'Dr. Souvik Mukherjee',
-        role: 'Expert Speaker',
-        expertise: 'Precision Microbiomics',
-        talks: [
-            { title: 'Precision Microbiomics: Unraveling the Antimicrobial Resistome', day: 'Tuesday, Nov 4', time: '12:00 PM' }
-        ]
-    },
-    {
-        name: 'Dr. Rakesh Sharma',
-        role: 'Principal Scientist, CSIR-IGIB',
-        expertise: 'Metagenomics & Microbial Diversity',
-        talks: [
-            { title: 'Microbial Diversity, Pathogens and AMR of Waterbodies', day: 'Tuesday, Nov 4', time: '3:30 PM' }
-        ]
-    },
-    {
-        name: 'Dr. Shandar Ahmed',
-        role: 'Expert Speaker',
-        expertise: 'AI & Machine Learning',
-        talks: [
-            { title: 'NGS Data Analysis using AI Methods', day: 'Wednesday, Nov 5', time: '9:30 AM' }
-        ]
-    },
-    {
-        name: 'Dr. Rajesh Pandey',
-        role: 'Principal Scientist, CSIR-IGIB',
-        expertise: 'Integrative Genomics',
-        talks: [
-            { title: 'Economics of Genomics: Active and Inactive Microbes', day: 'Wednesday, Nov 5', time: '11:30 AM' }
-        ]
-    },
-    {
-        name: 'Dr. Manish Kumar',
-        role: 'Expert Speaker',
-        expertise: 'Multi-Omics & Drug Resistance',
-        talks: [
-            { title: 'Discovery of Drug Resistance Factors in Multi-Omics Data', day: 'Wednesday, Nov 5', time: '2:00 PM' }
-        ]
-    },
-    {
-        name: 'Dr. Kumardeep Chaudhary',
-        role: 'Expert Speaker',
-        expertise: 'Federated AI & Surveillance',
-        talks: [
-            { title: 'Federated AI for Longitudinal Surveillance of AMR', day: 'Thursday, Nov 6', time: '9:30 AM' }
-        ]
-    },
-    {
-        name: 'Dr. Sanjay Deshpande',
-        role: 'Expert Speaker',
-        expertise: 'Biological Data Integration',
-        talks: [
-            { title: 'Integrating Data and Discovery: IBDC for Pathogen Research', day: 'Friday, Nov 7', time: '9:30 AM' }
-        ]
-    }
-]
-
 const objectives = [
     {
         icon: BookOpen,
@@ -160,53 +92,6 @@ export function WorkshopInfoSection() {
                                         <p className="text-sm text-gray-600 dark:text-gray-400">
                                             {objective.description}
                                         </p>
-                                    </CardContent>
-                                </Card>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Featured Speakers */}
-                <div id="speakers" className="mb-20">
-                    <div className="text-center mb-12">
-                        <h3 className="text-2xl font-bold md:text-3xl mb-4">Featured Speakers</h3>
-                        <p className="text-muted-foreground">
-                            Leading experts in genomics, AI, and bioinformatics
-                        </p>
-                    </div>
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                        {speakers.map((speaker, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.05 }}
-                            >
-                                <Card className="h-full bg-white dark:bg-gray-900 border hover:border-primary/50 transition-all hover:shadow-lg">
-                                    <CardHeader>
-                                        <CardTitle className="text-lg text-gray-900 dark:text-white">
-                                            {speaker.name}
-                                        </CardTitle>
-                                        <p className="text-sm text-primary font-medium">{speaker.role}</p>
-                                        <Badge variant="secondary" className="w-fit mt-2 text-xs bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                                            {speaker.expertise}
-                                        </Badge>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <div className="space-y-3">
-                                            {speaker.talks.map((talk, talkIndex) => (
-                                                <div key={talkIndex} className="border-l-2 border-primary/30 pl-3">
-                                                    <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                                                        {talk.title}
-                                                    </p>
-                                                    <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-                                                        {talk.day} • {talk.time}
-                                                    </p>
-                                                </div>
-                                            ))}
-                                        </div>
                                     </CardContent>
                                 </Card>
                             </motion.div>
