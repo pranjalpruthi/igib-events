@@ -157,31 +157,31 @@ export function SessionsSection() {
                             transition={{ delay: index * 0.05 }}
                             className="h-full"
                         >
-                            <Card className="h-full flex flex-col transition-all hover:shadow-xl hover:shadow-primary/20 bg-white/80 backdrop-blur-sm dark:bg-gray-900/80 border-2 hover:border-primary/30">
-                                <CardHeader>
+                            <Card className="h-full flex flex-col transition-all hover:shadow-xl hover:shadow-primary/20 bg-white dark:bg-gray-900 border hover:border-primary/50">
+                                <CardHeader className="pb-4">
                                     <div className="flex items-start justify-between gap-2">
                                         <div>
-                                            <Badge variant="outline" className="mb-2">
+                                            <Badge variant="outline" className="mb-2 border-primary/30 text-primary">
                                                 Session {session.id}
                                             </Badge>
-                                            <CardTitle className="text-lg">
+                                            <CardTitle className="text-lg text-gray-900 dark:text-white">
                                                 {session.title}
                                             </CardTitle>
                                         </div>
                                         {session.available ? (
-                                            <Badge className="shrink-0 bg-green-600">Available</Badge>
+                                            <Badge className="shrink-0 bg-green-600 hover:bg-green-700 text-white">Available</Badge>
                                         ) : (
-                                            <Badge variant="secondary" className="shrink-0">Coming Soon</Badge>
+                                            <Badge variant="secondary" className="shrink-0 bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300">Coming Soon</Badge>
                                         )}
                                     </div>
                                 </CardHeader>
                                 <CardContent className="flex-1 flex flex-col space-y-4">
                                     {/* Tools */}
                                     <div>
-                                        <p className="text-sm font-semibold mb-2">Tools:</p>
+                                        <p className="text-sm font-semibold mb-2 text-gray-900 dark:text-white">Tools:</p>
                                         <div className="flex flex-wrap gap-2">
                                             {session.tools.map((tool, i) => (
-                                                <Badge key={i} variant="secondary" className="text-xs">
+                                                <Badge key={i} variant="secondary" className="text-xs bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300">
                                                     {tool}
                                                 </Badge>
                                             ))}
@@ -190,17 +190,17 @@ export function SessionsSection() {
 
                                     {/* Objective */}
                                     <div>
-                                        <p className="text-sm font-semibold mb-2">Objective:</p>
-                                        <p className="text-sm text-muted-foreground">
+                                        <p className="text-sm font-semibold mb-2 text-gray-900 dark:text-white">Objective:</p>
+                                        <p className="text-sm text-gray-600 dark:text-gray-400">
                                             {session.objective}
                                         </p>
                                     </div>
 
                                     {/* Install Command */}
                                     <div>
-                                        <p className="text-sm font-semibold mb-2">Install:</p>
-                                        <div className="flex items-center gap-2 rounded-lg bg-muted p-2">
-                                            <code className="flex-1 text-xs overflow-x-auto">
+                                        <p className="text-sm font-semibold mb-2 text-gray-900 dark:text-white">Install:</p>
+                                        <div className="flex items-center gap-2 rounded-lg bg-gray-50 dark:bg-gray-800 p-2 border border-gray-200 dark:border-gray-700">
+                                            <code className="flex-1 text-xs overflow-x-auto text-gray-800 dark:text-gray-200">
                                                 {session.installCmd}
                                             </code>
                                             <CopyButton text={session.installCmd} />
@@ -213,7 +213,7 @@ export function SessionsSection() {
                                         {session.available && session.colabLink ? (
                                             <Button
                                                 asChild
-                                                className="w-full bg-[#F9AB00] text-black hover:bg-[#F9AB00]/90 shadow-md shadow-[#F9AB00]/20 hover:shadow-lg hover:shadow-[#F9AB00]/30 transition-all"
+                                                className="w-full bg-[#F9AB00] text-gray-900 font-semibold hover:bg-[#e69d00] shadow-md hover:shadow-lg transition-all"
                                                 size="sm"
                                             >
                                                 <a href={session.colabLink} target="_blank" rel="noopener noreferrer">
@@ -224,9 +224,8 @@ export function SessionsSection() {
                                         ) : (
                                             <Button
                                                 disabled
-                                                className="w-full"
+                                                className="w-full bg-gray-100 text-gray-500 dark:bg-gray-800 dark:text-gray-500"
                                                 size="sm"
-                                                variant="secondary"
                                             >
                                                 Notebook Coming Soon
                                             </Button>
@@ -236,9 +235,8 @@ export function SessionsSection() {
                                         {session.pptLink && (
                                             <Button
                                                 asChild
-                                                className="w-full"
+                                                className="w-full bg-gray-100 text-gray-900 hover:bg-gray-200 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-700 dark:hover:bg-gray-700 transition-all"
                                                 size="sm"
-                                                variant="outline"
                                             >
                                                 <a href={session.pptLink} target="_blank" rel="noopener noreferrer">
                                                     <span>View Presentation</span>
