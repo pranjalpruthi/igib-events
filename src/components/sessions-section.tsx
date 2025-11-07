@@ -11,7 +11,8 @@ const sessions = [
         title: 'Linux Basics for Bioinformatics',
         tools: ['Linux / Unix', 'Bash scripting', 'grep, awk, sed', 'File handling'],
         objective: 'Learn essential terminal operations, environment setup, and basic automation to support downstream analysis.',
-        colabLink: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
+        
+        Link: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
         available: true,
         installCmd: 'mamba install -c bioconda bash coreutils'
     },
@@ -29,8 +30,8 @@ const sessions = [
         title: 'Metagenome Assembly Basics',
         tools: ['Setu Pipeline', 'MetaSPAdes'],
         objective: 'Assemble raw reads into contigs and scaffolds for metagenomic datasets.',
-        colabLink: null,
-        available: false,
+        colabLink: 'https://colab.research.google.com/drive/1fMCrkI5jXTpuRgB_MUGamZOvhkDk4pRd?usp=sharing',
+        available: true,
         installCmd: 'mamba install -c bioconda spades'
     },
     {
@@ -38,8 +39,8 @@ const sessions = [
         title: 'Assembly Quality Assessment & Binning',
         tools: ['QUAST', 'MetaBAT2'],
         objective: 'Assess assembly completeness and extract representative genomes.',
-        colabLink: null,
-        available: false,
+        colabLink: 'https://colab.research.google.com/drive/1fMCrkI5jXTpuRgB_MUGamZOvhkDk4pRd?usp=sharing',
+        available: true,
         installCmd: 'mamba install -c bioconda quast metabat2'
     },
     {
@@ -47,8 +48,8 @@ const sessions = [
         title: 'Metagenomic Community Profiling',
         tools: ['Kraken2', 'Krona', 'MetaPhlAn 3', 'HUMAnN 3'],
         objective: 'Characterize microbial community composition and metabolic potential from metagenomic data.',
-        colabLink: null,
-        available: false,
+        colabLink: 'https://colab.research.google.com/drive/1fMCrkI5jXTpuRgB_MUGamZOvhkDk4pRd?usp=sharing',
+        available: true,
         installCmd: 'mamba install -c bioconda kraken2 krona metaphlan humann'
     },
     {
@@ -56,8 +57,8 @@ const sessions = [
         title: 'AMR & Virulence Prediction',
         tools: ['ResFinder', 'CARD', 'AMRFinderPlus'],
         objective: 'Predict antimicrobial resistance and virulence factors from genome sequences.',
-        colabLink: null,
-        available: false,
+        colabLink: 'https://colab.research.google.com/drive/1kD92SJYlGRyVvTrQUog6x7CxqXcD0sag?usp=sharing',
+        available: true,
         installCmd: 'mamba install -c bioconda ncbi-amrfinderplus'
     },
     {
@@ -65,8 +66,8 @@ const sessions = [
         title: 'Microbiome Analysis using AI/ML',
         tools: ['SPARA', 'Marker-ML'],
         objective: 'Use artificial intelligence to predict AMR and microbial function from hologenomic data.',
-        colabLink: null,
-        available: false,
+        colabLink: 'https://colab.research.google.com/drive/1kD92SJYlGRyVvTrQUog6x7CxqXcD0sag?usp=sharing',
+        available: true,
         installCmd: 'pip install spara-ml'
     },
     {
