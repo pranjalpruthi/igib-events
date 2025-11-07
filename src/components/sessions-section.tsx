@@ -269,7 +269,7 @@ export function SessionsSection() {
                                     Access all workshop sample datasets in one central location. This Google Drive folder contains data for all training sessions.
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-3">
-                                    <Button asChild size="lg" className="shadow-lg">
+                                    <Button asChild size="lg" className="bg-lime-600 hover:bg-lime-700 text-white shadow-lg shadow-lime-600/30 hover:shadow-xl hover:shadow-lime-600/40 transition-all">
                                         <a href="https://drive.google.com/drive/folders/1ILlIgXQZw2-ADOgwDm2aiJodZ-JN2vOH" target="_blank" rel="noopener noreferrer">
                                             <span>Open Sample Data Drive</span>
                                             <ExternalLink className="ml-2 size-4" />
