@@ -99,7 +99,7 @@ export default function HeroSection() {
                                         variant="outline"
                                         className="h-12 rounded-xl px-8 text-base font-semibold bg-white text-black border-2 border-white hover:bg-white/90 hover:text-black shadow-lg shadow-white/30 hover:shadow-xl hover:shadow-white/40 transition-all dark:bg-white dark:text-black dark:hover:bg-white/90"
                                     >
-                                        <a href="https://subpyramidic-lewis-luminously.ngrok-free.dev" target="_blank" rel="noopener noreferrer">
+                                        <a href="https://hpcpit.pranjal.work" target="_blank" rel="noopener noreferrer">
                                             <span>Access Resource Cockpit</span>
                                             <ChevronRight className="ml-1 size-5" />
                                         </a>

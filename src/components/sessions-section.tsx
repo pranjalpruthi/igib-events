@@ -296,7 +296,7 @@ export function SessionsSection() {
                                     <CopyButton text="/home/workshop/" />
                                 </div>
                                 <Button asChild variant="outline" size="lg">
-                                    <a href="https://subpyramidic-lewis-luminously.ngrok-free.dev" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://hpcpit.pranjal.work" target="_blank" rel="noopener noreferrer">
                                         <span>Access Resource Cockpit</span>
                                         <ExternalLink className="ml-2 size-4" />
                                     </a>
@@ -327,7 +327,7 @@ export function SessionsSection() {
                             </a>
                         </Button>
                         <Button asChild variant="outline" className="h-auto py-4">
-                            <a href="https://subpyramidic-lewis-luminously.ngrok-free.dev" target="_blank" rel="noopener noreferrer">
+                            <a href="https://hpcpit.pranjal.work" target="_blank" rel="noopener noreferrer">
                                 <div className="text-center">
                                     <p className="font-semibold">💻 Resource Cockpit</p>
                                     <p className="text-xs text-muted-foreground">Access Portal</p>

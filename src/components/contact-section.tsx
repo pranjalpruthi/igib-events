@@ -75,7 +75,7 @@ export function ContactSection() {
                             
                             <div className="space-y-4">
                                 <Button asChild variant="outline" className="w-full justify-between h-auto py-4">
-                                    <a href="https://subpyramidic-lewis-luminously.ngrok-free.dev" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://hpcpit.pranjal.work" target="_blank" rel="noopener noreferrer">
                                         <div className="text-left">
                                             <p className="font-semibold">Resource Cockpit</p>
                                             <p className="text-xs text-muted-foreground">Access for registered users</p>

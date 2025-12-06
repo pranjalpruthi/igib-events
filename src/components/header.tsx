@@ -17,7 +17,7 @@ const mobileMenuItems = [
     { name: 'Home', href: '#', icon: Home },
     { name: 'Sessions', href: '#sessions', icon: BookOpen },
     { name: 'Data', href: 'https://drive.google.com/drive/folders/1ILlIgXQZw2-ADOgwDm2aiJodZ-JN2vOH', icon: Database, external: true },
-    { name: 'Cockpit', href: 'https://subpyramidic-lewis-luminously.ngrok-free.dev', icon: Laptop, external: true },
+    { name: 'Cockpit', href: 'https://hpcpit.pranjal.work', icon: Laptop, external: true },
 ]
 
 export const HeroHeader = () => {
@@ -68,7 +68,7 @@ export const HeroHeader = () => {
                                 size="sm"
                                 variant="outline"
                                 className="bg-white text-black border-2 border-white hover:bg-white/90 hover:text-black shadow-md shadow-white/20 hover:shadow-lg hover:shadow-white/30 transition-all dark:bg-white dark:text-black dark:hover:bg-white/90">
-                                <a href="https://subpyramidic-lewis-luminously.ngrok-free.dev" target="_blank" rel="noopener noreferrer">
+                                <a href="https://hpcpit.pranjal.work" target="_blank" rel="noopener noreferrer">
                                     <span>Resource Cockpit</span>
                                 </a>
                             </Button>
