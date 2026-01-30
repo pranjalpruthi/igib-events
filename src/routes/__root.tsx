@@ -7,6 +7,7 @@ import {
 import * as React from 'react';
 import appCss from '@/styles/app.css?url';
 import { RootProvider } from 'fumadocs-ui/provider/tanstack';
+import { ThemeProvider } from '@/components/theme-provider';
 
 export const Route = createRootRoute({
   head: () => ({
@@ -19,15 +20,15 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'IGIB Events - Bioinformatics for One Health Workshop | CSIR-IGIB',
+        title: 'IGIB Events - Bioinformatics Workshops & Training',
       },
       {
         name: 'description',
-        content: 'Five-day hands-on workshop on Bioinformatics for One Health and Pathogen-Specific Research. November 3-7, 2025 at CSIR-IGIB, Delhi. Expert-led training in genomics, metagenomics, and AMR surveillance.',
+        content: 'Official events portal for the Jitendra Lab of Bioinformatics and Big Data at CSIR-IGIB. Explore upcoming workshops, training programs, and resources for bioinformatics skill development.',
       },
       {
         name: 'keywords',
-        content: 'bioinformatics, genomics, one health, AMR, pathogen research, metagenomics, CSIR-IGIB, workshop, training, Delhi, ICMR',
+        content: 'bioinformatics, genomics, one health, AMR, pathogen research, metagenomics, CSIR-IGIB, workshop, training, skill india',
       },
       {
         name: 'author',
@@ -40,11 +41,11 @@ export const Route = createRootRoute({
       },
       {
         property: 'og:title',
-        content: 'IGIB Events - Bioinformatics for One Health Workshop',
+        content: 'IGIB Events - Bioinformatics Workshops',
       },
       {
         property: 'og:description',
-        content: 'Five-day hands-on workshop on Bioinformatics for One Health. November 3-7, 2025 at CSIR-IGIB, Delhi. Expert training in genomics, metagenomics, and AMR surveillance.',
+        content: 'Official events portal for the Jitendra Lab of Bioinformatics and Big Data at CSIR-IGIB. Upcoming: Basic Bioinformatics Skill Development (Feb 2026).',
       },
       {
         property: 'og:site_name',
@@ -134,7 +135,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <html className="light" style={{ colorScheme: 'light' }}>
+    <html suppressHydrationWarning>
       <head>
         <HeadContent />
         <script
@@ -143,7 +144,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         />
       </head>
       <body className="flex flex-col min-h-screen">
-        <RootProvider>{children}</RootProvider>
+        <ThemeProvider>
+          <RootProvider>{children}</RootProvider>
+        </ThemeProvider>
         <Scripts />
       </body>
     </html>
