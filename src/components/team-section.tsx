@@ -10,6 +10,7 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from '@/components/ui/carousel'
+import Autoplay from 'embla-carousel-autoplay'
 import MatrixText from '@/components/kokonutui/matrix-text'
 
 const teamMembers = [
@@ -42,7 +43,8 @@ const teamMembers = [
         scholarId: 'BCxFaZcAAAAJ',
         citations: '3398+',
         expertise: 'Metagenomics, Microbial Diversity, Metal-Microbe Interactions',
-        color: 'from-purple-500 to-pink-500'
+        color: 'from-purple-500 to-pink-500',
+        image: '/assests/people/rakesh.webp'
     },
     {
         name: 'Dr. Shandar Ahmed',
@@ -62,7 +64,8 @@ const teamMembers = [
         scholarId: 'Dj14S78AAAAJ',
         citations: '2000+',
         expertise: 'Integrative Genomics of Host-Pathogen, Single Cell Multiomics',
-        color: 'from-teal-500 to-cyan-500'
+        color: 'from-teal-500 to-cyan-500',
+        image: '/assests/people/rajesh.webp'
     },
     {
         name: 'Dr. Kumardeep Chaudhary',
@@ -72,7 +75,8 @@ const teamMembers = [
         scholarId: 'RTPnUKkAAAAJ',
         citations: '1500+',
         expertise: 'Medical Informatics, Computational Biology, Machine Learning',
-        color: 'from-rose-500 to-pink-500'
+        color: 'from-rose-500 to-pink-500',
+        image: '/assests/people/kumardeep.webp'
     },
 ]
 
@@ -104,6 +108,13 @@ export function TeamSection() {
                         align: "start",
                         loop: true,
                     }}
+                    plugins={[
+                        Autoplay({
+                            delay: 4000,
+                            stopOnInteraction: true,
+                            stopOnMouseEnter: true,
+                        }),
+                    ]}
                     className="w-full"
                 >
                     <CarouselContent className="-ml-4">

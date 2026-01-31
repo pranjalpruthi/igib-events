@@ -41,7 +41,8 @@ const speakers = [
         citations: '3398+',
         expertise: 'Metagenomics, Microbial Diversity, Metal-Microbe Interactions. Focuses on microbial diversity and function using metagenomics, exploiting the microbiome for novel bioactive molecules.',
         session: 'Microbial Diversity, Pathogens and AMR of Waterbodies (Tuesday, Nov 4 - 3:30 PM)',
-        color: 'from-purple-500 to-pink-500'
+        color: 'from-purple-500 to-pink-500',
+        image: '/assests/people/rakesh.webp'
     },
     {
         name: 'Dr. Shandar Ahmed',
@@ -61,7 +62,8 @@ const speakers = [
         citations: '2000+',
         expertise: 'Integrative Genomics of Host-Pathogen, Single Cell Multiomics, Co-infections. Notable work on SARS-CoV-2 research with 1385+ citations on Delta variant studies.',
         session: 'Economics of Genomics: Active and Inactive Microbes (Wednesday, Nov 5 - 11:30 AM)',
-        color: 'from-teal-500 to-cyan-500'
+        color: 'from-teal-500 to-cyan-500',
+        image: '/assests/people/rajesh.webp'
     },
     {
         name: 'Dr. Manish Kumar',
@@ -81,7 +83,8 @@ const speakers = [
         citations: '1500+',
         expertise: 'Medical Informatics, Computational Biology, Next Generation Sequencing, Personalized Medicine, Machine Learning. Leads Digital and Genomic Medicine lab with notable publication on deep learning-based multi-omics integration (965 citations).',
         session: 'Federated AI for Longitudinal Surveillance of AMR (Thursday, Nov 6 - 9:30 AM)',
-        color: 'from-rose-500 to-pink-500'
+        color: 'from-rose-500 to-pink-500',
+        image: '/assests/people/kumardeep.webp'
     },
     {
         name: 'Dr. Sanjay Deshpande',
