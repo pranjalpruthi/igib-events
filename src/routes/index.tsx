@@ -12,6 +12,7 @@ import { MobileDock } from '@/components/mobile-dock'
 import MatrixText from '@/components/kokonutui/matrix-text'
 import { FeaturedWorkshops } from '@/components/featured-workshops'
 import { TeamSection } from '@/components/team-section'
+import { OrganizersSection } from '@/components/organizers-section'
 
 export const Route = createFileRoute('/')({
   component: LandingPage,
@@ -215,6 +216,7 @@ function LandingPage() {
 
         {/* Restored Sections */}
         <FeaturedWorkshops />
+        <OrganizersSection />
         <TeamSection />
 
         <div id="contact">
