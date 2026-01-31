@@ -44,7 +44,7 @@ export function FeaturedWorkshops() {
                     <div className="h-10 sm:h-12 md:h-14 flex items-center justify-center">
                         <MatrixText
                             text="Featured Workshops"
-                            className="text-3xl font-bold md:text-4xl"
+                            className="text-2xl sm:text-3xl font-bold md:text-4xl whitespace-nowrap"
                             matrixColor="#06b6d4"
                             matrixShadow="0 2px 10px rgba(6, 182, 212, 0.6)"
                             initialDelay={200}
