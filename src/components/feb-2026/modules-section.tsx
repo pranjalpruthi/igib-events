@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ExternalLink, Terminal, BookOpen, Cpu, Dna, Bug, BarChart3, Microscope, FileText } from 'lucide-react'
-import { motion } from 'motion/react'
+import { motion, AnimatePresence } from 'motion/react'
 import MatrixText from '@/components/kokonutui/matrix-text'
 import { cn } from '@/lib/utils'
 
@@ -151,31 +151,27 @@ import {
 import { ChevronDown, ChevronUp } from 'lucide-react'
 
 function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: boolean }) {
-    const [isExpanded, setIsExpanded] = React.useState(!isMobile)
+    const [isExpanded, setIsExpanded] = React.useState(false)
 
     return (
-        <Card className="h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 bg-card border hover:border-primary/50 overflow-hidden group">
+        <Card className="h-full flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-primary/15 bg-card/80 backdrop-blur-sm border-2 border-muted hover:border-primary/40 overflow-hidden group rounded-2xl">
             {/* Gradient Header Line */}
-            <div className={`h-1.5 w-full bg-gradient-to-r ${module.color}`} />
+            <div className={`h-2 w-full bg-gradient-to-r ${module.color}`} />
 
-            <CardHeader className="pb-2 p-4 md:p-6">
-                <div className="flex items-start justify-between gap-4">
+            <CardHeader className="pb-2 p-4 md:p-5">
+                <div className="flex items-start justify-between gap-3">
                     <div className="flex items-center gap-3">
                         <div className={cn(
-                            "flex items-center justify-center rounded-xl bg-gradient-to-br text-white shadow-sm transition-transform group-hover:scale-110 shrink-0",
-                            module.id === '1' ? "size-10 md:size-14" : "size-10",
+                            "flex items-center justify-center rounded-xl bg-gradient-to-br text-white shadow-sm transition-transform group-hover:scale-110 shrink-0 size-10",
                             module.color
                         )}>
-                            <module.icon className={cn(module.id === '1' ? "size-5 md:size-7" : "size-5")} />
+                            <module.icon className="size-5" />
                         </div>
                         <div>
-                            <Badge variant="outline" className="mb-1 border-primary/30 text-primary text-[10px] sm:text-xs">
+                            <Badge variant="outline" className="mb-1 border-primary/30 text-primary text-[10px]">
                                 Module {module.id}
                             </Badge>
-                            <CardTitle className={cn(
-                                "text-gray-900 dark:text-white leading-tight",
-                                module.id === '1' ? "text-lg md:text-2xl" : "text-base md:text-lg"
-                            )}>
+                            <CardTitle className="text-base md:text-lg text-gray-900 dark:text-white leading-tight">
                                 {module.title}
                             </CardTitle>
                         </div>
@@ -183,94 +179,96 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
                 </div>
             </CardHeader>
 
-            <CardContent className="flex-1 flex flex-col space-y-4 p-4 md:p-6 pt-0 md:pt-2">
+            <CardContent className="flex-1 flex flex-col p-4 md:p-5 pt-0">
                 {/* Topics */}
-                <div>
-                    <div className="flex flex-wrap gap-1.5 md:gap-2">
-                        {module.topics.map((topic: string, i: number) => (
-                            <Badge
-                                key={i}
-                                variant="secondary"
-                                className="text-[10px] sm:text-xs bg-muted/60 text-muted-foreground hover:bg-muted"
-                            >
-                                {topic}
-                            </Badge>
-                        ))}
-                    </div>
-
-                    {/* Module 1 Logic: Expandable on Mobile */}
-                    {module.id === '1' ? (
-                        <div className="mt-4">
-                            {isExpanded ? (
-                                <motion.div
-                                    initial={{ opacity: 0, height: 0 }}
-                                    animate={{ opacity: 1, height: "auto" }}
-                                    transition={{ duration: 0.3, ease: "easeOut" }}
-                                    className="text-sm text-muted-foreground leading-relaxed overflow-hidden"
-                                >
-                                    {module.longDescription}
-                                </motion.div>
-                            ) : (
-                                <motion.p
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    className="text-xs md:text-sm text-muted-foreground leading-relaxed"
-                                >
-                                    {module.objective}
-                                </motion.p>
-                            )}
-
-                            {/* Expander Toggle (Only on Mobile for Mod 1) */}
-                            {isMobile && (
-                                <Button
-                                    variant="ghost"
-                                    size="sm"
-                                    onClick={() => setIsExpanded(!isExpanded)}
-                                    className="mt-2 w-full h-8 text-xs text-primary hover:text-primary/80 hover:bg-primary/5"
-                                >
-                                    {isExpanded ? (
-                                        <>Show Less <ChevronUp className="ml-1 size-3" /></>
-                                    ) : (
-                                        <>Show Details <ChevronDown className="ml-1 size-3" /></>
-                                    )}
-                                </Button>
-                            )}
-                        </div>
-                    ) : (
-                        // Standard Cards logic
-                        <p className="mt-3 md:mt-4 text-xs md:text-sm text-muted-foreground leading-relaxed">
-                            {module.objective}
-                        </p>
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                    {module.topics.slice(0, isExpanded ? undefined : 3).map((topic: string, i: number) => (
+                        <Badge
+                            key={i}
+                            variant="secondary"
+                            className="text-[10px] bg-muted/60 text-muted-foreground"
+                        >
+                            {topic}
+                        </Badge>
+                    ))}
+                    {!isExpanded && module.topics.length > 3 && (
+                        <Badge variant="secondary" className="text-[10px] bg-muted/60 text-muted-foreground">
+                            +{module.topics.length - 3} more
+                        </Badge>
                     )}
                 </div>
 
+                {/* Objective / Expanded Content */}
+                <div className="flex-1 overflow-hidden">
+                    <AnimatePresence mode="wait">
+                        {isExpanded ? (
+                            <motion.div
+                                key="expanded"
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: "auto" }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.25, ease: "easeInOut" }}
+                                className="text-xs md:text-sm text-muted-foreground leading-relaxed"
+                            >
+                                {module.longDescription || (
+                                    <p>{module.objective}</p>
+                                )}
+                            </motion.div>
+                        ) : (
+                            <motion.p
+                                key="collapsed"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="text-xs md:text-sm text-muted-foreground leading-relaxed line-clamp-2"
+                            >
+                                {module.objective}
+                            </motion.p>
+                        )}
+                    </AnimatePresence>
+                </div>
+
+                {/* Expander Toggle */}
+                <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="mt-2 w-full h-7 text-[10px] text-primary hover:text-primary/80 hover:bg-primary/5"
+                >
+                    {isExpanded ? (
+                        <>Show Less <ChevronUp className="ml-1 size-3" /></>
+                    ) : (
+                        <>Show More <ChevronDown className="ml-1 size-3" /></>
+                    )}
+                </Button>
+
                 {/* Action Buttons */}
-                <div className="mt-auto pt-2 grid grid-cols-2 gap-2">
+                <div className="mt-3 pt-3 border-t grid grid-cols-2 gap-2">
                     <Button
                         asChild
                         size="sm"
                         className={cn(
-                            "w-full bg-white text-black hover:bg-gray-100 border border-gray-200 font-medium transition-all text-[10px] sm:text-xs h-8 md:h-9",
-                            // !module.available && 'pointer-events-none opacity-50' // Keeping it clickable but marked coming soon if desired, or disable if really not ready. User just said "updated". I will leave it enabled but titled coming soon.
+                            "w-full bg-white text-black hover:bg-gray-100 border border-gray-200 font-medium transition-all text-[10px] h-8",
                         )}
                     >
-                        <a href="#" target="_blank" rel="noopener noreferrer"> {/* Placeholder link for PPT */}
-                            <FileText className="size-3 md:size-3.5 mr-1.5" />
-                            Slides (Coming Soon)
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <FileText className="size-3 mr-1.5" />
+                            Slides (Soon)
                         </a>
                     </Button>
                     <Button
                         asChild
                         size="sm"
                         className={cn(
-                            "w-full bg-[#F9AB00] text-black hover:bg-[#F9AB00]/90 font-medium transition-all text-[10px] sm:text-xs h-8 md:h-9",
+                            "w-full bg-[#F9AB00] text-black hover:bg-[#F9AB00]/90 font-medium transition-all text-[10px] h-8",
                             !module.available && 'pointer-events-none opacity-50'
                         )}
                     >
                         <a href={module.colabLink} target="_blank" rel="noopener noreferrer">
-                            <img src="https://colab.research.google.com/img/colab_favicon_256px.png" alt="Colab" className="size-3 md:size-3.5 mr-2" />
-                            Notebook (Coming Soon)
-                            <ExternalLink className="ml-2 size-3" />
+                            <BookOpen className="size-3 mr-1.5" />
+                            Notebook (Soon)
+                            <ExternalLink className="ml-1 size-3" />
                         </a>
                     </Button>
                 </div>
@@ -309,7 +307,7 @@ export function ModulesSection2026() {
                         <CarouselContent className="-ml-4 pb-4">
                             {modules.map((module, index) => (
                                 <CarouselItem key={module.id} className="pl-4 basis-[85%] h-full">
-                                    <div className="h-full">
+                                    <div className="h-full min-h-[400px]">
                                         <ModuleCard module={module} isMobile={true} />
                                     </div>
                                 </CarouselItem>
@@ -322,20 +320,33 @@ export function ModulesSection2026() {
                     </Carousel>
                 </div>
 
-                {/* Desktop Grid View */}
-                <div className="hidden md:grid gap-4 grid-cols-2 lg:grid-cols-4 auto-rows-[minmax(280px,auto)]">
-                    {modules.map((module, index) => (
-                        <motion.div
-                            key={module.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.05 }}
-                            className={cn('h-full', module.className)}
-                        >
-                            <ModuleCard module={module} />
-                        </motion.div>
-                    ))}
+                {/* Desktop Carousel View */}
+                <div className="hidden md:block px-4 lg:px-12">
+                    <Carousel
+                        opts={{
+                            align: "start",
+                            loop: true,
+                        }}
+                        className="w-full"
+                    >
+                        <CarouselContent className="-ml-4 pb-4 items-stretch">
+                            {modules.map((module, index) => (
+                                <CarouselItem key={module.id} className="pl-4 md:basis-1/2 lg:basis-1/3 h-full">
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.05 }}
+                                        className="h-full min-h-[420px]"
+                                    >
+                                        <ModuleCard module={module} />
+                                    </motion.div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious className="-left-12" />
+                        <CarouselNext className="-right-12" />
+                    </Carousel>
                 </div>
 
                 {/* Master Colab Link */}
