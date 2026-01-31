@@ -155,29 +155,13 @@ export function HeroSection2026() {
                                 transition={{ delay: 0.6 }}
                                 className="mt-10 rounded-xl border bg-card/80 backdrop-blur-sm p-6 text-sm"
                             >
-                                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                                    <a href="https://jitendralab.igib.res.in" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                                        <img
-                                            src="/assests/logos/jnlab-logo.webp"
-                                            alt="Jitendra Lab Logo"
-                                            className="h-16 w-auto object-contain rounded-lg"
-                                        />
-                                    </a>
-                                    <div className="text-center sm:text-left">
-                                        <p className="font-semibold">Organized by:</p>
-                                        <p className="mt-1 text-muted-foreground">Jitendra Lab of Bioinformatics and Big Data at</p>
-                                        <p className="text-muted-foreground">CSIR- Institute of Genomics and Integrative Biology (CSIR-IGIB)</p>
-                                    </div>
+                                <div className="text-center">
+                                    <p className="font-semibold">Organized by:</p>
+                                    <p className="mt-1 text-muted-foreground">Jitendra Lab of Bioinformatics and Big Data at</p>
+                                    <p className="text-muted-foreground">CSIR- Institute of Genomics and Integrative Biology (CSIR-IGIB)</p>
                                 </div>
-                                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-4 pt-4 border-t border-border/50">
-                                    <a href="https://www.skillindia.gov.in/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                                        <img
-                                            src="/assests/logos/skill-india.webp"
-                                            alt="Skill India Logo"
-                                            className="h-12 w-auto object-contain rounded-lg bg-white/90 p-1"
-                                        />
-                                    </a>
-                                    <p className="text-muted-foreground text-center sm:text-left">Funded by: <strong className="text-foreground">SKILL INDIA PROJECT</strong> Govt. of INDIA</p>
+                                <div className="mt-4 pt-4 border-t border-border/50 text-center">
+                                    <p className="text-muted-foreground">Funded by: <strong className="text-foreground">SKILL INDIA PROJECT</strong> Govt. of INDIA</p>
                                 </div>
                             </motion.div>
                         </motion.div>
