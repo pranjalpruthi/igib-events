@@ -285,7 +285,7 @@ export function ModulesSection2026() {
                     <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">Online Workshop</Badge>
                     <MatrixText
                         text="Hands-on Training Modules"
-                        className="min-h-0 py-0 mb-2"
+                        className="min-h-0 py-0 mb-2 text-2xl sm:text-3xl md:text-4xl font-bold"
                         initialDelay={400}
                         letterAnimationDuration={300}
                         letterInterval={50}
