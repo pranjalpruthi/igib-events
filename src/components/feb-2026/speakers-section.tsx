@@ -36,23 +36,25 @@ const speakers = [
     },
     {
         name: "Pranjal Pruthi",
-        role: "Research Scientist",
+        role: "Web Developer",
         roleDetail: "Speaker",
-        session: "CHITRA Hands-on",
-        bio: "Research Scientist at CSIR-IGIB. Exploring frontiers of genomics. Skilled in Full Stack Web Dev & Bioinformatics.",
+        session: "Computational Genomics, CHITRA Hands-on",
+        bio: "PhD Scholar at CSIR-IGIB. Exploring frontiers of genomics, Full Stack Dev.",
         image: "/assests/people/pranjal.webp",
         links: {
             github: "https://github.com/pranjalpruthi",
             linkedin: "https://www.linkedin.com/in/pranjal-pruthi/",
             twitter: "https://x.com/pranjalpruthi",
-            website: "https://pranjal.mmm.page"
+            website: "https://pranjal.mmm.page",
+            email: "mail@pranjal.work"
         }
     },
     {
         // Keeping Mukul with minimal data as rich info wasn't provided but is needed for schedule
         name: 'Mukul Verma',
-        role: 'Speaker',
+        role: 'PhD Scholar',
         session: 'QC, Genome Assembly',
+        bio: 'PhD Scholar at Jitendra Lab, IGIB. Specializing in NGS Data Quality Control and Genome Assembly.',
         image: '/assests/people/mukul.webp',
         links: {
             linkedin: 'https://www.linkedin.com/in/mukul-verma-080910252/',
@@ -143,7 +145,7 @@ export function SpeakersSection2026() {
                         ]}
                         className="w-full"
                     >
-                        <CarouselContent className="-ml-4 pb-4">
+                        <CarouselContent className="-ml-4 pb-4 items-stretch">
                             {speakers.map((speaker, index) => (
                                 <CarouselItem key={index} className="pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 h-full">
                                     <motion.div
@@ -153,7 +155,7 @@ export function SpeakersSection2026() {
                                         transition={{ delay: index * 0.1 }}
                                         className="h-full"
                                     >
-                                        <Card className="h-full flex flex-col hover:shadow-xl transition-all duration-300 border-muted bg-card overflow-hidden group">
+                                        <Card className="h-full flex flex-col hover:shadow-xl transition-all duration-300 border-muted bg-primary/5 overflow-hidden group">
                                             <CardContent className="pt-6 px-4 pb-6 flex-1 flex flex-col items-center text-center select-none">
                                                 <div className="mb-4 relative">
                                                     <Avatar className="size-24 border-4 border-background shadow-md group-hover:scale-105 transition-transform duration-300">
@@ -183,7 +185,7 @@ export function SpeakersSection2026() {
                                                     <div className="mt-2 mb-3 flex-grow" /> // Spacer
                                                 )}
 
-                                                <Badge variant="secondary" className="text-[10px] sm:text-xs mb-4 mt-auto">
+                                                <Badge variant="secondary" className="text-[10px] sm:text-xs mb-4 mt-auto whitespace-normal h-auto py-1 text-center">
                                                     {speaker.session}
                                                 </Badge>
 
