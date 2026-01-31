@@ -50,10 +50,15 @@ const speakers = [
     },
     {
         // Keeping Mukul with minimal data as rich info wasn't provided but is needed for schedule
-        name: 'Mukul',
+        name: 'Mukul Verma',
         role: 'Speaker',
         session: 'QC, Genome Assembly',
-        image: null
+        image: '/assests/people/mukul.webp',
+        links: {
+            linkedin: 'https://www.linkedin.com/in/mukul-verma-080910252/',
+            email: 'mukulverma4321@gmail.com',
+            twitter: 'https://x.com/MukulVerm59526'
+        }
     },
     {
         name: "Preeti Agarwal",
@@ -88,11 +93,18 @@ const speakers = [
         }
     },
     {
-        // Keeping Anwesha
-        name: 'Anwesha',
-        role: 'Speaker',
+        name: 'Anwesha De',
+        role: 'PhD Scholar',
+        roleDetail: 'Speaker',
         session: 'AMR Detection',
-        image: null
+        bio: 'PhD Scholar at Jitendra Lab, IGIB. Focusing on Antimicrobial Resistance and Genomics.',
+        image: '/assests/people/anwesha.webp',
+        links: {
+            email: 'anwesha.de@csir.res.in',
+            linkedin: 'https://www.linkedin.com/in/anwesha-de-6980741bb/',
+            github: 'https://github.com/anweshagenomics',
+            twitter: 'https://x.com/AnweshaDe5'
+        }
     },
 
 ]

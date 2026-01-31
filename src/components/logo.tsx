@@ -3,8 +3,12 @@ import { cn } from '@/lib/utils'
 export const Logo = ({ className }: { className?: string }) => {
     return (
         <div className={cn('flex items-center gap-2', className)}>
-            <LogoIcon />
-            <span className="text-xl font-bold">IGIB Events</span>
+            <img
+                src="/assests/bol/bol-fhd-logo.webp"
+                alt="BioinformaticsOnLine Logo"
+                className="h-8 w-auto"
+            />
+            <span className="text-xl font-bold">BOL Events</span>
         </div>
     )
 }

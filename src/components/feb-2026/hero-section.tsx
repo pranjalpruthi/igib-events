@@ -19,9 +19,9 @@ export function HeroSection2026() {
                 size="sm"
                 variant="outline"
                 className="bg-white text-black border-2 border-white hover:bg-white/90 hover:text-black shadow-md shadow-white/20 hover:shadow-lg hover:shadow-white/30 transition-all dark:bg-white dark:text-black dark:hover:bg-white/90">
-                <a href="https://hpcpit.pranjal.work" target="_blank" rel="noopener noreferrer">
+                <a href="https://drive.google.com/drive/folders/11CeOLkJu6aE8ujMJN7qXj5eUVDKXCmm-?usp=sharing" target="_blank" rel="noopener noreferrer">
                     <Laptop className="mr-2 size-4" />
-                    <span>Resource Cockpit</span>
+                    <span>Data Repo</span>
                 </a>
             </Button>
             <Button
@@ -94,14 +94,15 @@ export function HeroSection2026() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.4 }}
-                                    className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3 rounded-xl border bg-card/80 backdrop-blur-sm p-3 sm:p-4 text-center sm:text-left transition-all hover:bg-card"
+                                    className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3 rounded-xl border bg-card/80 backdrop-blur-sm p-3 sm:p-4 text-center sm:text-left transition-all hover:bg-card hover:border-primary/50 group cursor-pointer"
+                                    onClick={() => window.open('https://zoom.us/j/97584266453?pwd=dx9tSA1PDBokiDRYIMNFOehhxKGTuD.1', '_blank')}
                                 >
-                                    <div className="flex size-8 sm:size-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground mb-1 sm:mb-0">
+                                    <div className="flex size-8 sm:size-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground mb-1 sm:mb-0 group-hover:scale-110 transition-transform">
                                         <Video className="size-4 sm:size-5" />
                                     </div>
                                     <div className="min-w-0">
-                                        <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wide">Mode</p>
-                                        <p className="text-xs sm:text-sm font-semibold leading-tight">Online (Live)</p>
+                                        <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wide">Platform</p>
+                                        <p className="text-xs sm:text-sm font-semibold leading-tight group-hover:text-primary transition-colors underline decoration-dotted underline-offset-4">Zoom (Join)</p>
                                     </div>
                                 </motion.div>
 
@@ -116,7 +117,7 @@ export function HeroSection2026() {
                                     </div>
                                     <div className="min-w-0">
                                         <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wide">Time</p>
-                                        <p className="text-xs sm:text-sm font-semibold leading-tight">10:00 – 5:00</p>
+                                        <p className="text-xs sm:text-sm font-semibold leading-tight">10:00 AM – 5:00 PM</p>
                                     </div>
                                 </motion.div>
                             </div>

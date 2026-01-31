@@ -67,7 +67,7 @@ const modules = [
                 </div>
             </div>
         ),
-        colabLink: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
+        colabLink: 'https://colab.research.google.com/drive/1rqvW9Mk0EXMdHEIbdEjazsqhPANBbEE-?usp=sharing#scrollTo=zP-DFgkZLZfO',
         available: true,
         color: 'from-blue-500 to-cyan-500',
         className: 'md:col-span-2 md:row-span-2'
@@ -345,20 +345,36 @@ export function ModulesSection2026() {
                     viewport={{ once: true }}
                     className="mt-12 text-center"
                 >
-                    <Card className="inline-block p-1 pr-4 border border-primary/20 bg-background shadow-sm rounded-full">
-                        <div className="flex items-center gap-3">
-                            <span className="bg-muted px-3 py-1.5 rounded-full text-xs font-medium text-muted-foreground">Pro Tip</span>
-                            <span className="text-sm text-muted-foreground hidden sm:inline">Want everything in one place?</span>
-                            <a
-                                href="https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-sm font-semibold text-primary hover:underline inline-flex items-center"
-                            >
-                                Open Master Notebook <ExternalLink className="ml-1 size-3" />
-                            </a>
-                        </div>
-                    </Card>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <Card className="inline-block p-1 pr-4 border border-primary/20 bg-background shadow-sm rounded-full">
+                            <div className="flex items-center gap-3">
+                                <span className="bg-muted px-3 py-1.5 rounded-full text-xs font-medium text-muted-foreground">Pro Tip</span>
+                                <span className="text-sm text-muted-foreground hidden sm:inline">Want everything in one place?</span>
+                                <a
+                                    href="https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-sm font-semibold text-primary hover:underline inline-flex items-center"
+                                >
+                                    Open Master Notebook <ExternalLink className="ml-1 size-3" />
+                                </a>
+                            </div>
+                        </Card>
+
+                        <Card className="inline-block p-1 pr-4 border border-blue-500/20 bg-blue-50/50 dark:bg-blue-900/10 shadow-sm rounded-full">
+                            <div className="flex items-center gap-3">
+                                <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1.5 rounded-full text-xs font-medium">Data</span>
+                                <a
+                                    href="https://drive.google.com/drive/folders/11CeOLkJu6aE8ujMJN7qXj5eUVDKXCmm-?usp=sharing"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-sm font-semibold text-blue-700 dark:text-blue-400 hover:underline inline-flex items-center"
+                                >
+                                    Common Data Repository <ExternalLink className="ml-1 size-3" />
+                                </a>
+                            </div>
+                        </Card>
+                    </div>
                 </motion.div>
             </div>
         </section>

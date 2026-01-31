@@ -25,15 +25,15 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'IGIB Events - Bioinformatics Workshops & Training',
+        title: 'BioinformaticsOnLine Events - Workshops & Training',
       },
       {
         name: 'description',
-        content: 'Official events portal for the Jitendra Lab of Bioinformatics and Big Data at CSIR-IGIB. Explore upcoming workshops, training programs, and resources for bioinformatics skill development.',
+        content: 'Official events portal for BioinformaticsOnLine (BOL) at CSIR-IGIB. Explore upcoming workshops, training programs, and resources for bioinformatics skill development.',
       },
       {
         name: 'keywords',
-        content: 'bioinformatics, genomics, one health, AMR, pathogen research, metagenomics, CSIR-IGIB, workshop, training, skill india',
+        content: 'bioinformatics, genomics, one health, AMR, pathogen research, metagenomics, CSIR-IGIB, workshop, training, skill india, BOL',
       },
       {
         name: 'author',
@@ -46,19 +46,19 @@ export const Route = createRootRoute({
       },
       {
         property: 'og:title',
-        content: 'IGIB Events - Bioinformatics Workshops',
+        content: 'BioinformaticsOnLine Events - Workshops',
       },
       {
         property: 'og:description',
-        content: 'Official events portal for the Jitendra Lab of Bioinformatics and Big Data at CSIR-IGIB.',
+        content: 'Official events portal for BioinformaticsOnLine (BOL) at CSIR-IGIB.',
       },
       {
         property: 'og:site_name',
-        content: 'IGIB Events',
+        content: 'BioinformaticsOnLine',
       },
       {
         property: 'og:image',
-        content: '/assests/meta-banner-optimised.jpg',
+        content: '/assests/bol/bol-fhd-logo.webp',
       },
       // Twitter
       {
@@ -67,15 +67,15 @@ export const Route = createRootRoute({
       },
       {
         name: 'twitter:title',
-        content: 'IGIB Events - Bioinformatics Workshops',
+        content: 'BioinformaticsOnLine Events - Workshops',
       },
       {
         name: 'twitter:description',
-        content: 'Official events portal for the Jitendra Lab of Bioinformatics and Big Data at CSIR-IGIB.',
+        content: 'Official events portal for BioinformaticsOnLine (BOL) at CSIR-IGIB.',
       },
       {
         name: 'twitter:image',
-        content: '/assests/meta-banner-optimised.jpg',
+        content: '/assests/bol/bol-fhd-logo.webp',
       },
       // Additional meta tags
       {
@@ -94,8 +94,8 @@ export const Route = createRootRoute({
     links: [
       { rel: 'stylesheet', href: appCss },
       { rel: 'canonical', href: 'https://igib-events.vercel.app' },
-      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-      { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon.svg' },
+      { rel: 'icon', type: 'image/png', href: '/assests/bol/favicon-192.png' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/assests/bol/favicon-192.png' },
     ],
   }),
   component: RootComponent,

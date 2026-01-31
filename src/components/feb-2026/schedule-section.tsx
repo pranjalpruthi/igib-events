@@ -9,10 +9,24 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from '@/components/ui/carousel'
+import { Button } from '@/components/ui/button'
+import { CalendarPlus, Copy, Check, Download, Calendar } from 'lucide-react'
+
+// Helper to format date for GCal (YYYYMMDD)
+const formatDateForGCal = (dateStr: string) => {
+    return dateStr.replace(/-/g, '')
+}
+
+// Fixed dates for Feb 2026
+const EVENT_YEAR = '2026'
+const EVENT_MONTH = '02'
+const EVENT_START_DATE = '2026-02-01'
 
 const schedule = [
     {
         day: 'Day 1',
+        date: '01',
+        fullDate: '2026-02-01',
         title: 'Introduction & Linux Basics-1',
         color: 'bg-blue-500',
         sessions: [
@@ -25,6 +39,8 @@ const schedule = [
     },
     {
         day: 'Day 2',
+        date: '02',
+        fullDate: '2026-02-02',
         title: 'Introduction & Linux Basics-2',
         color: 'bg-purple-500',
         sessions: [
@@ -36,6 +52,8 @@ const schedule = [
     },
     {
         day: 'Day 3',
+        date: '03',
+        fullDate: '2026-02-03',
         title: 'NGS Technologies & QC',
         color: 'bg-green-500',
         sessions: [
@@ -47,6 +65,8 @@ const schedule = [
     },
     {
         day: 'Day 4',
+        date: '04',
+        fullDate: '2026-02-04',
         title: 'Genome Assembly',
         color: 'bg-orange-500',
         sessions: [
@@ -58,6 +78,8 @@ const schedule = [
     },
     {
         day: 'Day 5',
+        date: '05',
+        fullDate: '2026-02-05',
         title: 'Genome Annotation',
         color: 'bg-indigo-500',
         sessions: [
@@ -69,6 +91,8 @@ const schedule = [
     },
     {
         day: 'Day 6',
+        date: '06',
+        fullDate: '2026-02-06',
         title: 'AMR Detection',
         color: 'bg-rose-500',
         sessions: [
@@ -80,6 +104,8 @@ const schedule = [
     },
     {
         day: 'Day 7',
+        date: '07',
+        fullDate: '2026-02-07',
         title: 'Enrichment & Valedictory',
         color: 'bg-amber-500',
         sessions: [
@@ -106,6 +132,160 @@ const slideVariants = {
     }),
 }
 
+function ScheduleCard({ day, index }: { day: any, index: number }) {
+    return (
+        <div className={cn(
+            "flex flex-col h-full rounded-2xl border bg-card overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group",
+            "hover:border-primary/20",
+            day.color.replace('bg-', 'border-').replace('500', '200') // Add subtle color border hint
+        )}>
+            {/* Header */}
+            <div className={cn("p-4 sm:p-6 pb-4 border-b relative overflow-hidden")}>
+                <div className={cn("absolute inset-0 opacity-10", day.color)} />
+                <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-2">
+                        <Badge variant="outline" className="bg-background/50 backdrop-blur-sm border-foreground/10">
+                            {day.day}
+                        </Badge>
+                        <div className={cn("size-2 rounded-full", day.color)} />
+                    </div>
+                    <div className="flex items-start justify-between gap-2">
+                        <h3 className="font-bold text-lg leading-tight mb-1">{day.title}</h3>
+                        <Badge variant="secondary" className="text-[10px] shrink-0 opacity-70">
+                            Feb {day.date}
+                        </Badge>
+                    </div>
+                </div>
+            </div>
+
+            {/* Sessions List */}
+            <div className="flex-1 p-4 sm:p-5 space-y-4 bg-muted/5">
+                {day.sessions.map((session: any, sIndex: number) => {
+                    const isBreak = session.title.includes('Break')
+                    return (
+                        <div key={sIndex} className={cn("relative pl-4 border-l-2", isBreak ? "border-muted-foreground/20" : "border-primary/20")}>
+                            <div className="mb-1 flex items-center gap-2">
+                                <span className={cn("text-xs font-mono font-medium", isBreak ? "text-muted-foreground" : "text-primary")}>
+                                    {session.time}
+                                </span>
+                                {session.mode && !isBreak && (
+                                    <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-4">
+                                        {session.mode}
+                                    </Badge>
+                                )}
+                            </div>
+                            <p className={cn("text-sm font-medium leading-snug", isBreak ? "text-muted-foreground italic" : "text-foreground")}>
+                                {session.title}
+                            </p>
+                            {session.speaker && (
+                                <p className="text-xs text-muted-foreground mt-0.5">
+                                    {session.speaker}
+                                </p>
+                            )}
+                        </div>
+                    )
+                })}
+            </div>
+        </div>
+    )
+}
+
+function ScheduleActions() {
+    const [copied, setCopied] = React.useState(false)
+
+    // Event Details
+    const title = "One-Week Basic Bioinformatics Skill Development Program"
+    const description = "Comprehensive 7-day workshop covering Linux, NGS, Genome Assembly, Annotation, and AMR detection. organized by CSIR-IGIB."
+    const location = "Online / CSIR-IGIB"
+
+    // Start: Feb 1, 2026, 10:00 AM
+    // End: Feb 1, 2026, 05:00 PM (Daily for 7 days)
+    const startDate = "20260201"
+    const startTime = "100000"
+    const endTime = "170000"
+
+    // GCal Recurrence: Daily for 7 days
+    const recurrenceRule = "RRULE:FREQ=DAILY;COUNT=7"
+
+    const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}T${startTime}/${startDate}T${endTime}&details=${encodeURIComponent(description)}&location=${encodeURIComponent(location)}&recur=${encodeURIComponent(recurrenceRule)}&sf=true&output=xml`
+
+    const handleDownloadICS = () => {
+        // Generating ICS content with VEVENT and RRULE
+        const icsContent = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'PRODID:-//CSIR-IGIB//Bioinformatics Workshop//EN',
+            'BEGIN:VEVENT',
+            `SUMMARY:${title}`,
+            `DTSTART:${startDate}T${startTime}`,
+            `DTEND:${startDate}T${endTime}`,
+            `RRULE:${recurrenceRule}`,
+            `DESCRIPTION:${description}`,
+            `LOCATION:${location}`,
+            'END:VEVENT',
+            'END:VCALENDAR'
+        ].join('\n')
+
+        const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' })
+        const link = document.createElement('a')
+        link.href = window.URL.createObjectURL(blob)
+        link.setAttribute('download', 'igib-bioinformatics-workshop.ics')
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+    }
+
+    const handleCopy = () => {
+        // Copy full schedule text
+        let text = `*${title}*\nFeb 1-7, 2026\n\n`
+        schedule.forEach(day => {
+            text += `*${day.day}: ${day.title}* (${day.fullDate})\n`
+            day.sessions.forEach((s: any) => {
+                text += `• ${s.time}: ${s.title} (${s.mode})` + (s.speaker ? ` - ${s.speaker}` : '') + '\n'
+            })
+            text += '\n'
+        })
+
+        navigator.clipboard.writeText(text)
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
+    }
+
+    return (
+        <div className="flex flex-wrap items-center justify-center gap-3 mt-4 mb-8">
+            <Button
+                variant="outline"
+                size="sm"
+                className="gap-2"
+                asChild
+            >
+                <a href={googleCalendarUrl} target="_blank" rel="noopener noreferrer">
+                    <CalendarPlus className="size-4 text-blue-500" />
+                    <span>Add to Google Calendar</span>
+                </a>
+            </Button>
+            <Button
+                variant="outline"
+                size="sm"
+                className="gap-2"
+                onClick={handleDownloadICS}
+            >
+                <Download className="size-4 text-green-500" />
+                <span>Save to Calendar (.ics)</span>
+            </Button>
+            <Button
+                variant="outline"
+                size="sm"
+                className="gap-2"
+                onClick={handleCopy}
+            >
+                {copied ? <Check className="size-4 text-green-600" /> : <Copy className="size-4 text-muted-foreground" />}
+                <span>{copied ? 'Copied Schedule' : 'Copy Full Schedule'}</span>
+            </Button>
+        </div>
+    )
+}
+
 export function ScheduleSection2026() {
     return (
         <section className="py-12 md:py-16 bg-background">
@@ -114,6 +294,9 @@ export function ScheduleSection2026() {
                     <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">7-Day Program</Badge>
                     <h2 className="text-2xl font-bold md:text-3xl">Workshop Schedule</h2>
                     <p className="mt-2 text-sm text-muted-foreground">Feb 1-7, 2026 • 10:00 AM – 5:00 PM daily</p>
+
+                    {/* Global Actions */}
+                    <ScheduleActions />
                 </div>
 
                 <div className="px-4 md:px-12">
@@ -124,57 +307,11 @@ export function ScheduleSection2026() {
                         }}
                         className="w-full"
                     >
-                        <CarouselContent className="-ml-4 pb-4">
+                        <CarouselContent className="-ml-4 pb-4 items-stretch">
                             {schedule.map((day, index) => (
-                                <CarouselItem key={index} className="pl-4 basis-[85%] md:basis-1/2 lg:basis-1/3 h-full">
+                                <CarouselItem key={index} className="pl-4 basis-[85%] md:basis-1/2 lg:basis-1/3 h-auto">
                                     <div className="h-full">
-                                        <div className={cn(
-                                            "flex flex-col h-full rounded-2xl border bg-card overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group",
-                                            "hover:border-primary/20"
-                                        )}>
-                                            {/* Header */}
-                                            <div className={cn("p-4 sm:p-6 pb-4 border-b relative overflow-hidden")}>
-                                                <div className={cn("absolute inset-0 opacity-10", day.color)} />
-                                                <div className="relative z-10">
-                                                    <div className="flex items-center justify-between mb-2">
-                                                        <Badge variant="outline" className="bg-background/50 backdrop-blur-sm border-foreground/10">
-                                                            {day.day}
-                                                        </Badge>
-                                                        <div className={cn("size-2 rounded-full", day.color)} />
-                                                    </div>
-                                                    <h3 className="font-bold text-lg leading-tight mb-1">{day.title}</h3>
-                                                </div>
-                                            </div>
-
-                                            {/* Sessions List */}
-                                            <div className="flex-1 p-4 sm:p-5 space-y-4 bg-muted/5">
-                                                {day.sessions.map((session, sIndex) => {
-                                                    const isBreak = session.title.includes('Break')
-                                                    return (
-                                                        <div key={sIndex} className={cn("relative pl-4 border-l-2", isBreak ? "border-muted-foreground/20" : "border-primary/20")}>
-                                                            <div className="mb-1 flex items-center gap-2">
-                                                                <span className={cn("text-xs font-mono font-medium", isBreak ? "text-muted-foreground" : "text-primary")}>
-                                                                    {session.time}
-                                                                </span>
-                                                                {session.mode && !isBreak && (
-                                                                    <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-4">
-                                                                        {session.mode}
-                                                                    </Badge>
-                                                                )}
-                                                            </div>
-                                                            <p className={cn("text-sm font-medium leading-snug", isBreak ? "text-muted-foreground italic" : "text-foreground")}>
-                                                                {session.title}
-                                                            </p>
-                                                            {session.speaker && (
-                                                                <p className="text-xs text-muted-foreground mt-0.5">
-                                                                    {session.speaker}
-                                                                </p>
-                                                            )}
-                                                        </div>
-                                                    )
-                                                })}
-                                            </div>
-                                        </div>
+                                        <ScheduleCard day={day} index={index} />
                                     </div>
                                 </CarouselItem>
                             ))}
