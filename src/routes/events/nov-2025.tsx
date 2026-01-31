@@ -1,8 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
-import HeroSection from '@/components/hero-section'
-import { WorkshopInfoSection } from '@/components/workshop-info-section'
-import { SessionsSection } from '@/components/sessions-section'
-import { SpeakersSection } from '@/components/speakers-section'
+import HeroSection from '@/components/nov-2025/hero-section'
+import { WorkshopInfoSection } from '@/components/nov-2025/workshop-info-section'
+import { SessionsSection } from '@/components/nov-2025/sessions-section'
+import { SpeakersSection } from '@/components/nov-2025/speakers-section'
 import { ContactSection, Footer } from '@/components/contact-section'
 import { MobileDock } from '@/components/mobile-dock'
 

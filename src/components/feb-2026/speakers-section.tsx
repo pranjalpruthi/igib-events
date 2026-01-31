@@ -6,24 +6,25 @@ import { motion } from 'motion/react'
 const speakers = [
     { name: 'Dr. Jitendra Narayan', role: 'Organizer & Speaker', session: 'Intro, Genome Assembly' },
     { name: 'Ajay Bhatia', role: 'Speaker', session: 'Linux, Gene Enrichment' },
-    { name: 'Kaushalendra', role: 'Speaker', session: 'NGS Overview' },
-    { name: 'Preeti Agarwal', role: 'Speaker', session: 'NGS Data Formats' },
+    { name: 'Pranjal', role: 'Speaker', session: 'CHITRA Hands-on' },
     { name: 'Mukul', role: 'Speaker', session: 'QC, Genome Assembly' },
+    { name: 'Preeti Agarwal', role: 'Speaker', session: 'NGS Data Formats' },
+    { name: 'Kaushalendra', role: 'Speaker', session: 'NGS Overview' },
     { name: 'Nityendra', role: 'Speaker', session: 'Genome Annotation' },
     { name: 'Anwesha', role: 'Speaker', session: 'AMR Detection' },
-    { name: 'Pranjal', role: 'Speaker', session: 'CHITRA Hands-on' },
 ]
 
 export function SpeakersSection2026() {
     return (
-        <section className="py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900">
-            <div className="mx-auto max-w-7xl px-6 lg:px-12">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl mb-4">Experts & Speakers</h2>
-                    <p className="text-muted-foreground">Meet the team delivering the training sessions</p>
+        <section className="py-12 md:py-16 bg-muted/30">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
+                <div className="text-center mb-6 md:mb-8">
+                    <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">Training Team</Badge>
+                    <h2 className="text-2xl font-bold md:text-3xl">Experts & Speakers</h2>
+                    <p className="mt-2 text-sm text-muted-foreground">Meet the team delivering the training sessions</p>
                 </div>
 
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     {speakers.map((speaker, index) => (
                         <motion.div
                             key={index}

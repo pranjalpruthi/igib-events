@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { motion } from 'motion/react'
-import { HexagonBackground } from '@/components/animate-ui/components/backgrounds/hexagon'
+
 import {
   Carousel,
   CarouselContent,
@@ -15,6 +15,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel'
 import { MobileDock } from '@/components/mobile-dock'
+import MatrixText from '@/components/kokonutui/matrix-text'
 
 export const Route = createFileRoute('/')({
   component: LandingPage,
@@ -64,13 +65,14 @@ const teamMembers = [
     scholarId: 'ySm4BzcAAAAJ',
     citations: '1000+',
     expertise: 'Bioinformatics, Genome Evolution, Chromosome Breakpoints, Comparative Genomics',
-    color: 'from-blue-500 to-cyan-500'
+    color: 'from-blue-500 to-cyan-500',
+    image: '/assests/team/jit.webp'
   },
   {
     name: 'Dr. Souvik Mukherjee',
     title: 'Associate Professor',
     role: 'Collaborator',
-    organization: 'BRIC-National Institute of Biomedical Genomics',
+    organization: 'BRIC-NIBMG',
     scholarId: '2ll9F2UAAAAJ',
     citations: '944+',
     expertise: 'Human Metagenomics, Population Genomics, Molecular Biology',
@@ -177,14 +179,7 @@ function LandingPage() {
 
         {/* Hero Section */}
         <section className="relative py-12 sm:py-16 md:py-24 lg:py-32 overflow-hidden">
-          {/* Hexagon Pattern Background */}
-          <div className="absolute inset-0 z-0 opacity-30">
-            <HexagonBackground
-              hexagonSize={80}
-              hexagonMargin={2}
-              className="bg-transparent"
-            />
-          </div>
+
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 relative z-10">
             <motion.div
@@ -216,11 +211,26 @@ function LandingPage() {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 className="text-3xl sm:text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl xl:text-7xl leading-tight"
               >
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 dark:from-cyan-300 dark:via-blue-400 dark:to-cyan-400 block mb-1 sm:mb-2 lg:inline lg:mb-0">
-                  Bioinformatics Workshops
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 dark:from-cyan-300 dark:via-blue-400 dark:to-cyan-400">
+                  Discovery Genomics
                 </span>
-                <span className="text-foreground/90">& Training Programs</span>
               </motion.h1>
+
+              {/* Sequence Your Skills - Matrix Animation */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                className="mt-2 sm:mt-4"
+              >
+                <MatrixText
+                  text="Sequence Your Skills"
+                  className="min-h-0 text-foreground/90 py-0"
+                  initialDelay={800}
+                  letterAnimationDuration={400}
+                  letterInterval={80}
+                />
+              </motion.div>
 
               {/* Tagline */}
               <motion.p
@@ -230,7 +240,6 @@ function LandingPage() {
                 className="mt-4 sm:mt-6 text-base sm:text-lg text-muted-foreground md:text-xl max-w-2xl mx-auto px-2"
               >
                 Organized by <span className="font-semibold text-foreground">Jitendra Lab of Bioinformatics and Big Data</span> at CSIR-IGIB.
-                Empowering researchers through hands-on training in genomics, metagenomics, and computational biology.
               </motion.p>
 
               {/* CTA */}
@@ -277,9 +286,9 @@ function LandingPage() {
                   </a>
                 </Button>
                 <Button size="sm" variant="outline" className="rounded-full bg-background/50 backdrop-blur-sm h-7 sm:h-8 px-2.5 sm:px-3 text-[10px] sm:text-xs md:text-sm" asChild>
-                  <a href="mailto:info@bioinformaticsonline.com">
+                  <a href="mailto:jitendra.igib@csir.res.in">
                     <Mail className="mr-1 sm:mr-1.5 size-3 sm:size-3.5" />
-                    Contact
+                    Connect
                   </a>
                 </Button>
               </motion.div>
@@ -289,17 +298,10 @@ function LandingPage() {
 
         {/* Featured Workshops Grid */}
         <section id="events" className="relative py-12 md:py-20 lg:py-28 bg-background/50 dark:bg-black/30 backdrop-blur-sm overflow-hidden">
-          {/* Hexagon Background */}
-          <div className="absolute inset-0 z-0 opacity-20">
-            <HexagonBackground
-              hexagonSize={60}
-              hexagonMargin={1}
-              className="bg-transparent"
-            />
-          </div>
+
 
           <div className="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
-            <div className="text-center mb-12">
+            <div className="text-center mb-12 select-none">
               <Badge className="mb-4 bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 border-cyan-500/30">Events</Badge>
               <h2 className="text-3xl font-bold md:text-4xl">Featured Workshops</h2>
               <p className="mt-4 text-muted-foreground max-w-xl mx-auto">Catch up on past events or register for upcoming sessions organized by our lab.</p>
@@ -353,8 +355,10 @@ function LandingPage() {
         </section>
 
         {/* Team Section */}
-        <section id="team" className="py-12 md:py-20 lg:py-28">
-          <div className="mx-auto max-w-7xl px-6 lg:px-12">
+        <section id="team" className="relative py-12 md:py-20 lg:py-28 overflow-hidden">
+
+
+          <div className="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -378,12 +382,20 @@ function LandingPage() {
                   <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
                     <Card className="group h-full overflow-hidden transition-all hover:shadow-xl border hover:border-primary/50">
                       <div className={`h-2 bg-gradient-to-r ${member.color}`} />
-                      <CardContent className="p-6 flex flex-col h-full">
+                      <CardContent className="p-6 flex flex-col h-full select-none">
                         {/* Avatar */}
                         <div className="mb-4 flex items-center justify-center">
-                          <div className={`flex size-20 items-center justify-center rounded-full bg-gradient-to-br ${member.color} text-2xl font-bold text-white shadow-lg`}>
-                            {member.name.split(' ').map(n => n[0]).join('')}
-                          </div>
+                          {member.image ? (
+                            <img
+                              src={member.image}
+                              alt={member.name}
+                              className="size-20 rounded-full object-cover shadow-lg ring-2 ring-white dark:ring-gray-800"
+                            />
+                          ) : (
+                            <div className={`flex size-20 items-center justify-center rounded-full bg-gradient-to-br ${member.color} text-2xl font-bold text-white shadow-lg`}>
+                              {member.name.split(' ').map(n => n[0]).join('')}
+                            </div>
+                          )}
                         </div>
 
                         {/* Member Info */}

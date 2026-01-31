@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ExternalLink, Copy, Check } from 'lucide-react'
 import { motion } from 'motion/react'
+import MatrixText from '@/components/kokonutui/matrix-text'
 
 const sessions = [
     {
@@ -139,9 +140,13 @@ export function SessionsSection() {
         <section className="py-24 bg-gradient-to-b from-blue-50/50 via-purple-50/30 to-pink-50/50 dark:from-blue-950/20 dark:via-purple-950/10 dark:to-pink-950/20">
             <div className="mx-auto max-w-7xl px-6 lg:px-12">
                 <div className="text-center">
-                    <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl">
-                        🧬 Hands-on Training Sessions
-                    </h2>
+                    <MatrixText
+                        text="Hands-on Training Sessions"
+                        className="min-h-0 py-0 mb-4"
+                        initialDelay={400}
+                        letterAnimationDuration={300}
+                        letterInterval={50}
+                    />
                     <p className="mt-4 text-lg text-muted-foreground">
                         Comprehensive practical training from Linux basics to advanced genomics analysis
                     </p>
@@ -230,7 +235,7 @@ export function SessionsSection() {
                                                 Notebook Coming Soon
                                             </Button>
                                         )}
-                                        
+
                                         {/* PPT Link */}
                                         {session.pptLink && (
                                             <Button
@@ -258,7 +263,7 @@ export function SessionsSection() {
                         <div className="flex items-start gap-4">
                             <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground">
                                 <svg className="size-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                                 </svg>
                             </div>
                             <div className="flex-1">

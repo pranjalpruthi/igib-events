@@ -127,13 +127,11 @@ export function ContactSection() {
 
                                 <Button asChild variant="outline" className="w-full justify-between h-auto py-4">
                                     <a href="https://sandbox.bio" target="_blank" rel="noopener noreferrer">
-                                        <div className="text-left">
-                                            <div className="font-semibold">Sandbox.bio - Interactive Tutorials</div>
-                                            <div className="text-sm text-muted-foreground mt-1">
-                                                Learn bioinformatics from your browser. No setup required
-                                            </div>
+                                        <div className="text-left flex-1 min-w-0">
+                                            <p className="font-semibold">Sandbox.bio</p>
+                                            <p className="text-xs text-muted-foreground truncate">Interactive browser-based tutorials</p>
                                         </div>
-                                        <ExternalLink className="size-4 shrink-0" />
+                                        <ExternalLink className="size-4 shrink-0 ml-2" />
                                     </a>
                                 </Button>
                             </div>

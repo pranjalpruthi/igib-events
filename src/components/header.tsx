@@ -80,33 +80,36 @@ export const HeroHeader = ({ menuItems = defaultMenuItems, rightContent }: HeroH
                                 </div>
                             </div>
 
-                            <div className="hidden lg:flex lg:gap-3 lg:items-center">
+                            <div className="hidden lg:flex lg:gap-2 lg:items-center flex-nowrap">
                                 {rightContent || (
                                     <>
                                         <Button
                                             asChild
                                             size="sm"
                                             variant="outline"
-                                            className="bg-white text-black border-2 border-white hover:bg-white/90 hover:text-black shadow-md shadow-white/20 hover:shadow-lg hover:shadow-white/30 transition-all dark:bg-white dark:text-black dark:hover:bg-white/90">
+                                            className="bg-white text-black border-2 border-white hover:bg-white/90 hover:text-black shadow-md shadow-white/20 hover:shadow-lg hover:shadow-white/30 transition-all dark:bg-white dark:text-black dark:hover:bg-white/90 px-3">
                                             <a href="https://hpcpit.pranjal.work" target="_blank" rel="noopener noreferrer">
-                                                <span>Resource Cockpit</span>
+                                                <Laptop className="size-4 xl:mr-1.5" />
+                                                <span className="hidden xl:inline">Cockpit</span>
                                             </a>
                                         </Button>
                                         <Button
                                             asChild
                                             size="sm"
-                                            className="bg-lime-600 hover:bg-lime-700 text-white shadow-md shadow-lime-600/20 hover:shadow-lg hover:shadow-lime-600/30 transition-all">
+                                            className="bg-lime-600 hover:bg-lime-700 text-white shadow-md shadow-lime-600/20 hover:shadow-lg hover:shadow-lime-600/30 transition-all px-3">
                                             <a href="https://drive.google.com/drive/folders/1ILlIgXQZw2-ADOgwDm2aiJodZ-JN2vOH" target="_blank" rel="noopener noreferrer">
-                                                <span>Sample Data</span>
+                                                <Database className="size-4 xl:mr-1.5" />
+                                                <span className="hidden xl:inline">Data</span>
                                             </a>
                                         </Button>
                                         <Button
                                             asChild
                                             variant="outline"
                                             size="sm"
-                                            className="border-2 border-primary hover:bg-primary hover:text-primary-foreground transition-all">
+                                            className="border-2 border-primary hover:bg-primary hover:text-primary-foreground transition-all px-3">
                                             <a href="https://www.canva.com/design/DAG3bQ0I9B8/2Q5S6W9e0Kj2ofaOqeMeYw/view?utm_content=DAG3bQ0I9B8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hdaf0b68eab" target="_blank" rel="noopener noreferrer">
-                                                <span>Download Brochure</span>
+                                                <BookOpen className="size-4 xl:mr-1.5" />
+                                                <span className="hidden xl:inline">Brochure</span>
                                             </a>
                                         </Button>
                                     </>

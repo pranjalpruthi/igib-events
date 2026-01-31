@@ -69,7 +69,7 @@ const ITEMS: DockItem[] = [
             { label: 'Sample Data', href: 'https://drive.google.com/drive/folders/1ILlIgXQZw2-ADOgwDm2aiJodZ-JN2vOH', icon: Database, colorClass: 'text-lime-500', bgClass: 'bg-lime-500/10 group-hover:bg-lime-500/20', external: true },
             { label: 'Feb 2026', href: '/events/feb-2026', icon: BookOpen, colorClass: 'text-blue-500', bgClass: 'bg-blue-500/10 group-hover:bg-blue-500/20' },
             { label: 'Nov 2025', href: '/events/nov-2025', icon: FileText, colorClass: 'text-orange-500', bgClass: 'bg-orange-500/10 group-hover:bg-orange-500/20' },
-            { label: 'Contact', href: '#contact', icon: Mail, colorClass: 'text-pink-500', bgClass: 'bg-pink-500/10 group-hover:bg-pink-500/20' },
+            { label: 'Connect', href: '#contact', icon: Mail, colorClass: 'text-pink-500', bgClass: 'bg-pink-500/10 group-hover:bg-pink-500/20' },
         ]
     },
 ];

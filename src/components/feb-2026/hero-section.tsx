@@ -40,7 +40,7 @@ export function HeroSection2026() {
         <>
             <HeroHeader menuItems={menuItems} rightContent={headerButtons} />
             <section className="relative">
-                <div className="py-20 md:py-24 lg:py-32">
+                <div className="py-12 md:py-20 lg:py-24">
                     <div className="relative mx-auto flex max-w-7xl flex-col px-6 lg:px-12">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}

@@ -176,7 +176,7 @@ export function SpeakersSection() {
                                                 variant="outline"
                                                 className="w-full"
                                             >
-                                                <a 
+                                                <a
                                                     href={`https://scholar.google.com/citations?user=${speaker.scholarId}&hl=en`}
                                                     target="_blank"
                                                     rel="noopener noreferrer"

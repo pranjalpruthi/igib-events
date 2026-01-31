@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
-import { HeroHeader } from './header'
+import { HeroHeader } from '@/components/header'
 import { Calendar, MapPin, Users, ChevronRight } from 'lucide-react'
 import { motion } from 'motion/react'
 
@@ -12,7 +12,7 @@ export default function HeroSection() {
                 <section className="relative">
                     <div className="py-20 md:py-24 lg:py-32">
                         <div className="relative mx-auto flex max-w-7xl flex-col px-6 lg:px-12">
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6 }}
@@ -39,7 +39,7 @@ export default function HeroSection() {
 
                                 {/* Subtitle */}
                                 <p className="mt-6 text-lg text-muted-foreground md:text-xl">
-                                    Advancing One Health through Genomics Data & Discovery. 
+                                    Advancing One Health through Genomics Data & Discovery.
                                     Comprehensive training in pathogen genomics, metagenomics, and antimicrobial resistance surveillance.
                                 </p>
 
