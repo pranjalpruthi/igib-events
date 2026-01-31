@@ -2,7 +2,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { motion } from 'motion/react'
-import { Github, Twitter, Linkedin, Mail, Globe, ExternalLink } from 'lucide-react'
+import { Github, Twitter, Linkedin, Mail, Globe, ExternalLink, BookOpen } from 'lucide-react'
 import {
     Carousel,
     CarouselContent,
@@ -193,6 +193,13 @@ export function OrganizersSection() {
                                                 <Button size="icon" variant="ghost" className="size-8" asChild>
                                                     <a href={member.links.website} target="_blank" rel="noopener noreferrer">
                                                         <Globe className="size-4" />
+                                                    </a>
+                                                </Button>
+                                            )}
+                                            {member.links.researchgate && (
+                                                <Button size="icon" variant="ghost" className="size-8" asChild>
+                                                    <a href={member.links.researchgate} target="_blank" rel="noopener noreferrer">
+                                                        <BookOpen className="size-4" />
                                                     </a>
                                                 </Button>
                                             )}
