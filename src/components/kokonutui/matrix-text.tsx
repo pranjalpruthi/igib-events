@@ -36,8 +36,8 @@ const MatrixText = ({
   initialDelay = 200,
   letterAnimationDuration = 500,
   letterInterval = 100,
-  matrixColor = "#06b6d4",
-  matrixShadow = "0 2px 4px rgba(6, 182, 212, 0.5)",
+  matrixColor = "#00ff41",
+  matrixShadow = "0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41",
 }: MatrixTextProps) => {
   const [letters, setLetters] = useState<LetterState[]>(() =>
     text.split("").map((char) => ({
@@ -50,8 +50,19 @@ const MatrixText = ({
 
   // ... (existing helper functions: getRandomChar, animateLetter, startAnimation, useEffect) ...
 
+  // DNA nucleotide colors (standard sequence colors)
+  const nucleotideColors: Record<string, { color: string; shadow: string }> = useMemo(() => ({
+    'A': { color: '#22c55e', shadow: '0 0 10px #22c55e, 0 0 20px #22c55e' }, // Green - Adenine
+    'T': { color: '#ef4444', shadow: '0 0 10px #ef4444, 0 0 20px #ef4444' }, // Red - Thymine
+    'G': { color: '#eab308', shadow: '0 0 10px #eab308, 0 0 20px #eab308' }, // Yellow - Guanine
+    'C': { color: '#3b82f6', shadow: '0 0 10px #3b82f6, 0 0 20px #3b82f6' }, // Blue - Cytosine
+  }), []);
+
   const getRandomChar = useCallback(
-    () => (Math.random() > 0.5 ? "1" : "0"),
+    () => {
+      const nucleotides = ['A', 'T', 'G', 'C'];
+      return nucleotides[Math.floor(Math.random() * nucleotides.length)];
+    },
     []
   );
 
@@ -136,31 +147,43 @@ const MatrixText = ({
     <div
       aria-label="Matrix text animation"
       className={cn(
-        "flex items-center justify-center text-black dark:text-white",
+        "flex items-center justify-center text-black dark:text-white cursor-pointer",
         className
       )}
+      onMouseEnter={startAnimation}
     >
       <div className="flex items-center justify-center">
         <div className="flex flex-wrap items-center justify-center">
-          {letters.map((letter, index) => (
-            <motion.div
-              animate={letter.isMatrix ? "matrix" : "normal"}
-              className="w-[1ch] overflow-hidden text-center font-mono"
-              initial="initial"
-              key={`${index}-${letter.char}`}
-              style={{
-                display: "inline-block",
-                fontVariantNumeric: "tabular-nums",
-              }}
-              transition={{
-                duration: 0.1,
-                ease: "easeInOut",
-              }}
-              variants={motionVariants}
-            >
-              {letter.isSpace ? "\u00A0" : letter.char}
-            </motion.div>
-          ))}
+          {letters.map((letter, index) => {
+            const nucleotideStyle = letter.isMatrix && nucleotideColors[letter.char]
+              ? nucleotideColors[letter.char]
+              : null;
+
+            return (
+              <motion.div
+                animate={nucleotideStyle ? {
+                  color: nucleotideStyle.color,
+                  textShadow: nucleotideStyle.shadow,
+                } : {
+                  color: undefined,
+                  textShadow: 'none',
+                }}
+                className="w-[1ch] text-center font-mono"
+                initial="initial"
+                key={`${index}-${letter.char}`}
+                style={{
+                  display: "inline-block",
+                  fontVariantNumeric: "tabular-nums",
+                }}
+                transition={{
+                  duration: 0.1,
+                  ease: "easeInOut",
+                }}
+              >
+                {letter.isSpace ? "\u00A0" : letter.char}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </div>
