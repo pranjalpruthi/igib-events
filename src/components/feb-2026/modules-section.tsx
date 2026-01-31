@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { ExternalLink, Terminal, BookOpen, Cpu, Dna, Bug, BarChart3, Microscope } from 'lucide-react'
+import { ExternalLink, Terminal, BookOpen, Cpu, Dna, Bug, BarChart3, Microscope, FileText } from 'lucide-react'
 import { motion } from 'motion/react'
 import MatrixText from '@/components/kokonutui/matrix-text'
 import { cn } from '@/lib/utils'
@@ -244,19 +244,32 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
                     )}
                 </div>
 
-                {/* Action Button */}
-                <div className="mt-auto pt-2">
+                {/* Action Buttons */}
+                <div className="mt-auto pt-2 grid grid-cols-2 gap-2">
                     <Button
                         asChild
                         size="sm"
                         className={cn(
-                            "w-full bg-[#F9AB00] text-black hover:bg-[#F9AB00]/90 font-medium transition-all text-xs md:text-sm h-8 md:h-9",
+                            "w-full bg-white text-black hover:bg-gray-100 border border-gray-200 font-medium transition-all text-[10px] sm:text-xs h-8 md:h-9",
+                            // !module.available && 'pointer-events-none opacity-50' // Keeping it clickable but marked coming soon if desired, or disable if really not ready. User just said "updated". I will leave it enabled but titled coming soon.
+                        )}
+                    >
+                        <a href="#" target="_blank" rel="noopener noreferrer"> {/* Placeholder link for PPT */}
+                            <FileText className="size-3 md:size-3.5 mr-1.5" />
+                            Slides (Coming Soon)
+                        </a>
+                    </Button>
+                    <Button
+                        asChild
+                        size="sm"
+                        className={cn(
+                            "w-full bg-[#F9AB00] text-black hover:bg-[#F9AB00]/90 font-medium transition-all text-[10px] sm:text-xs h-8 md:h-9",
                             !module.available && 'pointer-events-none opacity-50'
                         )}
                     >
                         <a href={module.colabLink} target="_blank" rel="noopener noreferrer">
                             <img src="https://colab.research.google.com/img/colab_favicon_256px.png" alt="Colab" className="size-3 md:size-3.5 mr-2" />
-                            Open Notebook
+                            Notebook (Coming Soon)
                             <ExternalLink className="ml-2 size-3" />
                         </a>
                     </Button>

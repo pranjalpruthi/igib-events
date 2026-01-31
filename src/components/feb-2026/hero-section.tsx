@@ -122,15 +122,15 @@ export function HeroSection2026() {
                             </div>
 
                             {/* CTA Buttons */}
-                            <div className="mt-8 md:mt-10 grid grid-cols-2 gap-3 sm:flex sm:flex-row sm:justify-center sm:gap-4 w-full sm:w-auto">
+                            <div className="mt-8 md:mt-10 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 w-full sm:w-auto mx-auto border-0">
                                 <Button
                                     asChild
                                     size="lg"
-                                    className="h-12 w-full rounded-xl px-4 sm:px-8 text-sm sm:text-base font-semibold bg-[#F9AB00] text-black hover:bg-[#E09800] shadow-lg shadow-[#F9AB00]/30 hover:shadow-xl hover:shadow-[#F9AB00]/40 transition-all duration-200 ease-out"
+                                    className="h-11 sm:h-12 w-full sm:w-auto sm:min-w-[200px] rounded-xl px-6 sm:px-8 text-sm sm:text-base font-semibold bg-[#F9AB00] text-black hover:bg-[#E09800] shadow-lg shadow-[#F9AB00]/20 hover:shadow-xl hover:shadow-[#F9AB00]/30 transition-all duration-200 ease-out"
                                 >
                                     <a href="https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing" target="_blank" rel="noopener noreferrer">
-                                        <span className="sm:hidden">Modules</span>
-                                        <span className="hidden sm:inline">Google Colab Modules</span>
+                                        <span className="sm:hidden">Modules (Coming Soon)</span>
+                                        <span className="hidden sm:inline">Google Colab Modules (Coming Soon)</span>
                                         <ChevronRight className="ml-1 size-4 sm:size-5" />
                                     </a>
                                 </Button>
@@ -138,11 +138,11 @@ export function HeroSection2026() {
                                     asChild
                                     size="lg"
                                     variant="outline"
-                                    className="h-12 w-full rounded-xl border-2 border-white bg-white text-black px-4 sm:px-8 text-sm sm:text-base font-semibold hover:bg-white/90 hover:text-black shadow-lg shadow-white/20 hover:shadow-xl hover:shadow-white/30 transition-all duration-200 ease-out"
+                                    className="h-11 sm:h-12 w-full sm:w-auto sm:min-w-[200px] rounded-xl border-2 border-white bg-white text-black px-6 sm:px-8 text-sm sm:text-base font-semibold hover:bg-white/90 hover:text-black shadow-lg shadow-white/20 hover:shadow-xl hover:shadow-white/30 transition-all duration-200 ease-out"
                                 >
                                     <a href="https://digital-standee-ppt-cchqj6v.gamma.site" target="_blank" rel="noopener noreferrer">
-                                        <span className="sm:hidden">Standee</span>
-                                        <span className="hidden sm:inline">View Presentation / Standee</span>
+                                        <span className="sm:hidden">Standee (Coming Soon)</span>
+                                        <span className="hidden sm:inline">View Presentation / Standee (Coming Soon)</span>
                                     </a>
                                 </Button>
                             </div>
