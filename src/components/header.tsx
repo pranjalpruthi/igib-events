@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { Logo } from '@/components/logo'
-import { Menu, X, Home, Calendar, Users, Mail, Database, BookOpen, Laptop } from 'lucide-react'
+import { Menu, X, Home, Calendar, Users, Mail, Database, BookOpen, Laptop, Compass } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import { motion, useScroll } from 'motion/react'
@@ -15,9 +15,9 @@ const defaultMenuItems = [
 ]
 
 const mobileMenuItems = [
-    { name: 'Home', href: '#', icon: Home },
+    { name: 'Home', href: '/', icon: Home },
     { name: 'Sessions', href: '#sessions', icon: BookOpen },
-    { name: 'Data', href: 'https://drive.google.com/drive/folders/1ILlIgXQZw2-ADOgwDm2aiJodZ-JN2vOH', icon: Database, external: true },
+    { name: 'Explore', href: '#events', icon: Compass },
     { name: 'Cockpit', href: 'https://hpcpit.pranjal.work', icon: Laptop, external: true },
 ]
 
@@ -59,6 +59,11 @@ export const HeroHeader = ({ menuItems = defaultMenuItems, rightContent }: HeroH
                                     className="flex items-center space-x-2">
                                     <Logo />
                                 </Link>
+
+                                {/* Mobile Theme Toggle */}
+                                <div className="lg:hidden">
+                                    <ThemeToggle />
+                                </div>
 
                                 <div className="hidden lg:block">
                                     <ul className="flex gap-8 text-sm">
@@ -112,34 +117,6 @@ export const HeroHeader = ({ menuItems = defaultMenuItems, rightContent }: HeroH
                     </div>
                 </nav>
             </header>
-
-            {/* Mobile Bottom Dock */}
-            <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 pb-safe">
-                <motion.div
-                    initial={{ y: 100 }}
-                    animate={{ y: 0 }}
-                    transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                    className="mx-3 mb-2 rounded-xl border bg-background/95 backdrop-blur-xl shadow-xl"
-                >
-                    <div className="flex items-center justify-around px-1 py-2">
-                        {mobileMenuItems.map((item, index) => (
-                            <a
-                                key={index}
-                                href={item.href}
-                                target={item.external ? "_blank" : undefined}
-                                rel={item.external ? "noopener noreferrer" : undefined}
-                                className="flex flex-col items-center gap-0.5 px-2 py-1.5 rounded-lg transition-all hover:bg-primary/10 active:scale-95"
-                            >
-                                <item.icon className="size-4 text-muted-foreground" />
-                                <span className="text-[9px] font-medium text-muted-foreground">{item.name}</span>
-                            </a>
-                        ))}
-                        <div className="flex flex-col items-center gap-0.5 px-2 py-1.5">
-                            <ThemeToggle />
-                        </div>
-                    </div>
-                </motion.div>
-            </div>
         </>
     )
 }

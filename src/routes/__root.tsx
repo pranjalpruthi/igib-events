@@ -5,9 +5,14 @@ import {
   Scripts,
 } from '@tanstack/react-router';
 import * as React from 'react';
+import { useEffect } from 'react';
+import Clarity from '@microsoft/clarity';
 import appCss from '@/styles/app.css?url';
 import { RootProvider } from 'fumadocs-ui/provider/tanstack';
 import { ThemeProvider } from '@/components/theme-provider';
+
+// Microsoft Clarity Project ID
+const CLARITY_PROJECT_ID = 'v9zix01itc';
 
 export const Route = createRootRoute({
   head: () => ({
@@ -45,11 +50,15 @@ export const Route = createRootRoute({
       },
       {
         property: 'og:description',
-        content: 'Official events portal for the Jitendra Lab of Bioinformatics and Big Data at CSIR-IGIB. Upcoming: Basic Bioinformatics Skill Development (Feb 2026).',
+        content: 'Official events portal for the Jitendra Lab of Bioinformatics and Big Data at CSIR-IGIB.',
       },
       {
         property: 'og:site_name',
         content: 'IGIB Events',
+      },
+      {
+        property: 'og:image',
+        content: '/assests/meta-banner-optimised.jpg',
       },
       // Twitter
       {
@@ -58,11 +67,15 @@ export const Route = createRootRoute({
       },
       {
         name: 'twitter:title',
-        content: 'IGIB Events - Bioinformatics for One Health Workshop',
+        content: 'IGIB Events - Bioinformatics Workshops',
       },
       {
         name: 'twitter:description',
-        content: 'Five-day hands-on workshop on Bioinformatics for One Health. November 3-7, 2025 at CSIR-IGIB, Delhi.',
+        content: 'Official events portal for the Jitendra Lab of Bioinformatics and Big Data at CSIR-IGIB.',
+      },
+      {
+        name: 'twitter:image',
+        content: '/assests/meta-banner-optimised.jpg',
       },
       // Additional meta tags
       {
@@ -89,6 +102,11 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
+  // Initialize Microsoft Clarity on mount
+  useEffect(() => {
+    Clarity.init(CLARITY_PROJECT_ID);
+  }, []);
+
   return (
     <RootDocument>
       <Outlet />

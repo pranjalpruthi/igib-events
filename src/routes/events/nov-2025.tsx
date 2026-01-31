@@ -4,6 +4,7 @@ import { WorkshopInfoSection } from '@/components/workshop-info-section'
 import { SessionsSection } from '@/components/sessions-section'
 import { SpeakersSection } from '@/components/speakers-section'
 import { ContactSection, Footer } from '@/components/contact-section'
+import { MobileDock } from '@/components/mobile-dock'
 
 export const Route = createFileRoute('/events/nov-2025')({
     component: Home,
@@ -18,6 +19,7 @@ function Home() {
             <WorkshopInfoSection />
             <ContactSection />
             <Footer />
+            <MobileDock />
         </div>
     )
 }

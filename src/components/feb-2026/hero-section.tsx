@@ -126,7 +126,7 @@ export function HeroSection2026() {
                                 <Button
                                     asChild
                                     size="lg"
-                                    className="h-12 rounded-xl px-8 text-base font-semibold bg-[#F9AB00] text-black hover:bg-[#F9AB00]/90 shadow-lg shadow-[#F9AB00]/30 hover:shadow-xl hover:shadow-[#F9AB00]/40 transition-all"
+                                    className="h-12 rounded-xl px-8 text-base font-semibold bg-[#F9AB00] text-black hover:bg-[#E09800] shadow-lg shadow-[#F9AB00]/30 hover:shadow-xl hover:shadow-[#F9AB00]/40 transition-all duration-200 ease-out"
                                 >
                                     <a href="https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing" target="_blank" rel="noopener noreferrer">
                                         <span>Google Colab Modules</span>
@@ -137,7 +137,7 @@ export function HeroSection2026() {
                                     asChild
                                     size="lg"
                                     variant="outline"
-                                    className="h-12 rounded-xl border-2 border-primary px-8 text-base font-semibold hover:bg-primary hover:text-primary-foreground transition-all"
+                                    className="h-12 rounded-xl border-2 border-primary px-8 text-base font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-200 ease-out"
                                 >
                                     <a href="https://digital-standee-ppt-cchqj6v.gamma.site" target="_blank" rel="noopener noreferrer">
                                         <span>View Presentation / Standee</span>

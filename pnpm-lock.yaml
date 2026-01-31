@@ -17,6 +17,9 @@ importers:
       '@lottiefiles/react-lottie-player':
         specifier: ^3.6.0
         version: 3.6.0(react@19.2.0)
+      '@microsoft/clarity':
+        specifier: ^1.0.2
+        version: 1.0.2
       '@radix-ui/react-accordion':
         specifier: ^1.2.12
         version: 1.2.12(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -576,6 +579,9 @@ packages:
 
   '@mdx-js/mdx@3.1.1':
     resolution: {integrity: sha512-f6ZO2ifpwAQIpzGWaBQT2TXxPv6z3RBzQKpVftEWN78Vl/YweF1uwussDx8ECAXVtr3Rs89fKyG9YlzUs9DyGQ==}
+
+  '@microsoft/clarity@1.0.2':
+    resolution: {integrity: sha512-9EZYROFpJxEGmQpHvUFqvD3ZJ7QQSqnibYSWmS+1xusoZfG1QQ1/Al9yVBBc11DWMbJrs1pe1hLT273it/skJg==}
 
   '@oozcitak/dom@1.15.10':
     resolution: {integrity: sha512-0JT29/LaxVgRcGKvHmSrUTEvZ8BXvZhGl2LASRUgHqDTC1M5g1pLmVv56IYNyt3bG2CUjDkc67wnyZC14pbQrQ==}
@@ -3488,6 +3494,8 @@ snapshots:
       vfile: 6.0.3
     transitivePeerDependencies:
       - supports-color
+
+  '@microsoft/clarity@1.0.2': {}
 
   '@oozcitak/dom@1.15.10':
     dependencies:
