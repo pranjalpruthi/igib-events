@@ -26,6 +26,8 @@ interface MatrixTextProps {
   initialDelay?: number;
   letterAnimationDuration?: number;
   letterInterval?: number;
+  matrixColor?: string;
+  matrixShadow?: string;
 }
 
 const MatrixText = ({
@@ -34,6 +36,8 @@ const MatrixText = ({
   initialDelay = 200,
   letterAnimationDuration = 500,
   letterInterval = 100,
+  matrixColor = "#06b6d4",
+  matrixShadow = "0 2px 4px rgba(6, 182, 212, 0.5)",
 }: MatrixTextProps) => {
   const [letters, setLetters] = useState<LetterState[]>(() =>
     text.split("").map((char) => ({
@@ -44,6 +48,8 @@ const MatrixText = ({
   );
   const [isAnimating, setIsAnimating] = useState(false);
 
+  // ... (existing helper functions: getRandomChar, animateLetter, startAnimation, useEffect) ...
+
   const getRandomChar = useCallback(
     () => (Math.random() > 0.5 ? "1" : "0"),
     []
@@ -51,6 +57,7 @@ const MatrixText = ({
 
   const animateLetter = useCallback(
     (index: number) => {
+      // ... (same as original)
       if (index >= text.length) return;
 
       requestAnimationFrame(() => {
@@ -107,21 +114,22 @@ const MatrixText = ({
     return () => clearTimeout(timer);
   }, []);
 
+
   const motionVariants = useMemo(
     () => ({
       // initial: {
       //     color: "rgb(var(--foreground-rgb))",
       // },
       matrix: {
-        color: "#06b6d4",
-        textShadow: "0 2px 4px rgba(6, 182, 212, 0.5)",
+        color: matrixColor,
+        textShadow: matrixShadow,
       },
       // normal: {
       //     color: "rgb(var(--foreground-rgb))",
       //     textShadow: "none",
       // },
     }),
-    []
+    [matrixColor, matrixShadow]
   );
 
   return (
@@ -137,7 +145,7 @@ const MatrixText = ({
           {letters.map((letter, index) => (
             <motion.div
               animate={letter.isMatrix ? "matrix" : "normal"}
-              className="w-[1ch] overflow-hidden text-center font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+              className="w-[1ch] overflow-hidden text-center font-mono"
               initial="initial"
               key={`${index}-${letter.char}`}
               style={{

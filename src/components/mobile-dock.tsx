@@ -48,7 +48,7 @@ const ITEMS: DockItem[] = [
     {
         id: 2,
         label: 'Events',
-        href: '#events',
+        href: '/events',
         title: <Calendar className='h-5 w-5' />,
     },
     {
@@ -63,7 +63,7 @@ const ITEMS: DockItem[] = [
         label: 'More',
         title: <MoreHorizontal className='h-5 w-5' />,
         menuItems: [
-            { label: 'Team', href: '#team', icon: Users, colorClass: 'text-purple-500', bgClass: 'bg-purple-500/10 group-hover:bg-purple-500/20' },
+            { label: 'Team', href: '/events#team', icon: Users, colorClass: 'text-purple-500', bgClass: 'bg-purple-500/10 group-hover:bg-purple-500/20' },
             { label: 'BioinformaticsOnLine', href: 'https://bioinformaticsonline.com', icon: Globe, colorClass: 'text-green-500', bgClass: 'bg-green-500/10 group-hover:bg-green-500/20', external: true },
             { label: 'Cockpit', href: 'https://hpcpit.pranjal.work', icon: Laptop, colorClass: 'text-cyan-500', bgClass: 'bg-cyan-500/10 group-hover:bg-cyan-500/20', external: true },
             { label: 'Sample Data', href: 'https://drive.google.com/drive/folders/1ILlIgXQZw2-ADOgwDm2aiJodZ-JN2vOH', icon: Database, colorClass: 'text-lime-500', bgClass: 'bg-lime-500/10 group-hover:bg-lime-500/20', external: true },
@@ -264,6 +264,30 @@ export function MobileDock() {
                                     </div>
                                     <span className={labelClasses}>{item.label}</span>
                                 </a>
+                            );
+                        }
+
+                        // Handle absolute path with hash (e.g., /#events)
+                        if (item.href && item.href.includes('#') && !item.href.startsWith('#')) {
+                            const [path, hash] = item.href.split('#');
+                            return (
+                                <Link
+                                    key={item.id}
+                                    to={path}
+                                    hash={hash}
+                                    aria-label={item.label}
+                                    className={baseClasses}
+                                    onClick={() => {
+                                        setIsOpen(false);
+                                        setActive(null);
+                                        // Force scroll behavior if needed, generally Router handles it
+                                    }}
+                                >
+                                    <div className={iconContainerClasses}>
+                                        {item.title}
+                                    </div>
+                                    <span className={labelClasses}>{item.label}</span>
+                                </Link>
                             );
                         }
 

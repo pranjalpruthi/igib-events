@@ -197,11 +197,10 @@ export function SpeakersSection() {
                 </Carousel>
 
                 {/* Navigation hint for mobile */}
-                <p className="text-center mt-6 text-sm text-muted-foreground md:hidden">
+                <p className="text-center mt-6 text-sm text-muted-foreground md:hidden animate-pulse select-none">
                     ← Swipe to see more speakers →
                 </p>
             </div>
         </section>
     )
 }
-

@@ -7,124 +7,25 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription }
 import { Badge } from '@/components/ui/badge'
 import { motion } from 'motion/react'
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import { MobileDock } from '@/components/mobile-dock'
 import MatrixText from '@/components/kokonutui/matrix-text'
+import { FeaturedWorkshops } from '@/components/featured-workshops'
+import { TeamSection } from '@/components/team-section'
 
 export const Route = createFileRoute('/')({
   component: LandingPage,
 })
 
-const events = [
-  {
-    title: "Basic Bioinformatics Skill Development",
-    subtitle: "One-Week Online Workshop",
-    date: "Feb 1-7, 2026",
-    mode: "Online (Live)",
-    modeIcon: Video,
-    location: "Virtual",
-    status: "Upcoming",
-    statusColor: "bg-green-600",
-    description: "Comprehensive training covering Linux basics, NGS data analysis, Genome Assembly, AMR detection, and Gene Enrichment.",
-    link: "/events/feb-2026",
-    gradient: "from-blue-500 to-cyan-500"
-  },
-  {
-    title: "Bioinformatics for One Health",
-    subtitle: "Five-Day Hands-on Workshop",
-    date: "Nov 3-7, 2025",
-    mode: "In-Person",
-    modeIcon: MapPin,
-    location: "CSIR-IGIB, Delhi",
-    status: "Completed",
-    statusColor: "bg-gray-500",
-    description: "Focused on pathogen genomics, metagenomics, and antimicrobial resistance surveillance with expert faculty.",
-    link: "/events/nov-2025",
-    gradient: "from-purple-500 to-pink-500"
-  },
-]
-
-const stats = [
-  { label: "Registrations (2026)", value: "4,500+", icon: Users },
-  { label: "Acceptance Rate", value: "~3%", icon: GraduationCap },
-  { label: "Expert Faculty", value: "15+", icon: Calendar },
-]
-
-const teamMembers = [
-  {
-    name: 'Dr. Jitendra Narayan',
-    title: 'Principal Scientist',
-    role: 'Principal Investigator',
-    organization: 'CSIR-IGIB',
-    scholarId: 'ySm4BzcAAAAJ',
-    citations: '1000+',
-    expertise: 'Bioinformatics, Genome Evolution, Chromosome Breakpoints, Comparative Genomics',
-    color: 'from-blue-500 to-cyan-500',
-    image: '/assests/team/jit.webp'
-  },
-  {
-    name: 'Dr. Souvik Mukherjee',
-    title: 'Associate Professor',
-    role: 'Collaborator',
-    organization: 'BRIC-NIBMG',
-    scholarId: '2ll9F2UAAAAJ',
-    citations: '944+',
-    expertise: 'Human Metagenomics, Population Genomics, Molecular Biology',
-    color: 'from-green-500 to-emerald-500'
-  },
-  {
-    name: 'Dr. Rakesh Sharma',
-    title: 'Chief Scientist',
-    role: 'Researcher',
-    organization: 'CSIR-IGIB',
-    scholarId: 'BCxFaZcAAAAJ',
-    citations: '3398+',
-    expertise: 'Metagenomics, Microbial Diversity, Metal-Microbe Interactions',
-    color: 'from-purple-500 to-pink-500'
-  },
-  {
-    name: 'Dr. Shandar Ahmed',
-    title: 'Professor of Bioinformatics',
-    role: 'Collaborator',
-    organization: 'SCIS, Jawaharlal Nehru University',
-    scholarId: 'JC8hey0AAAAJ',
-    citations: '4469+',
-    expertise: 'AI/ML methods for Bioinformatics, Protein-DNA Structural Interactions',
-    color: 'from-orange-500 to-red-500'
-  },
-  {
-    name: 'Dr. Rajesh Pandey',
-    title: 'Principal Scientist',
-    role: 'Researcher',
-    organization: 'CSIR-IGIB',
-    scholarId: 'Dj14S78AAAAJ',
-    citations: '2000+',
-    expertise: 'Integrative Genomics of Host-Pathogen, Single Cell Multiomics',
-    color: 'from-teal-500 to-cyan-500'
-  },
-  {
-    name: 'Dr. Kumardeep Chaudhary',
-    title: 'Principal Scientist',
-    role: 'Researcher',
-    organization: 'CSIR-IGIB',
-    scholarId: 'RTPnUKkAAAAJ',
-    citations: '1500+',
-    expertise: 'Medical Informatics, Computational Biology, Machine Learning',
-    color: 'from-rose-500 to-pink-500'
-  },
-]
+const events = [] // Removed inline events, using /events page
+// Removed inline teamMembers
+// ... imports cleaned up in next step if checking lint
 
 function LandingPage() {
   const menuItems = [
     { name: 'Portal Home', href: '/', icon: Home },
-    { name: 'Workshops', href: '#events', icon: Calendar },
-    { name: 'Team', href: '#team', icon: BookOpen },
+    { name: 'Workshops', href: '/events', icon: Calendar }, // Updated link
+    { name: 'Team', href: '/events#team', icon: BookOpen }, // Updated link
     { name: 'Contact', href: '#contact', icon: Mail },
   ]
 
@@ -178,15 +79,13 @@ function LandingPage() {
         />
 
         {/* Hero Section */}
-        <section className="relative py-12 sm:py-16 md:py-24 lg:py-32 overflow-hidden">
-
-
+        <section className="relative py-12 sm:py-16 md:py-24 lg:py-32 overflow-hidden h-screen flex items-center justify-center">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-center max-w-4xl mx-auto pt-4 sm:pt-6 md:pt-12 select-none"
+              className="text-center max-w-4xl mx-auto select-none"
             >
               {/* Floating Badges */}
               <motion.div
@@ -221,15 +120,33 @@ function LandingPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
-                className="mt-2 sm:mt-4"
+                className="mt-2 sm:mt-4 flex flex-col items-center"
               >
-                <MatrixText
-                  text="Sequence Your Skills"
-                  className="min-h-0 text-foreground/90 py-0"
-                  initialDelay={800}
-                  letterAnimationDuration={400}
-                  letterInterval={80}
-                />
+                <div className="block sm:hidden flex flex-col items-center gap-1">
+                  <MatrixText
+                    text="Sequence Your"
+                    className="min-h-0 text-foreground/90 py-0 text-3xl leading-none"
+                    initialDelay={800}
+                    letterAnimationDuration={400}
+                    letterInterval={80}
+                  />
+                  <MatrixText
+                    text="Skills"
+                    className="min-h-0 text-foreground/90 py-0 text-3xl leading-none"
+                    initialDelay={1800} // delayed after first part
+                    letterAnimationDuration={400}
+                    letterInterval={80}
+                  />
+                </div>
+                <div className="hidden sm:block">
+                  <MatrixText
+                    text="Sequence Your Skills"
+                    className="min-h-0 text-foreground/90 py-0 text-5xl md:text-6xl"
+                    initialDelay={800}
+                    letterAnimationDuration={400}
+                    letterInterval={80}
+                  />
+                </div>
               </motion.div>
 
               {/* Tagline */}
@@ -250,7 +167,7 @@ function LandingPage() {
                 className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-3 sm:gap-4"
               >
                 <Button size="lg" className="rounded-full px-6 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-semibold bg-cyan-500 hover:bg-cyan-400 text-white shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/40 transition-all duration-200 ease-out" asChild>
-                  <a href="#events">Explore Workshops <ArrowRight className="ml-2 size-4 sm:size-5" /></a>
+                  <Link to="/events">Explore Workshops <ArrowRight className="ml-2 size-4 sm:size-5" /></Link>
                 </Button>
               </motion.div>
 
@@ -296,166 +213,9 @@ function LandingPage() {
           </div>
         </section>
 
-        {/* Featured Workshops Grid */}
-        <section id="events" className="relative py-12 md:py-20 lg:py-28 bg-background/50 dark:bg-black/30 backdrop-blur-sm overflow-hidden">
-
-
-          <div className="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
-            <div className="text-center mb-12 select-none">
-              <Badge className="mb-4 bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 border-cyan-500/30">Events</Badge>
-              <h2 className="text-3xl font-bold md:text-4xl">Featured Workshops</h2>
-              <p className="mt-4 text-muted-foreground max-w-xl mx-auto">Catch up on past events or register for upcoming sessions organized by our lab.</p>
-            </div>
-
-            <div className="grid gap-8 md:grid-cols-2">
-              {events.map((event, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <Card className="h-full flex flex-col overflow-hidden border hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/10">
-                    <div className={`h-2 bg-gradient-to-r ${event.gradient}`} />
-                    <CardHeader>
-                      <div className="flex justify-between items-start mb-2">
-                        <Badge className={`${event.statusColor} text-white`}>{event.status}</Badge>
-                        <Badge variant="secondary">
-                          <event.modeIcon className="size-3 mr-1" />
-                          {event.mode}
-                        </Badge>
-                      </div>
-                      <CardTitle className="text-2xl">{event.title}</CardTitle>
-                      <CardDescription>{event.subtitle}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-1 space-y-3">
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Calendar className="size-4" />
-                        <span>{event.date}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <MapPin className="size-4" />
-                        <span>{event.location}</span>
-                      </div>
-                      <p className="text-sm pt-2 line-clamp-3">{event.description}</p>
-                    </CardContent>
-                    <CardFooter>
-                      <Button asChild className={`w-full ${event.status === 'Upcoming' ? 'bg-cyan-500 hover:bg-cyan-400 text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-400/30 transition-all duration-200 ease-out' : 'transition-colors duration-200'}`} variant={event.status === 'Upcoming' ? 'default' : 'outline'}>
-                        <Link to={event.link}>
-                          {event.status === 'Upcoming' ? 'View Details & Register' : 'View Archive'} <ArrowRight className="ml-2 size-4" />
-                        </Link>
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Team Section */}
-        <section id="team" className="relative py-12 md:py-20 lg:py-28 overflow-hidden">
-
-
-          <div className="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-12 select-none"
-            >
-              <Badge className="mb-4 bg-purple-500/20 text-purple-600 dark:text-purple-300 border-purple-500/30">Our Team</Badge>
-              <h2 className="text-3xl font-bold md:text-4xl">Meet the Team</h2>
-              <p className="mt-4 text-muted-foreground max-w-xl mx-auto">Expert faculty and researchers from CSIR-IGIB driving innovation in bioinformatics.</p>
-            </motion.div>
-
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-4">
-                {teamMembers.map((member, index) => (
-                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                    <Card className="group h-full overflow-hidden transition-all hover:shadow-xl border hover:border-primary/50">
-                      <div className={`h-2 bg-gradient-to-r ${member.color}`} />
-                      <CardContent className="p-6 flex flex-col h-full select-none">
-                        {/* Avatar */}
-                        <div className="mb-4 flex items-center justify-center">
-                          {member.image ? (
-                            <img
-                              src={member.image}
-                              alt={member.name}
-                              className="size-20 rounded-full object-cover shadow-lg ring-2 ring-white dark:ring-gray-800"
-                            />
-                          ) : (
-                            <div className={`flex size-20 items-center justify-center rounded-full bg-gradient-to-br ${member.color} text-2xl font-bold text-white shadow-lg`}>
-                              {member.name.split(' ').map(n => n[0]).join('')}
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Member Info */}
-                        <div className="text-center mb-4">
-                          <h3 className="text-xl font-bold">{member.name}</h3>
-                          <p className="mt-1 text-sm font-medium text-primary">{member.title}</p>
-                          {member.role === 'Principal Investigator' && (
-                            <Badge className="mt-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0">Principal Investigator</Badge>
-                          )}
-                          {member.role !== 'Principal Investigator' && (
-                            <Badge variant="secondary" className="mt-2">
-                              {member.organization}
-                            </Badge>
-                          )}
-                          {member.citations && (
-                            <div className="mt-2 flex items-center justify-center gap-1 text-xs text-muted-foreground">
-                              <GraduationCap className="size-3" />
-                              <span>{member.citations} citations</span>
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Expertise */}
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
-                          {member.expertise}
-                        </p>
-
-                        {/* Google Scholar Link */}
-                        {member.scholarId && (
-                          <Button
-                            asChild
-                            size="sm"
-                            className="w-full bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-600/25 hover:shadow-blue-500/30 transition-all duration-200 ease-out"
-                          >
-                            <a
-                              href={`https://scholar.google.com/citations?user=${member.scholarId}&hl=en`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <GraduationCap className="mr-2 size-4" />
-                              <span>View Google Scholar</span>
-                              <ExternalLink className="ml-2 size-3" />
-                            </a>
-                          </Button>
-                        )}
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="hidden md:flex" />
-              <CarouselNext className="hidden md:flex" />
-            </Carousel>
-
-            {/* Navigation hint for mobile */}
-            <p className="text-center mt-6 text-sm text-muted-foreground md:hidden">
-              ← Swipe to see more team members →
-            </p>
-          </div>
-        </section>
+        {/* Restored Sections */}
+        <FeaturedWorkshops />
+        <TeamSection />
 
         <div id="contact">
           <Footer />

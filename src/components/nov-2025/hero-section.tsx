@@ -44,19 +44,19 @@ export default function HeroSection() {
                                 </p>
 
                                 {/* Key Info Cards */}
-                                <div className="mt-10 grid gap-4 sm:grid-cols-3 max-w-3xl mx-auto">
+                                <div className="mt-6 md:mt-10 grid grid-cols-3 gap-2 sm:gap-4 max-w-3xl mx-auto">
                                     <motion.div
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.3 }}
-                                        className="flex items-center gap-3 rounded-xl border bg-card/80 backdrop-blur-sm p-4 transition-all hover:bg-card"
+                                        className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3 rounded-xl border bg-card/80 backdrop-blur-sm p-3 sm:p-4 text-center sm:text-left transition-all hover:bg-card"
                                     >
-                                        <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                                            <Calendar className="size-5" />
+                                        <div className="flex size-8 sm:size-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground mb-1 sm:mb-0">
+                                            <Calendar className="size-4 sm:size-5" />
                                         </div>
-                                        <div className="text-left">
-                                            <p className="text-xs text-muted-foreground">Dates</p>
-                                            <p className="text-sm font-semibold">Nov 3-7, 2025</p>
+                                        <div className="min-w-0">
+                                            <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wide">Dates</p>
+                                            <p className="text-xs sm:text-sm font-semibold whitespace-normal leading-tight">Nov 3-7, 2025</p>
                                         </div>
                                     </motion.div>
 
@@ -64,14 +64,14 @@ export default function HeroSection() {
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.4 }}
-                                        className="flex items-center gap-3 rounded-xl border bg-card/80 backdrop-blur-sm p-4 transition-all hover:bg-card"
+                                        className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3 rounded-xl border bg-card/80 backdrop-blur-sm p-3 sm:p-4 text-center sm:text-left transition-all hover:bg-card"
                                     >
-                                        <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                                            <MapPin className="size-5" />
+                                        <div className="flex size-8 sm:size-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground mb-1 sm:mb-0">
+                                            <MapPin className="size-4 sm:size-5" />
                                         </div>
-                                        <div className="text-left">
-                                            <p className="text-xs text-muted-foreground">Venue</p>
-                                            <p className="text-sm font-semibold">CSIR-IGIB, Delhi</p>
+                                        <div className="min-w-0">
+                                            <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wide">Venue</p>
+                                            <p className="text-xs sm:text-sm font-semibold leading-tight">CSIR-IGIB</p>
                                         </div>
                                     </motion.div>
 
@@ -79,14 +79,14 @@ export default function HeroSection() {
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.5 }}
-                                        className="flex items-center gap-3 rounded-xl border bg-card/80 backdrop-blur-sm p-4 transition-all hover:bg-card"
+                                        className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3 rounded-xl border bg-card/80 backdrop-blur-sm p-3 sm:p-4 text-center sm:text-left transition-all hover:bg-card"
                                     >
-                                        <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                                            <Users className="size-5" />
+                                        <div className="flex size-8 sm:size-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground mb-1 sm:mb-0">
+                                            <Users className="size-4 sm:size-5" />
                                         </div>
-                                        <div className="text-left">
-                                            <p className="text-xs text-muted-foreground">Format</p>
-                                            <p className="text-sm font-semibold">In-person + Hands-on</p>
+                                        <div className="min-w-0">
+                                            <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wide">Format</p>
+                                            <p className="text-xs sm:text-sm font-semibold leading-tight">In-person</p>
                                         </div>
                                     </motion.div>
                                 </div>

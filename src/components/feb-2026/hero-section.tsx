@@ -40,8 +40,8 @@ export function HeroSection2026() {
         <>
             <HeroHeader menuItems={menuItems} rightContent={headerButtons} />
             <section className="relative">
-                <div className="py-12 md:py-20 lg:py-24">
-                    <div className="relative mx-auto flex max-w-7xl flex-col px-6 lg:px-12">
+                <div className="pt-32 pb-12 md:py-20 lg:py-24">
+                    <div className="relative mx-auto flex max-w-7xl flex-col px-4 sm:px-6 lg:px-12">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ export function HeroSection2026() {
                             </motion.div>
 
                             {/* Main Heading */}
-                            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl xl:text-7xl">
+                            <h1 className="text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl xl:text-7xl">
                                 ONE-WEEK BASIC BIOINFORMATICS{' '}
                                 <span className="text-primary">
                                     SKILL DEVELOPMENT PROGRAM
@@ -74,19 +74,19 @@ export function HeroSection2026() {
                             </p>
 
                             {/* Key Info Cards */}
-                            <div className="mt-10 grid gap-4 sm:grid-cols-3 max-w-3xl mx-auto">
+                            <div className="mt-6 md:mt-10 grid grid-cols-3 gap-2 sm:gap-4 max-w-3xl mx-auto">
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.3 }}
-                                    className="flex items-center gap-3 rounded-xl border bg-card/80 backdrop-blur-sm p-4 transition-all hover:bg-card"
+                                    className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3 rounded-xl border bg-card/80 backdrop-blur-sm p-3 sm:p-4 text-center sm:text-left transition-all hover:bg-card"
                                 >
-                                    <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                                        <Calendar className="size-5" />
+                                    <div className="flex size-8 sm:size-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground mb-1 sm:mb-0">
+                                        <Calendar className="size-4 sm:size-5" />
                                     </div>
-                                    <div className="text-left">
-                                        <p className="text-xs text-muted-foreground">Dates</p>
-                                        <p className="text-sm font-semibold">Feb 1-7, 2026</p>
+                                    <div className="min-w-0">
+                                        <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wide">Dates</p>
+                                        <p className="text-xs sm:text-sm font-semibold whitespace-normal leading-tight">Feb 1-7, 2026</p>
                                     </div>
                                 </motion.div>
 
@@ -94,14 +94,14 @@ export function HeroSection2026() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.4 }}
-                                    className="flex items-center gap-3 rounded-xl border bg-card/80 backdrop-blur-sm p-4 transition-all hover:bg-card"
+                                    className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3 rounded-xl border bg-card/80 backdrop-blur-sm p-3 sm:p-4 text-center sm:text-left transition-all hover:bg-card"
                                 >
-                                    <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                                        <Video className="size-5" />
+                                    <div className="flex size-8 sm:size-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground mb-1 sm:mb-0">
+                                        <Video className="size-4 sm:size-5" />
                                     </div>
-                                    <div className="text-left">
-                                        <p className="text-xs text-muted-foreground">Mode</p>
-                                        <p className="text-sm font-semibold">Online (Live)</p>
+                                    <div className="min-w-0">
+                                        <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wide">Mode</p>
+                                        <p className="text-xs sm:text-sm font-semibold leading-tight">Online (Live)</p>
                                     </div>
                                 </motion.div>
 
@@ -109,38 +109,40 @@ export function HeroSection2026() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.5 }}
-                                    className="flex items-center gap-3 rounded-xl border bg-card/80 backdrop-blur-sm p-4 transition-all hover:bg-card"
+                                    className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-3 rounded-xl border bg-card/80 backdrop-blur-sm p-3 sm:p-4 text-center sm:text-left transition-all hover:bg-card"
                                 >
-                                    <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                                        <Users className="size-5" />
+                                    <div className="flex size-8 sm:size-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground mb-1 sm:mb-0">
+                                        <Users className="size-4 sm:size-5" />
                                     </div>
-                                    <div className="text-left">
-                                        <p className="text-xs text-muted-foreground">Time</p>
-                                        <p className="text-sm font-semibold">10:00 AM – 5:00 PM</p>
+                                    <div className="min-w-0">
+                                        <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wide">Time</p>
+                                        <p className="text-xs sm:text-sm font-semibold leading-tight">10:00 – 5:00</p>
                                     </div>
                                 </motion.div>
                             </div>
 
                             {/* CTA Buttons */}
-                            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                            <div className="mt-8 md:mt-10 grid grid-cols-2 gap-3 sm:flex sm:flex-row sm:justify-center sm:gap-4 w-full sm:w-auto">
                                 <Button
                                     asChild
                                     size="lg"
-                                    className="h-12 rounded-xl px-8 text-base font-semibold bg-[#F9AB00] text-black hover:bg-[#E09800] shadow-lg shadow-[#F9AB00]/30 hover:shadow-xl hover:shadow-[#F9AB00]/40 transition-all duration-200 ease-out"
+                                    className="h-12 w-full rounded-xl px-4 sm:px-8 text-sm sm:text-base font-semibold bg-[#F9AB00] text-black hover:bg-[#E09800] shadow-lg shadow-[#F9AB00]/30 hover:shadow-xl hover:shadow-[#F9AB00]/40 transition-all duration-200 ease-out"
                                 >
                                     <a href="https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing" target="_blank" rel="noopener noreferrer">
-                                        <span>Google Colab Modules</span>
-                                        <ChevronRight className="ml-1 size-5" />
+                                        <span className="sm:hidden">Modules</span>
+                                        <span className="hidden sm:inline">Google Colab Modules</span>
+                                        <ChevronRight className="ml-1 size-4 sm:size-5" />
                                     </a>
                                 </Button>
                                 <Button
                                     asChild
                                     size="lg"
                                     variant="outline"
-                                    className="h-12 rounded-xl border-2 border-primary px-8 text-base font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-200 ease-out"
+                                    className="h-12 w-full rounded-xl border-2 border-white bg-white text-black px-4 sm:px-8 text-sm sm:text-base font-semibold hover:bg-white/90 hover:text-black shadow-lg shadow-white/20 hover:shadow-xl hover:shadow-white/30 transition-all duration-200 ease-out"
                                 >
                                     <a href="https://digital-standee-ppt-cchqj6v.gamma.site" target="_blank" rel="noopener noreferrer">
-                                        <span>View Presentation / Standee</span>
+                                        <span className="sm:hidden">Standee</span>
+                                        <span className="hidden sm:inline">View Presentation / Standee</span>
                                     </a>
                                 </Button>
                             </div>
