@@ -75,11 +75,17 @@ const speakers = [
         }
     },
     {
-        // Keeping Kaushalendra
-        name: 'Kaushalendra',
-        role: 'Speaker',
+        name: 'Kaushlendra Mishra',
+        role: 'Project Associate',
+        roleDetail: 'NGS Specialist',
         session: 'NGS Overview',
-        image: null
+        bio: 'Specializing in High-Throughput Sequencing & Long-Read Genomics',
+        image: '/assests/people/Kaushlendra.webp',
+        links: {
+            email: 'kaushlendra242401@gmail.com',
+            twitter: 'https://x.com/kaushlendr47151',
+            linkedin: 'https://www.linkedin.com/in/kaushlendra-mishra-90636b205'
+        }
     },
     {
         name: "Nityendra Shukla",
