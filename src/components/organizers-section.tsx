@@ -181,7 +181,7 @@ export function OrganizersSection() {
                                         <div className="text-center mb-3">
                                             <h3 className="text-lg font-bold">{member.name}</h3>
                                             <p className="text-sm font-medium text-primary">{member.role}</p>
-                                            <div className="flex flex-col items-center gap-1.5 mt-2">
+                                            <div className="flex flex-col items-center justify-center gap-1.5 mt-2">
                                                 <Badge variant="secondary" className="text-[10px]">
                                                     {member.title}
                                                 </Badge>

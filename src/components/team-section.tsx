@@ -155,7 +155,7 @@ export function TeamSection() {
                                         <div className="text-center mb-4">
                                             <h3 className="text-xl font-bold">{member.name}</h3>
                                             <p className="mt-1 text-sm font-medium text-primary">{member.title}</p>
-                                            <div className="flex flex-col items-center gap-2 mt-2">
+                                            <div className="flex flex-col items-center justify-center gap-2 mt-2">
                                                 {member.role === 'Principal Investigator' && (
                                                     <Badge className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0">Principal Investigator</Badge>
                                                 )}

@@ -107,7 +107,7 @@ function LandingPage() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 }}
-                className="mb-4 sm:mb-6 inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3"
+                className="mb-4 sm:mb-6 inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 select-none"
               >
                 <Badge className="bg-primary/10 backdrop-blur-md border-primary/20 hover:bg-primary/20 px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm">
                   <span className="size-1.5 sm:size-2 rounded-full bg-cyan-400 dark:bg-cyan-400 animate-pulse mr-1.5 sm:mr-2" />
@@ -181,7 +181,7 @@ function LandingPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-3 sm:gap-4"
+                className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-3 sm:gap-4 select-none"
               >
                 <Button size="lg" className="rounded-full px-6 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-semibold bg-cyan-500 hover:bg-cyan-400 text-white shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/40 transition-all duration-200 ease-out" asChild>
                   <Link to="/events">Explore Workshops <ArrowRight className="ml-2 size-4 sm:size-5" /></Link>
@@ -193,7 +193,7 @@ function LandingPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
-                className="mt-6 sm:mt-8 flex flex-row flex-wrap justify-center items-center gap-1.5 sm:gap-2 md:gap-3 px-2 sm:px-4"
+                className="mt-6 sm:mt-8 flex flex-row flex-wrap justify-center items-center gap-1.5 sm:gap-2 md:gap-3 px-2 sm:px-4 select-none"
               >
                 <Button size="sm" variant="outline" className="rounded-full bg-background/50 backdrop-blur-sm h-7 sm:h-8 px-2.5 sm:px-3 text-[10px] sm:text-xs md:text-sm" asChild>
                   <a href="https://jitendralab.igib.res.in" target="_blank" rel="noopener noreferrer">

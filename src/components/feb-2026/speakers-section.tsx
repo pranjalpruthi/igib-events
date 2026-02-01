@@ -196,7 +196,7 @@ export function SpeakersSection2026() {
                                                 <p className="text-xs text-muted-foreground mb-2">{speaker.roleDetail}</p>
 
                                                 {/* Badges */}
-                                                <div className="flex flex-col gap-2 mb-3">
+                                                <div className="flex flex-col items-center justify-center gap-2 mb-3">
                                                     {speaker.role === 'Principal Investigator' && (
                                                         <Badge className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0 text-xs">
                                                             Principal Investigator
