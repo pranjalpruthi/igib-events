@@ -157,7 +157,7 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
     const [isExpanded, setIsExpanded] = React.useState(false)
 
     return (
-        <Card className="h-full flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-primary/15 bg-card/80 backdrop-blur-sm border-2 border-muted hover:border-primary/40 overflow-hidden group rounded-2xl">
+        <Card className="h-full min-h-[380px] flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-primary/15 bg-card/80 backdrop-blur-sm border-2 border-muted hover:border-primary/40 overflow-hidden group rounded-2xl">
             {/* Gradient Header Line */}
             <div className={`h-2 w-full bg-gradient-to-r ${module.color}`} />
 

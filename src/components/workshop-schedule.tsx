@@ -7,9 +7,29 @@ import {
 } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Calendar, Coffee, Utensils, GraduationCap, Laptop, Users, ExternalLink } from 'lucide-react'
+import { Calendar, Coffee, Utensils, GraduationCap, Laptop, Users, ExternalLink, LucideIcon } from 'lucide-react'
 
-const scheduleData = [
+// TypeScript interface for session data
+interface Session {
+    time: string;
+    icon: LucideIcon;
+    title: string;
+    type: string;
+    speaker?: string;
+    description?: string;
+    tools?: string;
+    colabLink?: string;
+    special?: boolean;
+}
+
+interface DaySchedule {
+    day: string;
+    date: string;
+    title: string;
+    sessions: Session[];
+}
+
+const scheduleData: DaySchedule[] = [
     {
         day: 'Day 1',
         date: 'November 3, 2025',
@@ -240,12 +260,12 @@ export function WorkshopSchedule() {
                                 </AccordionTrigger>
                                 <AccordionContent className="pb-6">
                                     <div className="mt-4 space-y-4">
-                                        {day.sessions.map((session, sessionIndex) => {
+                                        {day.sessions.map((session: Session, sessionIndex: number) => {
                                             const Icon = session.icon
                                             return (
                                                 <div
                                                     key={sessionIndex}
-                                                    className={`flex gap-4 rounded-xl border p-4 select-none ${session.special ? 'border-primary bg-primary/5' : ''}`}
+                                                    className={`flex gap-4 rounded-xl border p-4 select-none ${session.special === true ? 'border-primary bg-primary/5' : ''}`}
                                                 >
                                                     <div className="flex-shrink-0">
                                                         <div className={`flex size-10 items-center justify-center rounded-lg ${getTypeColor(session.type)}`}>
