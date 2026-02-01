@@ -251,7 +251,7 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
                         <Button
                             asChild
                             size="sm"
-                            className="w-full bg-emerald-500 text-white hover:bg-emerald-600 font-medium transition-all text-[10px] h-8"
+                            className="w-full bg-blue-600 text-white hover:bg-blue-700 font-medium transition-all text-[10px] h-8"
                         >
                             <a href={module.slidesLink} target="_blank" rel="noopener noreferrer">
                                 View Slides
@@ -262,7 +262,7 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
                             <Button
                                 size="sm"
                                 variant="outline"
-                                className="w-full font-medium transition-all text-[10px] h-8 opacity-60"
+                                className="w-full font-medium transition-all text-[10px] h-8 border-blue-500/20 text-blue-500 hover:bg-blue-500/5 hover:text-blue-600"
                             >
                                 Slides (Soon)
                             </Button>
@@ -272,7 +272,7 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
                         <Button
                             asChild
                             size="sm"
-                            className="w-full bg-emerald-500 text-white hover:bg-emerald-600 font-medium transition-all text-[10px] h-8"
+                            className="w-full bg-[#f9ab00] text-black hover:bg-[#e09a00] font-medium transition-all text-[10px] h-8"
                         >
                             <a href={module.colabLink} target="_blank" rel="noopener noreferrer">
                                 Open Notebook
@@ -283,7 +283,7 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
                             <Button
                                 size="sm"
                                 variant="outline"
-                                className="w-full font-medium transition-all text-[10px] h-8 opacity-60"
+                                className="w-full font-medium transition-all text-[10px] h-8 border-orange-500/20 text-orange-500 hover:bg-orange-500/5 hover:text-orange-600"
                             >
                                 Notebook (Soon)
                             </Button>
@@ -379,14 +379,16 @@ export function ModulesSection2026() {
                             <div className="flex items-center gap-3">
                                 <span className="bg-muted px-3 py-1.5 rounded-full text-xs font-medium text-muted-foreground">Pro Tip</span>
                                 <span className="text-sm text-muted-foreground hidden sm:inline">Want everything in one place?</span>
-                                <a
-                                    href="https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-sm font-semibold text-primary hover:underline inline-flex items-center"
+                                <ComingSoonDialog
+                                    title="Master Notebook Coming Soon"
+                                    description="The unified Master Notebook containing all 7 modules is being finalized. Individual Day 1 notebook is available above."
                                 >
-                                    Open Master Notebook <ExternalLink className="ml-1 size-3" />
-                                </a>
+                                    <button
+                                        className="text-sm font-semibold text-primary hover:underline inline-flex items-center cursor-pointer"
+                                    >
+                                        Master Notebook (Soon) <ExternalLink className="ml-1 size-3" />
+                                    </button>
+                                </ComingSoonDialog>
                             </div>
                         </Card>
 
