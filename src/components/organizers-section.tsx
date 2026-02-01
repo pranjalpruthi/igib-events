@@ -44,7 +44,7 @@ const organizers = [
     {
         name: "Pranjal Pruthi",
         role: "PhD Scholar",
-        title: "Full Stack Developer",
+        title: "Full Stack Web Developer",
         bio: "Exploring frontiers of genomics. Computational Genomics & CHITRA Pipeline development.",
         image: "/assests/people/pranjal.webp",
         color: "from-purple-500 to-pink-500",
