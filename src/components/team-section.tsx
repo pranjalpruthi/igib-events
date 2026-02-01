@@ -78,6 +78,17 @@ const teamMembers = [
         color: 'from-rose-500 to-pink-500',
         image: '/assests/people/kumardeep.webp'
     },
+    {
+        name: 'Dr. Aastha Mishra',
+        title: 'Principal Scientist',
+        role: 'Researcher',
+        organization: 'CSIR-IGIB',
+        scholarId: 'WWeXX48AAAAJ',
+        citations: '800+',
+        expertise: 'Physiological Genomics, Hypoxia, Epigenetics',
+        color: 'from-pink-500 to-rose-500',
+        image: '/assests/people/aastha.webp'
+    },
 ]
 
 export function TeamSection() {

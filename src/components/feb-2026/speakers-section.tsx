@@ -101,6 +101,20 @@ const speakers = [
         }
     },
     {
+        name: "Dr. Aastha Mishra",
+        role: "Principal Scientist",
+        roleDetail: "Speaker",
+        session: "Physiological Genomics",
+        bio: "Physiological Genomics of Hypoxia. Circulating nucleic acids in disease pathogenesis.",
+        image: "/assests/people/aastha.webp",
+        links: {
+            researchgate: "https://www.researchgate.net/profile/Aastha-Mishra-2",
+            scholar: "https://scholar.google.com/citations?user=WWeXX48AAAAJ&hl=en",
+            linkedin: "https://www.linkedin.com/in/aastha-mishra-2308186a/",
+            email: "aastha.igib@csir.res.in"
+        }
+    },
+    {
         name: 'Anwesha De',
         role: 'PhD Scholar',
         roleDetail: 'Speaker',
