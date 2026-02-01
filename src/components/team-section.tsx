@@ -23,7 +23,8 @@ const teamMembers = [
         citations: '1000+',
         expertise: 'Bioinformatics, Genome Evolution, Chromosome Breakpoints, Comparative Genomics',
         color: 'from-blue-500 to-cyan-500',
-        image: '/assests/people/jit.webp'
+        image: '/assests/people/jit.webp',
+        isSkillIndiaOrganizer: true
     },
     {
         name: 'Dr. Souvik Mukherjee',
@@ -81,13 +82,14 @@ const teamMembers = [
     {
         name: 'Dr. Aastha Mishra',
         title: 'Principal Scientist',
-        role: 'Researcher',
+        role: 'Principal Investigator',
         organization: 'CSIR-IGIB',
         scholarId: 'WWeXX48AAAAJ',
         citations: '800+',
         expertise: 'Physiological Genomics, Hypoxia, Epigenetics',
         color: 'from-pink-500 to-rose-500',
-        image: '/assests/people/aastha.webp'
+        image: '/assests/people/aastha.webp',
+        isSkillIndiaOrganizer: true
     },
 ]
 
@@ -131,9 +133,9 @@ export function TeamSection() {
                     <CarouselContent className="-ml-4">
                         {teamMembers.map((member, index) => (
                             <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                                <Card className="group h-full overflow-hidden transition-all hover:shadow-xl border hover:border-primary/50">
+                                <Card className="group overflow-hidden transition-all hover:shadow-xl border hover:border-primary/50">
                                     <div className={`h-2 bg-gradient-to-r ${member.color}`} />
-                                    <CardContent className="p-6 flex flex-col h-full select-none">
+                                    <CardContent className="p-6 flex flex-col select-none">
                                         {/* Avatar */}
                                         <div className="mb-4 flex items-center justify-center">
                                             {member.image ? (
@@ -153,14 +155,19 @@ export function TeamSection() {
                                         <div className="text-center mb-4">
                                             <h3 className="text-xl font-bold">{member.name}</h3>
                                             <p className="mt-1 text-sm font-medium text-primary">{member.title}</p>
-                                            {member.role === 'Principal Investigator' && (
-                                                <Badge className="mt-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0">Principal Investigator</Badge>
-                                            )}
-                                            {member.role !== 'Principal Investigator' && (
-                                                <Badge variant="secondary" className="mt-2">
-                                                    {member.organization}
-                                                </Badge>
-                                            )}
+                                            <div className="flex flex-col items-center gap-2 mt-2">
+                                                {member.role === 'Principal Investigator' && (
+                                                    <Badge className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0">Principal Investigator</Badge>
+                                                )}
+                                                {member.isSkillIndiaOrganizer && (
+                                                    <Badge className="bg-gradient-to-r from-orange-500 to-amber-500 text-white border-0">SKILL INDIA ORGANIZER</Badge>
+                                                )}
+                                                {member.role !== 'Principal Investigator' && !member.isSkillIndiaOrganizer && (
+                                                    <Badge variant="secondary">
+                                                        {member.organization}
+                                                    </Badge>
+                                                )}
+                                            </div>
                                             {member.citations && (
                                                 <div className="mt-2 flex items-center justify-center gap-1 text-xs text-muted-foreground">
                                                     <GraduationCap className="size-3" />
@@ -170,7 +177,7 @@ export function TeamSection() {
                                         </div>
 
                                         {/* Expertise */}
-                                        <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
+                                        <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                                             {member.expertise}
                                         </p>
 

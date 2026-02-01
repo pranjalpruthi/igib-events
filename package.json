@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@base-ui-components/react": "1.0.0-rc.0",
+    "@floating-ui/react": "^0.27.17",
     "@gsap/react": "^2.1.2",
     "@hookform/resolvers": "^5.2.2",
     "@lottiefiles/react-lottie-player": "^3.6.0",

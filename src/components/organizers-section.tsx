@@ -21,6 +21,7 @@ const organizers = [
         bio: "Head of Jitendra Lab, specializing in Comparative Genomics, Genome Evolution, Chromosome Rearrangements.",
         image: "/assests/people/jit.webp",
         color: "from-blue-500 to-cyan-500",
+        isSkillIndiaOrganizer: true,
         links: {
             website: "https://jitendralab.igib.res.in",
             twitter: "https://x.com/jnarayan81",
@@ -104,6 +105,21 @@ const organizers = [
             email: "anwesha.de@csir.res.in"
         }
     },
+    {
+        name: "Dr. Aastha Mishra",
+        role: "Principal Investigator",
+        title: "Principal Scientist",
+        bio: "Physiological Genomics of Hypoxia. Circulating nucleic acids in disease pathogenesis.",
+        image: "/assests/people/aastha.webp",
+        color: "from-pink-500 to-rose-500",
+        isSkillIndiaOrganizer: true,
+        links: {
+            researchgate: "https://www.researchgate.net/profile/Aastha-Mishra-2",
+            scholar: "https://scholar.google.com/citations?user=WWeXX48AAAAJ&hl=en",
+            linkedin: "https://www.linkedin.com/in/aastha-mishra-2308186a/",
+            email: "aastha.igib@csir.res.in"
+        }
+    },
 ]
 
 export function OrganizersSection() {
@@ -139,9 +155,9 @@ export function OrganizersSection() {
                     <CarouselContent className="-ml-4">
                         {organizers.map((member, index) => (
                             <CarouselItem key={index} className="pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-                                <Card className="group h-full overflow-hidden transition-all hover:shadow-xl border-2 hover:border-primary/50 rounded-2xl">
+                                <Card className="group overflow-hidden transition-all hover:shadow-xl border-2 hover:border-primary/50 rounded-2xl">
                                     <div className={`h-2 bg-gradient-to-r ${member.color}`} />
-                                    <CardContent className="p-5 flex flex-col h-full select-none">
+                                    <CardContent className="p-5 flex flex-col select-none">
                                         {/* Avatar */}
                                         <div className="mb-4 flex items-center justify-center">
                                             <Avatar className="size-20 ring-2 ring-white dark:ring-gray-800 shadow-lg">
@@ -156,13 +172,18 @@ export function OrganizersSection() {
                                         <div className="text-center mb-3">
                                             <h3 className="text-lg font-bold">{member.name}</h3>
                                             <p className="text-sm font-medium text-primary">{member.role}</p>
-                                            <Badge variant="secondary" className="mt-2 text-[10px]">
-                                                {member.title}
-                                            </Badge>
+                                            <div className="flex flex-col items-center gap-1.5 mt-2">
+                                                <Badge variant="secondary" className="text-[10px]">
+                                                    {member.title}
+                                                </Badge>
+                                                {member.isSkillIndiaOrganizer && (
+                                                    <Badge className="bg-gradient-to-r from-orange-500 to-amber-500 text-white border-0 text-[10px]">SKILL INDIA ORGANIZER</Badge>
+                                                )}
+                                            </div>
                                         </div>
 
                                         {/* Bio */}
-                                        <p className="text-xs text-muted-foreground leading-relaxed mb-4 flex-1 text-center line-clamp-2">
+                                        <p className="text-xs text-muted-foreground leading-relaxed mb-4 text-center line-clamp-2">
                                             {member.bio}
                                         </p>
 

@@ -15,6 +15,7 @@ const speakers = [
         session: "Intro, Genome Assembly",
         bio: "Specializing in Comparative Genomics, Genome Evolution, Adaptation, Chromosome Rearrangements, HGT, Repeats",
         image: "/assests/people/jit.webp",
+        isSkillIndiaOrganizer: true,
         links: {
             website: "https://bioinformaticsonline.com/profile/admin",
             scholar: "https://scholar.google.co.uk/citations?user=ySm4BzcAAAAJ&hl=en",
@@ -102,11 +103,12 @@ const speakers = [
     },
     {
         name: "Dr. Aastha Mishra",
-        role: "Principal Scientist",
+        role: "Principal Investigator",
         roleDetail: "Speaker",
         session: "Physiological Genomics",
         bio: "Physiological Genomics of Hypoxia. Circulating nucleic acids in disease pathogenesis.",
         image: "/assests/people/aastha.webp",
+        isSkillIndiaOrganizer: true,
         links: {
             researchgate: "https://www.researchgate.net/profile/Aastha-Mishra-2",
             scholar: "https://scholar.google.com/citations?user=WWeXX48AAAAJ&hl=en",
@@ -167,16 +169,15 @@ export function SpeakersSection2026() {
                     >
                         <CarouselContent className="-ml-4 pb-4 items-stretch">
                             {speakers.map((speaker, index) => (
-                                <CarouselItem key={index} className="pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 h-full">
+                                <CarouselItem key={index} className="pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                                     <motion.div
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: index * 0.1 }}
-                                        className="h-full"
                                     >
-                                        <Card className="h-full flex flex-col hover:shadow-xl transition-all duration-300 border-muted bg-primary/5 overflow-hidden group">
-                                            <CardContent className="pt-6 px-4 pb-6 flex-1 flex flex-col items-center text-center select-none">
+                                        <Card className="flex flex-col hover:shadow-xl transition-all duration-300 border-muted bg-primary/5 overflow-hidden group">
+                                            <CardContent className="pt-6 px-4 pb-6 flex flex-col items-center text-center select-none">
                                                 <div className="mb-4 relative">
                                                     <Avatar className="size-24 border-4 border-background shadow-md group-hover:scale-105 transition-transform duration-300">
                                                         {speaker.image ? (
@@ -192,20 +193,25 @@ export function SpeakersSection2026() {
                                                 <div className="mb-1">
                                                     <h3 className="font-bold text-lg">{speaker.name}</h3>
                                                     <p className="text-sm font-medium text-primary/80">{speaker.role}</p>
+                                                    {/* PI and Skill India badges */}
+                                                    <div className="flex flex-col items-center gap-1.5 mt-2">
+                                                        {speaker.role === 'Principal Investigator' && (
+                                                            <Badge className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0 text-[10px]">Principal Investigator</Badge>
+                                                        )}
+                                                        {speaker.isSkillIndiaOrganizer && (
+                                                            <Badge className="bg-gradient-to-r from-orange-500 to-amber-500 text-white border-0 text-[10px]">SKILL INDIA ORGANIZER</Badge>
+                                                        )}
+                                                    </div>
                                                 </div>
 
                                                 {/* Bio limited to 2 lines */}
                                                 {speaker.bio && (
-                                                    <p className="text-xs text-muted-foreground mt-2 mb-3 line-clamp-3 px-2 flex-grow">
+                                                    <p className="text-xs text-muted-foreground mt-2 mb-3 line-clamp-3 px-2">
                                                         {speaker.bio}
                                                     </p>
                                                 )}
 
-                                                {!speaker.bio && (
-                                                    <div className="mt-2 mb-3 flex-grow" /> // Spacer
-                                                )}
-
-                                                <Badge variant="secondary" className="text-[10px] sm:text-xs mb-4 mt-auto whitespace-normal h-auto py-1 text-center">
+                                                <Badge variant="secondary" className="text-[10px] sm:text-xs mb-4 whitespace-normal h-auto py-1 text-center">
                                                     {speaker.session}
                                                 </Badge>
 
