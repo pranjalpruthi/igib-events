@@ -84,13 +84,14 @@ const schedule = [
         day: 'Day 5',
         date: '05',
         fullDate: '2026-02-05',
-        title: 'Genome Annotation',
+        title: 'Assembly Evaluation, Mapping and Genome Annotation',
         color: 'bg-indigo-500',
         sessions: [
-            { time: '10:00 – 11:30', title: 'Genome Annotation Concepts', mode: 'Lecture', speaker: 'Nityendra' },
-            { time: '11:45 – 13:00', title: 'Structural and Functional Annotation', mode: 'Lecture', speaker: '' },
-            { time: '14:00 – 15:30', title: 'Annotation Tools and Databases (Prokka, RefSeq)', mode: 'Lecture', speaker: '' },
-            { time: '15:45 – 17:00', title: 'Hands-on: Genome Annotation Workflow', mode: 'Hands-on', speaker: '' },
+            { time: '10:00 – 11:30', title: 'Assembly Quality Assessment with Quast and Reads mapping (Coverage Check)', mode: 'Lecture/Hands-on', speaker: 'Mukul' },
+            { time: '11:45 – 13:00', title: 'Scaffolding with Ragtag and BUSCO Validation', mode: 'Lecture/Hands-on', speaker: 'Mukul' },
+            { time: '14:00 – 15:30', title: 'Genome Annotation Concepts, Structural and Functional Annotation, Annotation Tools and Databases (Prokka, RefSeq)', mode: 'Lecture', speaker: 'Nityendra' },
+            { time: '15:45 – 16:30', title: 'Hands-on: Genome Annotation Workflow', mode: 'Hands-on', speaker: 'Nityendra' },
+            { time: '16:30 – 17:00', title: 'Flash Quiz', mode: '', speaker: '' },
         ]
     },
     {
