@@ -147,7 +147,7 @@ export function SpeakersSection2026() {
     return (
         <section id="speakers" className="py-12 md:py-16 bg-muted/30">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
-                <div className="text-center mb-10">
+                <div className="text-center mb-10 select-none">
                     <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">Training Team</Badge>
                     <h2 className="text-2xl font-bold md:text-3xl">Experts & Speakers</h2>
                     <p className="mt-2 text-sm text-muted-foreground max-w-xl mx-auto select-text">
@@ -181,7 +181,7 @@ export function SpeakersSection2026() {
                                         <Card className="group relative overflow-hidden border-2 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 h-full flex flex-col">
                                             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                                            <CardContent className="relative p-6 text-center flex flex-col h-full">
+                                            <CardContent className="relative p-6 text-center flex flex-col h-full select-none">
                                                 {/* Avatar */}
                                                 <div className="relative mx-auto mb-4">
                                                     <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 blur-xl transition-all duration-300 group-hover:blur-2xl" />

@@ -24,24 +24,24 @@ const scheduleData = [
             { time: '11:15-11:30', icon: Coffee, title: 'Tea Break', type: 'break' },
             { time: '11:30-13:00', icon: Laptop, title: 'Software and Dependencies Installation', type: 'setup' },
             { time: '13:00-14:00', icon: Utensils, title: 'Lunch Break', type: 'meal' },
-            { 
-                time: '14:00-15:15', 
-                icon: Laptop, 
-                title: 'Hands-on Session 1A: Linux Basics for Bioinformatics', 
+            {
+                time: '14:00-15:15',
+                icon: Laptop,
+                title: 'Hands-on Session 1A: Linux Basics for Bioinformatics',
                 description: 'Command-line navigation, File handling and text processing, Writing simple shell scripts',
                 tools: 'Linux/Unix, Bash scripting',
                 colabLink: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
-                type: 'handson' 
+                type: 'handson'
             },
             { time: '15:15-15:30', icon: Coffee, title: 'Tea Break', type: 'break' },
-            { 
-                time: '15:30-17:00', 
-                icon: Laptop, 
-                title: 'Hands-on Session 1B: NGS Data Quality Assessment', 
+            {
+                time: '15:30-17:00',
+                icon: Laptop,
+                title: 'Hands-on Session 1B: NGS Data Quality Assessment',
                 description: 'Running FastQC on raw sequencing data, Quality trimming with Trimmomatic, Generating MultiQC reports',
                 tools: 'FastQC, Trimmomatic, MultiQC',
                 colabLink: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
-                type: 'handson' 
+                type: 'handson'
             },
             { time: '17:00-18:00', icon: Users, title: 'CSIR-IGIB Bio-bank and HPC visit', type: 'tour' },
             { time: '20:00-21:00', icon: Utensils, title: 'Dinner', type: 'meal' },
@@ -55,45 +55,45 @@ const scheduleData = [
             { time: '08:00-09:15', icon: Utensils, title: 'Breakfast', type: 'meal' },
             { time: '09:15-09:30', icon: Users, title: 'Overview for the Day', type: 'admin' },
             { time: '09:30-10:00', icon: GraduationCap, title: 'Talk 2: Genome Assembly', speaker: 'Dr. Jitendra Narayan', type: 'lecture' },
-            { 
-                time: '10:00-11:15', 
-                icon: Laptop, 
-                title: 'Hands-on Session 2A(I): Metagenome Assembly Basics', 
+            {
+                time: '10:00-11:15',
+                icon: Laptop,
+                title: 'Hands-on Session 2A(I): Metagenome Assembly Basics',
                 description: 'Viral Genome Assembly using Setu pipeline, Running assembly with MetaSPAdes',
                 tools: 'Setu, MetaSPAdes',
                 colabLink: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
-                type: 'handson' 
+                type: 'handson'
             },
             { time: '11:15-11:30', icon: Coffee, title: 'Tea Break', type: 'break' },
-            { 
-                time: '11:30-12:00', 
-                icon: Laptop, 
-                title: 'Hands-on Session 2A(II): Metagenome Assembly Basics', 
+            {
+                time: '11:30-12:00',
+                icon: Laptop,
+                title: 'Hands-on Session 2A(II): Metagenome Assembly Basics',
                 description: 'Quality assessment of assembled contigs, Binning assembled contigs into MAGs',
                 tools: 'QUAST, MetaBAT2',
                 colabLink: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
-                type: 'handson' 
+                type: 'handson'
             },
             { time: '12:00-13:00', icon: GraduationCap, title: 'Talk 3: Precision Microbiomics - Unraveling the Antimicrobial Resistome with BHARAT pipeline', speaker: 'Dr. Souvik Mukherjee', type: 'lecture' },
             { time: '13:00-14:00', icon: Utensils, title: 'Lunch Break', type: 'meal' },
-            { 
-                time: '14:00-15:15', 
-                icon: Laptop, 
-                title: 'BHARAT pipeline for annotation', 
+            {
+                time: '14:00-15:15',
+                icon: Laptop,
+                title: 'BHARAT pipeline for annotation',
                 speaker: 'Mr. Shankha Nath',
                 colabLink: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
-                type: 'handson' 
+                type: 'handson'
             },
             { time: '15:15-15:30', icon: Coffee, title: 'Tea Break', type: 'break' },
             { time: '15:30-16:30', icon: GraduationCap, title: 'Talk 4', speaker: 'Dr. Rakesh Sharma', type: 'lecture' },
-            { 
-                time: '16:30-18:00', 
-                icon: Laptop, 
-                title: 'Hands-on Session 2B: Metagenomic Community Profiling', 
+            {
+                time: '16:30-18:00',
+                icon: Laptop,
+                title: 'Hands-on Session 2B: Metagenomic Community Profiling',
                 description: 'Taxonomic classification with Kraken2, Visualization with Krona, Functional profiling with HUMAnN, Abundance estimation with MetaPhlAn',
                 tools: 'Kraken2, Krona, HUMAnN, MetaPhlAn',
                 colabLink: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
-                type: 'handson' 
+                type: 'handson'
             },
             { time: '20:00-21:00', icon: Utensils, title: 'Dinner', type: 'meal' },
         ]
@@ -111,22 +111,22 @@ const scheduleData = [
             { time: '13:00-14:00', icon: Utensils, title: 'Lunch Break', type: 'meal' },
             { time: '14:00-15:30', icon: GraduationCap, title: 'Talk 7: Discovery of Drug Resistance Factors in Multi-Omics Data', speaker: 'Dr. Manish Kumar', type: 'lecture' },
             { time: '15:30-15:45', icon: Coffee, title: 'Tea Break', type: 'break' },
-            { 
-                time: '15:45-16:45', 
-                icon: Laptop, 
-                title: 'Hands-on Session 3A: AMR & Virulence Prediction', 
+            {
+                time: '15:45-16:45',
+                icon: Laptop,
+                title: 'Hands-on Session 3A: AMR & Virulence Prediction',
                 description: 'Explore key AMR databases, Genome-based resistance prediction tools, Analytical workflows used in research and clinical microbiology',
                 colabLink: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
-                type: 'handson' 
+                type: 'handson'
             },
-            { 
-                time: '16:45-18:00', 
-                icon: Laptop, 
-                title: 'Hands-on Session 3B: Microbiome Analysis', 
+            {
+                time: '16:45-18:00',
+                icon: Laptop,
+                title: 'Hands-on Session 3B: Microbiome Analysis',
                 description: 'Antimicrobial resistance prediction using AI with SPARA, AMR detection using Marker-ML',
                 tools: 'SPARA, Marker-ML',
                 colabLink: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
-                type: 'handson' 
+                type: 'handson'
             },
             { time: '20:00-21:00', icon: Utensils, title: 'Dinner', type: 'meal' },
         ]
@@ -139,44 +139,44 @@ const scheduleData = [
             { time: '08:00-09:15', icon: Utensils, title: 'Breakfast', type: 'meal' },
             { time: '09:15-09:30', icon: Users, title: 'Overview of the Day', type: 'admin' },
             { time: '09:30-10:30', icon: GraduationCap, title: 'Talk 8: Federated AI and Machine Learning Opportunities for Longitudinal Surveillance of AMR', speaker: 'Dr. Kumardeep Chaudhary', type: 'lecture' },
-            { 
-                time: '10:30-11:15', 
-                icon: Laptop, 
-                title: 'Hands-on Session 4A: Genome Annotation & Functional Enrichment', 
+            {
+                time: '10:30-11:15',
+                icon: Laptop,
+                title: 'Hands-on Session 4A: Genome Annotation & Functional Enrichment',
                 description: 'Genome annotation with Prokka, Enrichment analysis with getEnrich',
                 tools: 'Prokka, getEnrich',
                 colabLink: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
-                type: 'handson' 
+                type: 'handson'
             },
             { time: '11:15-11:30', icon: Coffee, title: 'Tea Break', type: 'break' },
-            { 
-                time: '11:30-13:00', 
-                icon: Laptop, 
-                title: 'Hands-on Session 4B: Pan-genome & Structural Variation Analysis', 
+            {
+                time: '11:30-13:00',
+                icon: Laptop,
+                title: 'Hands-on Session 4B: Pan-genome & Structural Variation Analysis',
                 description: 'Synteny block analysis, Chromosome breakpoint mapping, Detecting and visualizing genomic rearrangements, Pan-genome construction with Roary, Comprehensive SSR analysis with CrossRoads',
                 tools: 'Chitra, Roary, CrossRoads',
                 colabLink: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
-                type: 'handson' 
+                type: 'handson'
             },
             { time: '13:00-14:00', icon: Utensils, title: 'Lunch Break', type: 'meal' },
-            { 
-                time: '14:00-15:30', 
-                icon: Laptop, 
-                title: 'Hands-on Session 4C: Pathogen Genome Analysis', 
+            {
+                time: '14:00-15:30',
+                icon: Laptop,
+                title: 'Hands-on Session 4C: Pathogen Genome Analysis',
                 description: 'Bacterial genome identification through alignment and assembly, Reference-based mapping to generate consensus genomes, Comparative coverage assessment, De-novo assembly, Interpretation of genome assembly statistics',
                 tools: 'Minimap2, BWA-MEM, SAMtools, Medaka, Bcftools, Flye, Canu, SPAdes',
                 colabLink: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
-                type: 'handson' 
+                type: 'handson'
             },
             { time: '15:30-15:45', icon: Coffee, title: 'Tea Break', type: 'break' },
-            { 
-                time: '15:45-18:00', 
-                icon: Laptop, 
-                title: 'Hands-on Session 4D: Host Response Analysis', 
+            {
+                time: '15:45-18:00',
+                icon: Laptop,
+                title: 'Hands-on Session 4D: Host Response Analysis',
                 description: 'Differential Expression Analysis with DESeq2, Visualization of expression data, Pathway Enrichment Analysis using Enrichr/STRING, Network visualization using Cytoscape',
                 tools: 'limma, DESeq2, R/ggplot2, Enrichr, STRING, Cytoscape',
                 colabLink: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
-                type: 'handson' 
+                type: 'handson'
             },
             { time: '20:00-21:00', icon: Utensils, title: 'Gala Dinner (Venue: Sandoz Restaurant, Mathura Road)', type: 'meal', special: true },
         ]
@@ -212,7 +212,7 @@ export function WorkshopSchedule() {
     return (
         <section id="schedule" className="py-24 bg-muted/30">
             <div className="mx-auto max-w-7xl px-6 lg:px-12">
-                <div className="text-center">
+                <div className="text-center select-none">
                     <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl">Workshop Schedule</h2>
                     <p className="mt-4 text-lg text-muted-foreground">
                         Comprehensive 5-day program with lectures and hands-on training
@@ -222,12 +222,12 @@ export function WorkshopSchedule() {
                 <div className="mt-12">
                     <Accordion type="single" collapsible className="space-y-4">
                         {scheduleData.map((day, dayIndex) => (
-                            <AccordionItem 
-                                key={dayIndex} 
+                            <AccordionItem
+                                key={dayIndex}
                                 value={`day-${dayIndex}`}
                                 className="rounded-2xl border bg-card px-6 shadow-sm"
                             >
-                                <AccordionTrigger className="hover:no-underline py-6">
+                                <AccordionTrigger className="hover:no-underline py-6 select-none">
                                     <div className="flex items-center gap-4 text-left">
                                         <div className="flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
                                             <Calendar className="size-5" />
@@ -243,9 +243,9 @@ export function WorkshopSchedule() {
                                         {day.sessions.map((session, sessionIndex) => {
                                             const Icon = session.icon
                                             return (
-                                                <div 
+                                                <div
                                                     key={sessionIndex}
-                                                    className={`flex gap-4 rounded-xl border p-4 ${session.special ? 'border-primary bg-primary/5' : ''}`}
+                                                    className={`flex gap-4 rounded-xl border p-4 select-none ${session.special ? 'border-primary bg-primary/5' : ''}`}
                                                 >
                                                     <div className="flex-shrink-0">
                                                         <div className={`flex size-10 items-center justify-center rounded-lg ${getTypeColor(session.type)}`}>
@@ -303,7 +303,7 @@ export function WorkshopSchedule() {
                     </Accordion>
                 </div>
 
-                <div className="mt-12 text-center">
+                <div className="mt-12 text-center select-none">
                     <Button asChild size="lg" variant="outline">
                         <a href="https://dub.sh/nOwquyu" target="_blank" rel="noopener noreferrer">
                             View Full Schedule

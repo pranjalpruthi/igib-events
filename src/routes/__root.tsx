@@ -58,7 +58,19 @@ export const Route = createRootRoute({
       },
       {
         property: 'og:image',
-        content: '/assests/bol/bol-fhd-logo.webp',
+        content: '/assests/meta-banner.webp',
+      },
+      {
+        property: 'og:image:width',
+        content: '1200',
+      },
+      {
+        property: 'og:image:height',
+        content: '630',
+      },
+      {
+        property: 'og:image:type',
+        content: 'image/webp',
       },
       // Twitter
       {
@@ -75,7 +87,7 @@ export const Route = createRootRoute({
       },
       {
         name: 'twitter:image',
-        content: '/assests/bol/bol-fhd-logo.webp',
+        content: '/assests/meta-banner.webp',
       },
       // Additional meta tags
       {

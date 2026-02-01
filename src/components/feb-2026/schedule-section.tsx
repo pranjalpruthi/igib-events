@@ -144,7 +144,7 @@ function ScheduleCard({ day, index }: { day: any, index: number }) {
             day.color.replace('bg-', 'border-').replace('500', '200') // Add subtle color border hint
         )}>
             {/* Header */}
-            <div className={cn("p-4 sm:p-6 pb-4 border-b relative overflow-hidden")}>
+            <div className={cn("p-4 sm:p-6 pb-4 border-b relative overflow-hidden select-none")}>
                 <div className={cn("absolute inset-0 opacity-10", day.color)} />
                 <div className="relative z-10">
                     <div className="flex items-center justify-between mb-2">
@@ -163,7 +163,7 @@ function ScheduleCard({ day, index }: { day: any, index: number }) {
             </div>
 
             {/* Sessions List */}
-            <div className="flex-1 p-4 sm:p-5 space-y-4 bg-muted/5">
+            <div className="flex-1 p-4 sm:p-5 space-y-4 bg-muted/5 select-none">
                 {day.sessions.map((session: any, sIndex: number) => {
                     const isBreak = session.title.includes('Break')
                     return (
@@ -193,7 +193,7 @@ function ScheduleCard({ day, index }: { day: any, index: number }) {
 
             {/* Resources */}
             {day.resources && (
-                <div className="p-4 sm:p-5 pt-0 flex flex-wrap gap-2">
+                <div className="p-4 sm:p-5 pt-0 flex flex-wrap gap-2 select-none">
                     {day.resources.colab && (
                         <Button size="sm" variant="outline" className="gap-1.5 text-xs h-8 bg-[#F9AB00]/10 border-[#F9AB00]/30 hover:bg-[#F9AB00]/20 text-[#F9AB00] dark:text-[#F9AB00]" asChild>
                             <a href={day.resources.colab} target="_blank" rel="noopener noreferrer">
@@ -278,7 +278,7 @@ function ScheduleActions() {
     }
 
     return (
-        <div className="flex flex-wrap items-center justify-center gap-3 mt-4 mb-8">
+        <div className="flex flex-wrap items-center justify-center gap-3 mt-4 mb-8 select-none">
             <Button
                 variant="outline"
                 size="sm"
@@ -316,7 +316,7 @@ export function ScheduleSection2026() {
     return (
         <section id="schedule" className="py-12 md:py-16 bg-background">
             <div className="mx-auto max-w-7xl px-4 sm:px-6">
-                <div className="text-center mb-10">
+                <div className="text-center mb-10 select-none">
                     <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">7-Day Program</Badge>
                     <h2 className="text-2xl font-bold md:text-3xl">Workshop Schedule</h2>
                     <p className="mt-2 text-sm text-muted-foreground">Feb 1-7, 2026 • 10:00 AM – 5:00 PM daily</p>

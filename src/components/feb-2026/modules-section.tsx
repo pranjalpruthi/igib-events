@@ -161,7 +161,7 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
             {/* Gradient Header Line */}
             <div className={`h-2 w-full bg-gradient-to-r ${module.color}`} />
 
-            <CardHeader className="pb-2 p-4 md:p-5">
+            <CardHeader className="pb-2 p-4 md:p-5 select-none">
                 <div className="flex items-start justify-between gap-3">
                     <div className="flex items-center gap-3">
                         <div className={cn(
@@ -182,7 +182,7 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
                 </div>
             </CardHeader>
 
-            <CardContent className="flex-1 flex flex-col p-4 md:p-5 pt-0">
+            <CardContent className="flex-1 flex flex-col p-4 md:p-5 pt-0 select-none">
                 {/* Topics */}
                 <div className="flex flex-wrap gap-1.5 mb-3">
                     {module.topics.slice(0, isExpanded ? undefined : 3).map((topic: string, i: number) => (
@@ -382,7 +382,7 @@ export function ModulesSection2026() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mt-12 text-center"
+                    className="mt-12 text-center select-none"
                 >
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Card className="inline-block p-1 pr-4 border border-primary/20 bg-background shadow-sm rounded-full">
