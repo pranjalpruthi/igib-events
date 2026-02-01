@@ -6,6 +6,7 @@ import { ExternalLink, Terminal, BookOpen, Cpu, Dna, Bug, BarChart3, Microscope,
 import { motion, AnimatePresence } from 'motion/react'
 import MatrixText from '@/components/kokonutui/matrix-text'
 import { cn } from '@/lib/utils'
+import { ComingSoonDialog } from '@/components/feb-2026/coming-soon-dialog'
 
 const modules = [
     {
@@ -67,7 +68,8 @@ const modules = [
                 </div>
             </div>
         ),
-        colabLink: 'https://colab.research.google.com/drive/1rqvW9Mk0EXMdHEIbdEjazsqhPANBbEE-?usp=sharing#scrollTo=zP-DFgkZLZfO',
+        colabLink: 'https://colab.research.google.com/drive/1rqvW9Mk0EXMdHEIbdEjazsqhPANBbEE-?usp=sharing',
+        slidesLink: 'https://intro-to-unix-igib-dd767th.gamma.site/',
         available: true,
         color: 'from-blue-500 to-cyan-500',
         className: 'md:col-span-2 md:row-span-2'
@@ -78,8 +80,8 @@ const modules = [
         icon: Cpu,
         topics: ['Shell fundamentals', 'Variables & loops', 'awk, sed, grep', 'Pipelines'],
         objective: 'Master shell fundamentals, variables/loops/conditions, text processing with awk/sed/grep.',
-        colabLink: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
-        available: true,
+        colabLink: '',
+        available: false,
         color: 'from-purple-500 to-pink-500',
         className: 'md:col-span-1'
     },
@@ -89,8 +91,8 @@ const modules = [
         icon: Microscope,
         topics: ['Sequencing platforms', 'Read quality metrics', 'FastQC & MultiQC'],
         objective: 'Understand sequencing platforms, read quality metrics, adapter/GC issues; hands-on FastQC and MultiQC.',
-        colabLink: 'https://colab.research.google.com/drive/11QNwa9I-VOk8Wg-VBxcPVycLqCxYqAFq?usp=sharing',
-        available: true,
+        colabLink: '',
+        available: false,
         color: 'from-green-500 to-emerald-500',
         className: 'md:col-span-1'
     },
@@ -100,8 +102,8 @@ const modules = [
         icon: Dna,
         topics: ['De novo vs reference', 'Assembly strategies', 'SPAdes & evaluation'],
         objective: 'Compare de novo vs reference-based assembly, learn assembly strategies; hands-on SPAdes.',
-        colabLink: 'https://colab.research.google.com/drive/1fMCrkI5jXTpuRgB_MUGamZOvhkDk4pRd?usp=sharing',
-        available: true,
+        colabLink: '',
+        available: false,
         color: 'from-orange-500 to-red-500',
         className: 'md:col-span-1'
     },
@@ -111,8 +113,8 @@ const modules = [
         icon: BookOpen,
         topics: ['Gene prediction', 'Functional databases', 'Prokka workflow'],
         objective: 'Learn gene prediction, functional databases, annotation pipelines; hands-on Prokka workflow.',
-        colabLink: 'https://colab.research.google.com/drive/1w9ThIz4xlhG_mwYVFx-iAfYLOPp10ztr?usp=sharing',
-        available: true,
+        colabLink: '',
+        available: false,
         color: 'from-indigo-500 to-violet-500',
         className: 'md:col-span-1'
     },
@@ -122,8 +124,8 @@ const modules = [
         icon: Bug,
         topics: ['AMR mechanisms', 'Resistance databases', 'Surveillance methods', 'Gene detection'],
         objective: 'Understand AMR mechanisms, databases, surveillance; hands-on AMR gene detection and interpretation.',
-        colabLink: 'https://colab.research.google.com/drive/1kD92SJYlGRyVvTrQUog6x7CxqXcD0sag?usp=sharing',
-        available: true,
+        colabLink: '',
+        available: false,
         color: 'from-rose-500 to-red-500',
         className: 'md:col-span-2'
     },
@@ -133,8 +135,8 @@ const modules = [
         icon: BarChart3,
         topics: ['GO & KEGG databases', 'Enrichment statistics', 'Chitra Pipeline', 'Pathway visualization'],
         objective: 'Learn GO/KEGG databases, enrichment statistics; hands-on Chitra Pipeline for GO enrichment and pathway visualization.',
-        colabLink: 'https://colab.research.google.com/drive/1w9ThIz4xlhG_mwYVFx-iAfYLOPp10ztr?usp=sharing',
-        available: true,
+        colabLink: '',
+        available: false,
         color: 'from-amber-500 to-yellow-500',
         className: 'md:col-span-2'
     }
@@ -245,32 +247,48 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
 
                 {/* Action Buttons */}
                 <div className="mt-3 pt-3 border-t grid grid-cols-2 gap-2">
-                    <Button
-                        asChild
-                        size="sm"
-                        className={cn(
-                            "w-full bg-white text-black hover:bg-gray-100 border border-gray-200 font-medium transition-all text-[10px] h-8",
-                        )}
-                    >
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                            <FileText className="size-3 mr-1.5" />
-                            Slides (Soon)
-                        </a>
-                    </Button>
-                    <Button
-                        asChild
-                        size="sm"
-                        className={cn(
-                            "w-full bg-[#F9AB00] text-black hover:bg-[#F9AB00]/90 font-medium transition-all text-[10px] h-8",
-                            !module.available && 'pointer-events-none opacity-50'
-                        )}
-                    >
-                        <a href={module.colabLink} target="_blank" rel="noopener noreferrer">
-                            <BookOpen className="size-3 mr-1.5" />
-                            Notebook (Soon)
-                            <ExternalLink className="ml-1 size-3" />
-                        </a>
-                    </Button>
+                    {module.slidesLink ? (
+                        <Button
+                            asChild
+                            size="sm"
+                            className="w-full bg-emerald-500 text-white hover:bg-emerald-600 font-medium transition-all text-[10px] h-8"
+                        >
+                            <a href={module.slidesLink} target="_blank" rel="noopener noreferrer">
+                                View Slides
+                            </a>
+                        </Button>
+                    ) : (
+                        <ComingSoonDialog title="Slides Coming Soon" description={`Slides for ${module.title} will be uploaded soon. Check Day 1 in the Schedule section for available materials.`}>
+                            <Button
+                                size="sm"
+                                variant="outline"
+                                className="w-full font-medium transition-all text-[10px] h-8 opacity-60"
+                            >
+                                Slides (Soon)
+                            </Button>
+                        </ComingSoonDialog>
+                    )}
+                    {module.available ? (
+                        <Button
+                            asChild
+                            size="sm"
+                            className="w-full bg-emerald-500 text-white hover:bg-emerald-600 font-medium transition-all text-[10px] h-8"
+                        >
+                            <a href={module.colabLink} target="_blank" rel="noopener noreferrer">
+                                Open Notebook
+                            </a>
+                        </Button>
+                    ) : (
+                        <ComingSoonDialog title="Notebook Coming Soon" description={`The Colab notebook for ${module.title} is being prepared. Check Day 1 in the Schedule section for available materials.`}>
+                            <Button
+                                size="sm"
+                                variant="outline"
+                                className="w-full font-medium transition-all text-[10px] h-8 opacity-60"
+                            >
+                                Notebook (Soon)
+                            </Button>
+                        </ComingSoonDialog>
+                    )}
                 </div>
             </CardContent>
         </Card>
