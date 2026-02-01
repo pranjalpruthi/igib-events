@@ -93,6 +93,9 @@ export const Route = createRootRoute({
     ],
     links: [
       { rel: 'stylesheet', href: appCss },
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Pacifico&display=swap' },
       { rel: 'canonical', href: 'https://igib-events.vercel.app' },
       { rel: 'icon', type: 'image/png', href: '/assests/bol/favicon-192.png' },
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/assests/bol/favicon-192.png' },

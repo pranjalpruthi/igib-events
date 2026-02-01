@@ -133,9 +133,9 @@ export function TeamSection() {
                     <CarouselContent className="-ml-4">
                         {teamMembers.map((member, index) => (
                             <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                                <Card className="group overflow-hidden transition-all hover:shadow-xl border hover:border-primary/50">
+                                <Card className="group overflow-hidden transition-all hover:shadow-xl border hover:border-primary/50 h-full flex flex-col">
                                     <div className={`h-2 bg-gradient-to-r ${member.color}`} />
-                                    <CardContent className="p-6 flex flex-col select-none">
+                                    <CardContent className="p-6 flex flex-col select-none flex-1">
                                         {/* Avatar */}
                                         <div className="mb-4 flex items-center justify-center">
                                             {member.image ? (

@@ -63,8 +63,8 @@ export function HeroSection2026() {
                             {/* Main Heading */}
                             <h1 className="text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl xl:text-7xl">
                                 ONE-WEEK BASIC BIOINFORMATICS{' '}
-                                <span className="text-primary">
-                                    SKILL DEVELOPMENT PROGRAM
+                                <span className="block text-primary mt-2" style={{ fontFamily: "'Pacifico', cursive" }}>
+                                    Skill Development Program
                                 </span>
                             </h1>
 
@@ -131,7 +131,7 @@ export function HeroSection2026() {
                                 >
                                     <Button
                                         size="lg"
-                                        className="h-11 sm:h-12 w-full sm:w-auto sm:min-w-[200px] rounded-xl px-6 sm:px-8 text-sm sm:text-base font-semibold bg-[#F9AB00] text-black hover:bg-[#E09800] shadow-lg shadow-[#F9AB00]/20 hover:shadow-xl hover:shadow-[#F9AB00]/30 transition-all duration-200 ease-out"
+                                        className="h-11 sm:h-12 w-full sm:w-auto sm:min-w-[200px] rounded-xl px-6 sm:px-8 text-sm sm:text-base font-semibold bg-[#F9AB00] text-black hover:bg-[#E09800] shadow-[0_0_20px_rgba(249,171,0,0.4)] hover:shadow-[0_0_30px_rgba(249,171,0,0.6)] transition-all duration-200 ease-out"
                                     >
                                         <span className="sm:hidden">Modules (Coming Soon)</span>
                                         <span className="hidden sm:inline">Google Colab Modules</span>
@@ -145,7 +145,7 @@ export function HeroSection2026() {
                                     <Button
                                         size="lg"
                                         variant="outline"
-                                        className="h-11 sm:h-12 w-full sm:w-auto sm:min-w-[200px] rounded-xl border-2 border-white bg-white text-black px-6 sm:px-8 text-sm sm:text-base font-semibold hover:bg-white/90 hover:text-black shadow-lg shadow-white/20 hover:shadow-xl hover:shadow-white/30 transition-all duration-200 ease-out"
+                                        className="h-11 sm:h-12 w-full sm:w-auto sm:min-w-[200px] rounded-xl border-2 border-white bg-white text-black px-6 sm:px-8 text-sm sm:text-base font-semibold hover:bg-white/90 hover:text-black shadow-[0_0_15px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] transition-all duration-200 ease-out dark:bg-white dark:text-black dark:border-white dark:hover:bg-white/90"
                                     >
                                         <span className="sm:hidden">Standee</span>
                                         <span className="hidden sm:inline">View Presentation / Standee</span>

@@ -150,7 +150,7 @@ export function SpeakersSection2026() {
                 <div className="text-center mb-10">
                     <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">Training Team</Badge>
                     <h2 className="text-2xl font-bold md:text-3xl">Experts & Speakers</h2>
-                    <p className="mt-2 text-sm text-muted-foreground max-w-xl mx-auto">
+                    <p className="mt-2 text-sm text-muted-foreground max-w-xl mx-auto select-text">
                         Meet the distinguished faculty and researchers delivering the training sessions
                     </p>
                 </div>
@@ -176,41 +176,47 @@ export function SpeakersSection2026() {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: index * 0.1 }}
+                                        className="h-full"
                                     >
-                                        <Card className="flex flex-col hover:shadow-xl transition-all duration-300 border-muted bg-primary/5 overflow-hidden group">
-                                            <CardContent className="pt-6 px-4 pb-6 flex flex-col items-center text-center select-none">
-                                                <div className="mb-4 relative">
-                                                    <Avatar className="size-24 border-4 border-background shadow-md group-hover:scale-105 transition-transform duration-300">
-                                                        {speaker.image ? (
-                                                            <AvatarImage src={speaker.image} alt={speaker.name} className="object-cover" />
-                                                        ) : (
-                                                            <AvatarFallback className="bg-primary/10 text-primary text-2xl font-bold">
-                                                                {speaker.name.split(' ').map(n => n[0]).join('')}
-                                                            </AvatarFallback>
-                                                        )}
+                                        <Card className="group relative overflow-hidden border-2 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 h-full flex flex-col">
+                                            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                                            <CardContent className="relative p-6 text-center flex flex-col h-full">
+                                                {/* Avatar */}
+                                                <div className="relative mx-auto mb-4">
+                                                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 blur-xl transition-all duration-300 group-hover:blur-2xl" />
+                                                    <Avatar className="relative size-24 border-4 border-background shadow-xl">
+                                                        <AvatarImage src={speaker.image} alt={speaker.name} />
+                                                        <AvatarFallback>{speaker.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                                                     </Avatar>
                                                 </div>
 
-                                                <div className="mb-1">
-                                                    <h3 className="font-bold text-lg">{speaker.name}</h3>
-                                                    <p className="text-sm font-medium text-primary/80">{speaker.role}</p>
-                                                    {/* PI and Skill India badges */}
-                                                    <div className="flex flex-col items-center gap-1.5 mt-2">
-                                                        {speaker.role === 'Principal Investigator' && (
-                                                            <Badge className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0 text-[10px]">Principal Investigator</Badge>
-                                                        )}
-                                                        {speaker.isSkillIndiaOrganizer && (
-                                                            <Badge className="bg-gradient-to-r from-orange-500 to-amber-500 text-white border-0 text-[10px]">SKILL INDIA ORGANIZER</Badge>
-                                                        )}
-                                                    </div>
+                                                {/* Name & Role */}
+                                                <h3 className="text-lg font-bold">{speaker.name}</h3>
+                                                <p className="text-xs text-muted-foreground mb-2">{speaker.roleDetail}</p>
+
+                                                {/* Badges */}
+                                                <div className="flex flex-col gap-2 mb-3">
+                                                    {speaker.role === 'Principal Investigator' && (
+                                                        <Badge className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0 text-xs">
+                                                            Principal Investigator
+                                                        </Badge>
+                                                    )}
+                                                    {speaker.isSkillIndiaOrganizer && (
+                                                        <Badge className="bg-gradient-to-r from-orange-500 to-amber-500 text-white border-0 text-xs">
+                                                            SKILL INDIA ORGANIZER
+                                                        </Badge>
+                                                    )}
                                                 </div>
 
-                                                {/* Bio limited to 2 lines */}
-                                                {speaker.bio && (
+                                                <p className="text-sm font-medium text-primary mb-3">{speaker.session}</p>
+
+                                                {/* Bio with Tooltip */}
+                                                <div className="flex-1 flex items-start">
                                                     <TooltipProvider>
                                                         <Tooltip>
                                                             <TooltipTrigger asChild>
-                                                                <p className="text-xs text-muted-foreground mt-2 mb-3 line-clamp-3 px-2 cursor-help">
+                                                                <p className="text-xs text-muted-foreground line-clamp-3 cursor-help">
                                                                     {speaker.bio}
                                                                 </p>
                                                             </TooltipTrigger>
@@ -219,11 +225,7 @@ export function SpeakersSection2026() {
                                                             </TooltipContent>
                                                         </Tooltip>
                                                     </TooltipProvider>
-                                                )}
-
-                                                <Badge variant="secondary" className="text-[10px] sm:text-xs mb-4 whitespace-normal h-auto py-1 text-center">
-                                                    {speaker.session}
-                                                </Badge>
+                                                </div>
 
                                                 {/* Social Links */}
                                                 {speaker.links && (

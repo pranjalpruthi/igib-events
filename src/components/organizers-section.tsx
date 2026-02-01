@@ -13,6 +13,7 @@ import {
 import MatrixText from '@/components/kokonutui/matrix-text'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '@/components/animate-ui/components/animate/tooltip'
+import Autoplay from 'embla-carousel-autoplay'
 
 const organizers = [
     {
@@ -151,14 +152,21 @@ export function OrganizersSection() {
                         align: "start",
                         loop: true,
                     }}
+                    plugins={[
+                        Autoplay({
+                            delay: 4000,
+                            stopOnInteraction: true,
+                            stopOnMouseEnter: true,
+                        }),
+                    ]}
                     className="w-full"
                 >
                     <CarouselContent className="-ml-4">
                         {organizers.map((member, index) => (
                             <CarouselItem key={index} className="pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-                                <Card className="group overflow-hidden transition-all hover:shadow-xl border-2 hover:border-primary/50 rounded-2xl">
+                                <Card className="group overflow-hidden transition-all hover:shadow-xl border-2 hover:border-primary/50 rounded-2xl h-full flex flex-col">
                                     <div className={`h-2 bg-gradient-to-r ${member.color}`} />
-                                    <CardContent className="p-5 flex flex-col select-none">
+                                    <CardContent className="p-5 flex flex-col select-none flex-1">
                                         {/* Avatar */}
                                         <div className="mb-4 flex items-center justify-center">
                                             <Avatar className="size-20 ring-2 ring-white dark:ring-gray-800 shadow-lg">
