@@ -30,9 +30,9 @@ export default function HeroSection() {
                                 </motion.div>
 
                                 {/* Main Heading */}
-                                <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl xl:text-7xl">
+                                <h1 className="text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl xl:text-7xl">
                                     Five-day Hands-on Workshop on{' '}
-                                    <span className="text-primary">
+                                    <span className="block text-primary mt-2" style={{ fontFamily: "'Bitcount Single', monospace", fontWeight: 300, letterSpacing: '0.08em' }}>
                                         Bioinformatics for One Health
                                     </span>
                                 </h1>
