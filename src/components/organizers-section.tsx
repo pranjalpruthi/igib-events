@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/carousel'
 import MatrixText from '@/components/kokonutui/matrix-text'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '@/components/animate-ui/components/animate/tooltip'
 
 const organizers = [
     {
@@ -183,9 +184,18 @@ export function OrganizersSection() {
                                         </div>
 
                                         {/* Bio */}
-                                        <p className="text-xs text-muted-foreground leading-relaxed mb-4 text-center line-clamp-2">
-                                            {member.bio}
-                                        </p>
+                                        <TooltipProvider>
+                                            <Tooltip>
+                                                <TooltipTrigger asChild>
+                                                    <p className="text-xs text-muted-foreground leading-relaxed mb-4 text-center line-clamp-2 cursor-help">
+                                                        {member.bio}
+                                                    </p>
+                                                </TooltipTrigger>
+                                                <TooltipContent>
+                                                    <p className="max-w-xs">{member.bio}</p>
+                                                </TooltipContent>
+                                            </Tooltip>
+                                        </TooltipProvider>
 
                                         {/* Social Links */}
                                         <div className="flex items-center justify-center gap-2 pt-2 border-t">

@@ -5,6 +5,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription }
 import { Badge } from '@/components/ui/badge'
 import { motion } from 'motion/react'
 import MatrixText from '@/components/kokonutui/matrix-text'
+import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '@/components/animate-ui/components/animate/tooltip'
 
 const events = [
     {
@@ -84,7 +85,16 @@ export function FeaturedWorkshops() {
                                         <MapPin className="size-4" />
                                         <span>{event.location}</span>
                                     </div>
-                                    <p className="text-sm pt-2 line-clamp-3">{event.description}</p>
+                                    <TooltipProvider>
+                                        <Tooltip>
+                                            <TooltipTrigger asChild>
+                                                <p className="text-sm pt-2 line-clamp-3 cursor-help">{event.description}</p>
+                                            </TooltipTrigger>
+                                            <TooltipContent>
+                                                <p className="max-w-xs">{event.description}</p>
+                                            </TooltipContent>
+                                        </Tooltip>
+                                    </TooltipProvider>
                                 </CardContent>
                                 <CardFooter>
                                     <Button asChild className={`w-full ${event.status === 'Upcoming' ? 'bg-cyan-500 hover:bg-cyan-400 text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-400/30 transition-all duration-200 ease-out' : 'transition-colors duration-200'}`} variant={event.status === 'Upcoming' ? 'default' : 'outline'}>

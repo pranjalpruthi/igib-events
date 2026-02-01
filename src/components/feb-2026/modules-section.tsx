@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'motion/react'
 import MatrixText from '@/components/kokonutui/matrix-text'
 import { cn } from '@/lib/utils'
 import { ComingSoonDialog } from '@/components/feb-2026/coming-soon-dialog'
+import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '@/components/animate-ui/components/animate/tooltip'
 
 const modules = [
     {
@@ -217,16 +218,25 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
                                 )}
                             </motion.div>
                         ) : (
-                            <motion.p
-                                key="collapsed"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.2 }}
-                                className="text-xs md:text-sm text-muted-foreground leading-relaxed line-clamp-2"
-                            >
-                                {module.objective}
-                            </motion.p>
+                            <TooltipProvider>
+                                <Tooltip>
+                                    <TooltipTrigger asChild>
+                                        <motion.p
+                                            key="collapsed"
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                            transition={{ duration: 0.2 }}
+                                            className="text-xs md:text-sm text-muted-foreground leading-relaxed line-clamp-2 cursor-help"
+                                        >
+                                            {module.objective}
+                                        </motion.p>
+                                    </TooltipTrigger>
+                                    <TooltipContent>
+                                        <p className="max-w-xs">{module.objective}</p>
+                                    </TooltipContent>
+                                </Tooltip>
+                            </TooltipProvider>
                         )}
                     </AnimatePresence>
                 </div>

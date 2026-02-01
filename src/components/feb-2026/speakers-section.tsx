@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { motion } from 'motion/react'
 import { Github, Twitter, Linkedin, Globe, BookOpen, GraduationCap, Mail } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '@/components/animate-ui/components/animate/tooltip'
 
 // Detailed speaker data
 const speakers = [
@@ -206,9 +207,18 @@ export function SpeakersSection2026() {
 
                                                 {/* Bio limited to 2 lines */}
                                                 {speaker.bio && (
-                                                    <p className="text-xs text-muted-foreground mt-2 mb-3 line-clamp-3 px-2">
-                                                        {speaker.bio}
-                                                    </p>
+                                                    <TooltipProvider>
+                                                        <Tooltip>
+                                                            <TooltipTrigger asChild>
+                                                                <p className="text-xs text-muted-foreground mt-2 mb-3 line-clamp-3 px-2 cursor-help">
+                                                                    {speaker.bio}
+                                                                </p>
+                                                            </TooltipTrigger>
+                                                            <TooltipContent>
+                                                                <p className="max-w-xs">{speaker.bio}</p>
+                                                            </TooltipContent>
+                                                        </Tooltip>
+                                                    </TooltipProvider>
                                                 )}
 
                                                 <Badge variant="secondary" className="text-[10px] sm:text-xs mb-4 whitespace-normal h-auto py-1 text-center">
