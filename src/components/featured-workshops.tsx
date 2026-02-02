@@ -99,7 +99,7 @@ export function FeaturedWorkshops() {
                                 <CardFooter>
                                     <Button asChild className={`w-full ${event.status === 'Upcoming' ? 'bg-cyan-500 hover:bg-cyan-400 text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-400/30 transition-all duration-200 ease-out' : 'transition-colors duration-200'}`} variant={event.status === 'Upcoming' ? 'default' : 'outline'}>
                                         <Link to={event.link}>
-                                            {event.status === 'Upcoming' ? 'View Details & Register' : 'View Archive'} <ArrowRight className="ml-2 size-4" />
+                                            {event.status === 'Upcoming' ? 'View Details' : 'View Archive'} <ArrowRight className="ml-2 size-4" />
                                         </Link>
                                     </Button>
                                 </CardFooter>
