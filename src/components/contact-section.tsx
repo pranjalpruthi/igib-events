@@ -300,7 +300,7 @@ export function Footer() {
                                             <AvatarImage src="/assests/people/pranjal.webp" alt="Pranjal Pruthi" />
                                             <AvatarFallback>PP</AvatarFallback>
                                         </Avatar>
-                                        <strong className="text-foreground inline-flex items-center gap-2">Pranjal & 😅 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="40" height="40" className="inline-block" /> AI</strong>
+                                        <strong className="text-foreground inline-flex items-center gap-2"> & 😅 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="40" height="40" className="inline-block" /> AI</strong>
                                     </div>
                                 </TooltipTrigger>
                                 <TooltipContent className="flex flex-col gap-2 p-3">
