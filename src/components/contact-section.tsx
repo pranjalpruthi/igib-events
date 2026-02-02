@@ -291,16 +291,16 @@ export function Footer() {
                         A <strong className="text-foreground">Skill India</strong> project by <strong className="text-foreground">CSIR-IGIB</strong>
                     </p>
                     <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground flex-wrap">
-                        <span>Made with <span className="text-red-500 animate-pulse">❤️</span> in <strong className="text-foreground">Jitendra Lab</strong> by</span>
+                        <span>Crafted with <span className="text-red-500 animate-pulse">❤️</span> in <strong className="text-foreground">Jitendra Lab</strong> by</span>
                         <TooltipProvider>
                             <Tooltip>
                                 <TooltipTrigger asChild>
-                                    <div className="inline-flex items-center gap-2">
-                                        <Avatar className="size-6 border-2 border-primary/20 hover:border-primary/40 transition-all cursor-pointer">
+                                    <div className="inline-flex items-center gap-2 text-sm">
+                                        <Avatar className="size-[50px] border-2 border-primary/20 hover:border-primary/40 transition-all cursor-pointer">
                                             <AvatarImage src="/assests/people/pranjal.webp" alt="Pranjal Pruthi" />
                                             <AvatarFallback>PP</AvatarFallback>
                                         </Avatar>
-                                        <strong className="text-foreground">Pranjal</strong>
+                                        <strong className="text-foreground inline-flex items-center gap-2">Pranjal & 😅 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="40" height="40" className="inline-block" /> AI</strong>
                                     </div>
                                 </TooltipTrigger>
                                 <TooltipContent className="flex flex-col gap-2 p-3">
