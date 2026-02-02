@@ -117,6 +117,28 @@ function LandingPage() {
                 "radial-gradient(70% 55% at 50% 50%, #2a5d77 0%, #184058 18%, #0f2a43 34%, #0a1b30 50%, #071226 66%, #040d1c 80%, #020814 92%, #01040d 97%, #000309 100%), radial-gradient(160% 130% at 10% 10%, rgba(0,0,0,0) 38%, #000309 76%, #000208 100%), radial-gradient(160% 130% at 90% 90%, rgba(0,0,0,0) 38%, #000309 76%, #000208 100%)"
             }}
           />
+
+          {/* Building Image Overlay - Right Side with Fade */}
+          <div
+            className="absolute inset-0 z-[1] pointer-events-none"
+            style={{
+              backgroundImage: "url('/assests/hero.webp')",
+              backgroundSize: "cover",
+              backgroundPosition: "right center",
+              backgroundRepeat: "no-repeat",
+              maskImage: "linear-gradient(to left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.15) 40%, transparent 70%)",
+              WebkitMaskImage: "linear-gradient(to left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.15) 40%, transparent 70%)",
+              opacity: 0.4
+            }}
+          />
+
+          {/* Additional fade overlay for light mode */}
+          <div
+            className="absolute inset-0 z-[2] pointer-events-none dark:hidden"
+            style={{
+              background: "linear-gradient(to left, transparent 0%, rgba(248, 250, 252, 0.6) 50%, rgba(248, 250, 252, 0.95) 80%)"
+            }}
+          />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
