@@ -109,10 +109,12 @@ function LandingPage() {
                 transition={{ delay: 0.2 }}
                 className="mb-4 sm:mb-6 inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 select-none"
               >
-                <Badge className="bg-primary/10 backdrop-blur-md border-primary/20 hover:bg-primary/20 px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm">
-                  <span className="size-1.5 sm:size-2 rounded-full bg-cyan-400 dark:bg-cyan-400 animate-pulse mr-1.5 sm:mr-2" />
-                  CSIR-IGIB
-                </Badge>
+                <a href="https://www.igib.res.in" target="_blank" rel="noopener noreferrer">
+                  <Badge className="bg-primary/10 backdrop-blur-md border-primary/20 hover:bg-primary/20 px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm text-cyan-600 dark:text-cyan-300 cursor-pointer">
+                    <span className="size-1.5 sm:size-2 rounded-full bg-cyan-400 dark:bg-cyan-400 animate-pulse mr-1.5 sm:mr-2" />
+                    CSIR-IGIB
+                  </Badge>
+                </a>
                 <a href="https://www.skillindiadigital.gov.in/" target="_blank" rel="noopener noreferrer">
                   <Badge className="bg-amber-500/20 backdrop-blur-md border-amber-500/30 text-amber-600 dark:text-amber-300 hover:bg-amber-500/30 px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm cursor-pointer">
                     Skill India
