@@ -57,6 +57,28 @@ function LandingPage() {
         }}
       />
 
+      {/* Building Image Overlay - Full Page - Right Side with Fade */}
+      <div
+        className="fixed inset-0 z-[1] pointer-events-none"
+        style={{
+          backgroundImage: "url('/assests/hero.webp')",
+          backgroundSize: "cover",
+          backgroundPosition: "right center",
+          backgroundRepeat: "no-repeat",
+          maskImage: "linear-gradient(to left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.15) 40%, transparent 70%)",
+          WebkitMaskImage: "linear-gradient(to left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.15) 40%, transparent 70%)",
+          opacity: 0.4
+        }}
+      />
+
+      {/* Additional fade overlay for light mode - Full Page */}
+      <div
+        className="fixed inset-0 z-[2] pointer-events-none dark:hidden"
+        style={{
+          background: "linear-gradient(to left, transparent 0%, rgba(248, 250, 252, 0.6) 50%, rgba(248, 250, 252, 0.95) 80%)"
+        }}
+      />
+
       {/* Content Layer */}
       <div className="relative z-10 flex flex-col pb-20 lg:pb-0">
         <HeroHeader
