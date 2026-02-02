@@ -54,7 +54,8 @@ const schedule = [
             { time: '15:45 – 17:00', title: 'Hands-on: Building Simple BASH Pipelines', mode: 'Hands-on', speaker: 'Ajay Bhatia' },
         ],
         resources: {
-            colab: 'https://colab.research.google.com/drive/1VzKvU5z8f750S2eL8CXHlP3oyZYZxhBw?usp=sharing'
+            colab: 'https://colab.research.google.com/drive/1VzKvU5z8f750S2eL8CXHlP3oyZYZxhBw?usp=sharing',
+            slides: 'https://gamma.app/docs/Bioinformatics-Essentials-Command-Line-Tools-Automation-60xdia50tk1ei5o?mode=doc'
         }
     },
     {

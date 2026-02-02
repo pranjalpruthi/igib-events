@@ -82,6 +82,7 @@ const modules = [
         topics: ['Shell fundamentals', 'Variables & loops', 'awk, sed, grep', 'Pipelines'],
         objective: 'Master shell fundamentals, variables/loops/conditions, text processing with awk/sed/grep.',
         colabLink: 'https://colab.research.google.com/drive/1VzKvU5z8f750S2eL8CXHlP3oyZYZxhBw?usp=sharing',
+        slidesLink: 'https://gamma.app/docs/Bioinformatics-Essentials-Command-Line-Tools-Automation-60xdia50tk1ei5o?mode=doc',
         available: true,
         color: 'from-purple-500 to-pink-500',
         className: 'md:col-span-1'
