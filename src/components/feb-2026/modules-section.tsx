@@ -93,8 +93,9 @@ const modules = [
         icon: Microscope,
         topics: ['Sequencing platforms', 'Read quality metrics', 'FastQC & MultiQC'],
         objective: 'Understand sequencing platforms, read quality metrics, adapter/GC issues; hands-on FastQC and MultiQC.',
-        colabLink: '',
-        available: false,
+        colabLink: 'https://colab.research.google.com/drive/1EdY_AgsiHmqJJIS4R_JvtdKE0PkloPVs',
+        slidesLink: 'https://nextgen-sequencing-s95rflj.gamma.site/',
+        available: true,
         color: 'from-green-500 to-emerald-500',
         className: 'md:col-span-1'
     },

@@ -69,7 +69,11 @@ const schedule = [
             { time: '11:45 – 13:00', title: 'NGS Data Formats (FASTQ, SAM, BAM, VCF)', mode: 'Lecture', speaker: 'Preeti Agarwal' },
             { time: '14:00 – 15:30', title: 'Quality Control of NGS Data (FastQC, MultiQC)', mode: 'Lecture', speaker: 'Mukul' },
             { time: '15:45 – 17:00', title: 'Hands-on: Raw Read Quality Assessment', mode: 'Hands-on', speaker: 'Mukul' },
-        ]
+        ],
+        resources: {
+            colab: 'https://colab.research.google.com/drive/1EdY_AgsiHmqJJIS4R_JvtdKE0PkloPVs',
+            slides: 'https://nextgen-sequencing-s95rflj.gamma.site/'
+        }
     },
     {
         day: 'Day 4',
