@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/carousel'
 import { Button } from '@/components/ui/button'
 import { CalendarPlus, Copy, Check, Download, Calendar, FileText, ExternalLink } from 'lucide-react'
+import { ComingSoonDialog } from '@/components/feb-2026/coming-soon-dialog'
 
 // Helper to format date for GCal (YYYYMMDD)
 const formatDateForGCal = (dateStr: string) => {
@@ -86,7 +87,12 @@ const schedule = [
             { time: '11:45 – 13:00', title: 'De novo and Reference-based Assembly', mode: 'Lecture', speaker: 'Mukul' },
             { time: '14:00 – 15:30', title: 'Assembly Tools and Strategies (SPAdes)', mode: 'Lecture', speaker: 'Mukul' },
             { time: '15:45 – 17:00', title: 'Hands-on: Genome Assembly & Evaluation', mode: 'Hands-on', speaker: 'Mukul' },
-        ]
+        ],
+        resources: {
+            colab: '',
+            slides: '',
+            customStatusText: 'Take care'
+        }
     },
     {
         day: 'Day 5',
@@ -203,21 +209,35 @@ function ScheduleCard({ day, index }: { day: any, index: number }) {
             {/* Resources */}
             {day.resources && (
                 <div className="p-4 sm:p-5 pt-0 flex flex-wrap gap-2 select-none">
-                    {day.resources.colab && (
+                    {day.resources.colab ? (
                         <Button size="sm" variant="outline" className="gap-1.5 text-xs h-8 bg-[#F9AB00]/10 border-[#F9AB00]/30 hover:bg-[#F9AB00]/20 text-[#F9AB00] dark:text-[#F9AB00]" asChild>
                             <a href={day.resources.colab} target="_blank" rel="noopener noreferrer">
                                 <svg className="size-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M16.9414 4.9757a7.033 7.033 0 0 0-4.9308 2.0646 7.033 7.033 0 0 0-.1232 9.8068l2.395-2.395a3.6455 3.6455 0 0 1 5.1621-5.1621l2.395-2.395a7.033 7.033 0 0 0-4.8981-1.9443zM7.0586 4.9757a7.033 7.033 0 0 0-4.8981 1.9443l2.395 2.395a3.6455 3.6455 0 0 1 5.1621 5.1621l2.395 2.395a7.033 7.033 0 0 0-.1232-9.8068 7.033 7.033 0 0 0-4.9308-2.0646zm9.879 9.879l-2.395 2.395a3.6455 3.6455 0 0 1-5.1621-5.1621L7.0586 9.6946a7.033 7.033 0 0 0 .1232 9.8068 7.033 7.033 0 0 0 9.8068.1232l-2.395-2.395a3.6455 3.6455 0 0 1 2.3491.8506z" /></svg>
                                 Colab
                             </a>
                         </Button>
+                    ) : (
+                        <ComingSoonDialog title="Notebook Coming Soon" description={`The notebook for ${day.title} is being prepared.`}>
+                            <Button size="sm" variant="outline" className="gap-1.5 text-xs h-8 border-orange-500/20 text-orange-500 hover:bg-orange-500/5 hover:text-orange-600">
+                                <svg className="size-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M16.9414 4.9757a7.033 7.033 0 0 0-4.9308 2.0646 7.033 7.033 0 0 0-.1232 9.8068l2.395-2.395a3.6455 3.6455 0 0 1 5.1621-5.1621l2.395-2.395a7.033 7.033 0 0 0-4.8981-1.9443zM7.0586 4.9757a7.033 7.033 0 0 0-4.8981 1.9443l2.395 2.395a3.6455 3.6455 0 0 1 5.1621 5.1621l2.395 2.395a7.033 7.033 0 0 0-.1232-9.8068 7.033 7.033 0 0 0-4.9308-2.0646zm9.879 9.879l-2.395 2.395a3.6455 3.6455 0 0 1-5.1621-5.1621L7.0586 9.6946a7.033 7.033 0 0 0 .1232 9.8068 7.033 7.033 0 0 0 9.8068.1232l-2.395-2.395a3.6455 3.6455 0 0 1 2.3491.8506z" /></svg>
+                                {day.resources.customStatusText || 'Colab (Soon)'}
+                            </Button>
+                        </ComingSoonDialog>
                     )}
-                    {day.resources.slides && (
+                    {day.resources.slides ? (
                         <Button size="sm" variant="outline" className="gap-1.5 text-xs h-8 bg-primary/10 border-primary/30 hover:bg-primary/20" asChild>
                             <a href={day.resources.slides} target="_blank" rel="noopener noreferrer">
                                 <FileText className="size-3.5" />
                                 Slides
                             </a>
                         </Button>
+                    ) : (
+                        <ComingSoonDialog title="Slides Coming Soon" description={`Slides for ${day.title} will be available soon.`}>
+                            <Button size="sm" variant="outline" className="gap-1.5 text-xs h-8 border-primary/20 text-primary hover:bg-primary/5">
+                                <FileText className="size-3.5" />
+                                {day.resources.customStatusText || 'Slides (Soon)'}
+                            </Button>
+                        </ComingSoonDialog>
                     )}
                 </div>
             )}

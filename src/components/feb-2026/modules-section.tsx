@@ -107,6 +107,7 @@ const modules = [
         objective: 'Compare de novo vs reference-based assembly, learn assembly strategies; hands-on SPAdes.',
         colabLink: '',
         available: false,
+        customStatusText: 'Take care',
         color: 'from-orange-500 to-red-500',
         className: 'md:col-span-1'
     },
@@ -276,7 +277,7 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
                                 variant="outline"
                                 className="w-full font-medium transition-all text-[10px] h-8 border-blue-500/20 text-blue-500 hover:bg-blue-500/5 hover:text-blue-600"
                             >
-                                Slides (Soon)
+                                {module.customStatusText ? module.customStatusText : 'Slides (Soon)'}
                             </Button>
                         </ComingSoonDialog>
                     )}
@@ -297,7 +298,7 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
                                 variant="outline"
                                 className="w-full font-medium transition-all text-[10px] h-8 border-orange-500/20 text-orange-500 hover:bg-orange-500/5 hover:text-orange-600"
                             >
-                                Notebook (Soon)
+                                {module.customStatusText ? module.customStatusText : 'Notebook (Soon)'}
                             </Button>
                         </ComingSoonDialog>
                     )}
