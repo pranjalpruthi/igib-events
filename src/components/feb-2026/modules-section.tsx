@@ -105,9 +105,8 @@ const modules = [
         icon: Dna,
         topics: ['De novo vs reference', 'Assembly strategies', 'SPAdes & evaluation'],
         objective: 'Compare de novo vs reference-based assembly, learn assembly strategies; hands-on SPAdes.',
-        colabLink: '',
-        available: false,
-        customStatusText: 'Take care',
+        colabLink: 'https://drive.google.com/file/d/1zfr8ubsVQqKRnoinQ9KiP_WExlPthVNZ/view?usp=sharing',
+        available: true,
         color: 'from-orange-500 to-red-500',
         className: 'md:col-span-1'
     },

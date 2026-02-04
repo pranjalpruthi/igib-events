@@ -6,7 +6,11 @@ import { ThemeToggle } from '@/components/theme-toggle'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '@/components/animate-ui/components/animate/tooltip'
 
-export function ContactSection() {
+interface ContactSectionProps {
+    fundingSource?: string
+}
+
+export function ContactSection({ fundingSource = 'ICMR' }: ContactSectionProps) {
     return (
         <section id="contact" className="py-24 bg-background">
             <div className="mx-auto max-w-7xl px-6 lg:px-12">
@@ -154,7 +158,7 @@ export function ContactSection() {
                             <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
                                 <span>Organized by: <strong>CSIR-IGIB</strong></span>
                                 <span className="hidden sm:inline">•</span>
-                                <span>Funded by: <strong>ICMR</strong></span>
+                                <span>Funded by: <strong>{fundingSource}</strong></span>
                             </div>
                         </CardContent>
                     </Card>

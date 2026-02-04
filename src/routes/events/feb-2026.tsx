@@ -17,7 +17,7 @@ function Feb2026Workshop() {
             <ModulesSection2026 />
             <ScheduleSection2026 />
             <SpeakersSection2026 />
-            <ContactSection />
+            <ContactSection fundingSource="Skill India Project (IGIB: HCP002502/2025/E-I)" />
             <Footer />
             <MobileDock />
         </div>

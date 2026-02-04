@@ -166,7 +166,7 @@ export function HeroSection2026() {
                                     <p className="text-muted-foreground">CSIR- Institute of Genomics and Integrative Biology (CSIR-IGIB)</p>
                                 </div>
                                 <div className="mt-4 pt-4 border-t border-border/50 text-center">
-                                    <p className="text-muted-foreground">Funded by: <strong className="text-foreground">SKILL INDIA PROJECT</strong> Govt. of INDIA</p>
+                                    <p className="text-muted-foreground">Funded by: <strong className="text-foreground">Skill India Project (IGIB: HCP002502/2025/E-I)</strong> Govt. of INDIA</p>
                                 </div>
                             </motion.div>
                         </motion.div>

@@ -89,7 +89,7 @@ const schedule = [
             { time: '15:45 – 17:00', title: 'Hands-on: Genome Assembly & Evaluation', mode: 'Hands-on', speaker: 'Mukul' },
         ],
         resources: {
-            colab: '',
+            colab: 'https://drive.google.com/file/d/1zfr8ubsVQqKRnoinQ9KiP_WExlPthVNZ/view?usp=sharing',
             slides: '',
             customStatusText: 'Take care'
         }
