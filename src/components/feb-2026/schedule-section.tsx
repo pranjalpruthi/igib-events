@@ -103,8 +103,8 @@ const schedule = [
         sessions: [
             { time: '10:00 – 11:30', title: 'Assembly Quality Assessment with Quast and Reads mapping (Coverage Check)', mode: 'Lecture/Hands-on', speaker: 'Mukul' },
             { time: '11:45 – 13:00', title: 'Scaffolding with Ragtag and BUSCO Validation', mode: 'Lecture/Hands-on', speaker: 'Mukul' },
-            { time: '14:00 – 15:30', title: 'Genome Annotation Concepts, Structural and Functional Annotation, Annotation Tools and Databases (Prokka, RefSeq)', mode: 'Lecture', speaker: 'Nityendra' },
-            { time: '15:45 – 16:30', title: 'Hands-on: Genome Annotation Workflow', mode: 'Hands-on', speaker: 'Nityendra' },
+            { time: '14:00 – 15:30', title: 'Genome Annotation Concepts, Structural and Functional Annotation, Annotation Tools and Databases (Prokka, RefSeq)', mode: 'Lecture', speaker: 'Nity Gritty' },
+            { time: '15:45 – 16:30', title: 'Hands-on: Genome Annotation Workflow', mode: 'Hands-on', speaker: 'NityGritty' },
             { time: '16:30 – 17:00', title: 'Flash Quiz', mode: '', speaker: '' },
         ]
     },
