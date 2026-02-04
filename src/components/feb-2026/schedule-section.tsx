@@ -56,7 +56,7 @@ const schedule = [
         ],
         resources: {
             colab: 'https://colab.research.google.com/drive/1VzKvU5z8f750S2eL8CXHlP3oyZYZxhBw?usp=sharing',
-            slides: 'https://gamma.app/docs/Bioinformatics-Essentials-Command-Line-Tools-Automation-60xdia50tk1ei5o?mode=doc'
+            slides: 'https://bioinformatics-essential-bb8m6ic.gamma.site/'
         }
     },
     {
