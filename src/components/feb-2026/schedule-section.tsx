@@ -83,7 +83,7 @@ const schedule = [
         title: 'Genome Assembly',
         color: 'bg-orange-500',
         sessions: [
-            { time: '10:00 – 11:30', title: 'Principles of Genome Assembly', mode: 'Lecture', speaker: 'Dr. Jitendra' },
+            { time: '10:30 – 11:45', title: 'Principles of Genome Assembly', mode: 'Lecture', speaker: 'Dr. Jitendra' },
             { time: '11:45 – 13:00', title: 'De novo and Reference-based Assembly', mode: 'Lecture', speaker: 'Mukul' },
             { time: '14:00 – 15:30', title: 'Assembly Tools and Strategies (SPAdes)', mode: 'Lecture', speaker: 'Mukul' },
             { time: '15:45 – 17:00', title: 'Hands-on: Genome Assembly & Evaluation', mode: 'Hands-on', speaker: 'Mukul' },
