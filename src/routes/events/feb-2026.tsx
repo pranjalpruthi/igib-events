@@ -16,19 +16,43 @@ function Feb2026Workshop() {
         <div className="min-h-screen w-full bg-slate-50 dark:bg-slate-950 relative overflow-x-hidden">
             {/* Bottom Fade Grid Background */}
             <div
-                className="absolute inset-0 z-0 pointer-events-none opacity-[0.4] dark:opacity-20"
+                className="absolute inset-0 z-0 pointer-events-none"
                 style={{
                     backgroundImage: `
-                        linear-gradient(to right, #e2e8f0 1px, transparent 1px),
-                        linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)
+                        linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+                        linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px)
                     `,
                     backgroundSize: "24px 24px",
                     WebkitMaskImage:
                         "radial-gradient(ellipse 80% 50% at 50% 100%, #000 10%, transparent 100%)",
                     maskImage:
                         "radial-gradient(ellipse 80% 50% at 50% 100%, #000 10%, transparent 100%)",
+                    opacity: 0.4,
                 }}
             />
+
+            {/* Premium Glower Grid Lines for Dark Mode */}
+            <div
+                className="absolute inset-0 z-0 pointer-events-none hidden dark:block"
+                style={{
+                    backgroundImage: `
+                        linear-gradient(to right, rgba(234, 179, 8, 0.1) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(234, 179, 8, 0.1) 1px, transparent 1px)
+                    `,
+                    backgroundSize: "96px 96px",
+                    WebkitMaskImage:
+                        "radial-gradient(ellipse 60% 40% at 50% 100%, #000 0%, transparent 100%)",
+                    maskImage:
+                        "radial-gradient(ellipse 60% 40% at 50% 100%, #000 0%, transparent 100%)",
+                    opacity: 0.6,
+                }}
+            />
+
+            <style dangerouslySetInnerHTML={{
+                __html: `
+                :root { --grid-color: #e2e8f0; }
+                .dark { --grid-color: rgba(30, 41, 59, 0.5); }
+            `}} />
 
             <HeroSection2026 />
 

@@ -12,6 +12,8 @@ import {
 import { Button } from '@/components/ui/button'
 import { CalendarPlus, Copy, Check, Download, Calendar, FileText, ExternalLink } from 'lucide-react'
 import { ComingSoonDialog } from '@/components/feb-2026/coming-soon-dialog'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '@/components/animate-ui/components/animate/tooltip'
 
 // Helper to format date for GCal (YYYYMMDD)
 const formatDateForGCal = (dateStr: string) => {
@@ -31,11 +33,11 @@ const schedule = [
         title: 'Introduction & Linux Basics-1',
         color: 'bg-blue-500',
         sessions: [
-            { time: '10:00 – 10:30', title: 'Inauguration & Program Overview', mode: 'Live', speaker: '' },
+            { time: '10:00 – 10:30', title: 'Inauguration & Program Overview', mode: 'Live', speaker: 'Dr. Jitendra' },
             { time: '10:30 – 11:30', title: 'Introduction to Bioinformatics and its Applications', mode: 'Lecture', speaker: 'Dr. Jitendra' },
-            { time: '11:45 – 13:00', title: 'System setup and installation', mode: 'Lecture', speaker: '' },
-            { time: '14:00 – 15:30', title: 'Linux Operating System: Architecture & File System', mode: 'Hands-on', speaker: '' },
-            { time: '15:45 – 17:00', title: 'Practical Session: Basic Linux Commands for Bioinformatics', mode: 'Hands-on', speaker: '' },
+            { time: '11:45 – 13:00', title: 'System setup and installation', mode: 'Lecture', speaker: 'Mukul' },
+            { time: '14:00 – 15:30', title: 'Linux Operating System: Architecture & File System', mode: 'Hands-on', speaker: 'Ajay Bhatia' },
+            { time: '15:45 – 17:00', title: 'Practical Session: Basic Linux Commands for Bioinformatics', mode: 'Hands-on', speaker: 'Ajay Bhatia' },
         ],
         resources: {
             colab: 'https://colab.research.google.com/drive/1rqvW9Mk0EXMdHEIbdEjazsqhPANBbEE-?usp=sharing',
@@ -107,7 +109,7 @@ const schedule = [
             { time: '10:00 – 11:30', title: 'Assembly Quality Assessment with Quast and Reads mapping (Coverage Check)', mode: 'Lecture/Hands-on', speaker: 'Mukul' },
             { time: '11:45 – 13:00', title: 'Scaffolding with Ragtag and BUSCO Validation', mode: 'Lecture/Hands-on', speaker: 'Mukul' },
             { time: '14:00 – 15:30', title: 'Genome Annotation Concepts, Structural and Functional Annotation, Annotation Tools and Databases (Prokka, RefSeq)', mode: 'Lecture', speaker: 'Nity Gritty' },
-            { time: '15:45 – 16:30', title: 'Hands-on: Genome Annotation Workflow', mode: 'Hands-on', speaker: 'NityGritty' },
+            { time: '15:45 – 16:30', title: 'Hands-on: Genome Annotation Workflow', mode: 'Hands-on', speaker: 'Nityendra Shukla' },
             { time: '16:30 – 17:00', title: 'Flash Quiz', mode: '', speaker: '' },
         ],
         resources: {
@@ -142,6 +144,39 @@ const schedule = [
         ]
     },
 ]
+
+const speakerData = {
+    'Dr. Jitendra': { name: 'Dr. Jitendra Narayan', image: '/assests/people/jit.webp', role: 'Principal Investigator' },
+    'Ajay Bhatia': { name: 'Ajay Bhatia', image: '/assests/people/ajay.webp', role: 'PhD Scholar' },
+    'Pranjal': { name: 'Pranjal Pruthi', image: '/assests/people/pranjal.webp', role: 'PhD Scholar' },
+    'Mukul': { name: 'Mukul Verma', image: '/assests/people/mukul.webp', role: 'PhD Scholar' },
+    'Preeti Agarwal': { name: 'Preeti Agarwal', image: '/assests/people/preeti.webp', role: 'PhD & SRF' },
+    'Kaushalendra': { name: 'Kaushlendra Mishra', image: '/assests/people/Kaushlendra.webp', role: 'NGS Specialist' },
+    'Nityendra Shukla': { name: 'Nityendra Shukla', image: '/assests/people/nitin.webp', role: 'Research Scientist' },
+    'Anwesha': { name: 'Anwesha De', image: '/assests/people/anwesha.webp', role: 'PhD Scholar' },
+}
+
+function SpeakerAvatar({ name }: { name: string }) {
+    const speaker = speakerData[name as keyof typeof speakerData]
+    if (!speaker) return null
+
+    return (
+        <TooltipProvider>
+            <Tooltip>
+                <TooltipTrigger asChild>
+                    <Avatar className="size-6 border border-background shadow-sm hover:scale-110 transition-transform cursor-help">
+                        <AvatarImage src={speaker.image} alt={speaker.name} />
+                        <AvatarFallback className="text-[8px]">{speaker.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                    </Avatar>
+                </TooltipTrigger>
+                <TooltipContent className="flex flex-col gap-0.5 p-2">
+                    <p className="text-xs font-semibold text-primary-foreground">{speaker.name}</p>
+                    <p className="text-[10px] text-primary-foreground/70">{speaker.role}</p>
+                </TooltipContent>
+            </Tooltip>
+        </TooltipProvider>
+    )
+}
 
 const slideVariants = {
     enter: (direction: number) => ({
@@ -206,9 +241,12 @@ function ScheduleCard({ day, index }: { day: any, index: number }) {
                                 {session.title}
                             </p>
                             {session.speaker && (
-                                <p className="text-xs text-muted-foreground mt-0.5">
-                                    {session.speaker}
-                                </p>
+                                <div className="flex items-center gap-2 mt-1.5">
+                                    <SpeakerAvatar name={session.speaker} />
+                                    <p className="text-[11px] text-muted-foreground font-medium">
+                                        {session.speaker}
+                                    </p>
+                                </div>
                             )}
                         </div>
                     )
