@@ -4,6 +4,7 @@ import { motion } from 'motion/react'
 
 import { HeroHeader } from '@/components/header'
 import { ComingSoonDialog } from '@/components/feb-2026/coming-soon-dialog'
+import { CreepyButton } from '@/components/ui/creepy-button'
 
 export function HeroSection2026() {
     const menuItems = [
@@ -125,17 +126,19 @@ export function HeroSection2026() {
 
                             {/* CTA Buttons */}
                             <div className="mt-8 md:mt-10 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 w-full sm:w-auto mx-auto border-0">
-                                <Button
-                                    size="lg"
-                                    className="h-11 sm:h-12 w-full sm:w-auto sm:min-w-[200px] rounded-xl px-6 sm:px-8 text-sm sm:text-base font-semibold bg-[#F9AB00] text-black hover:bg-[#E09800] shadow-[0_0_20px_rgba(249,171,0,0.4)] hover:shadow-[0_0_30px_rgba(249,171,0,0.6)] transition-all duration-200 ease-out"
-                                    asChild
+                                <CreepyButton
+                                    className="w-full sm:w-auto h-11 sm:h-12"
+                                    coverClassName="bg-amber-500 text-white font-bold px-6 sm:px-8 py-0 shadow-[0_0_20px_rgba(245,158,11,0.4)]"
+                                    onClick={() => {
+                                        const element = document.getElementById('modules');
+                                        if (element) {
+                                            element.scrollIntoView({ behavior: 'smooth' });
+                                        }
+                                    }}
                                 >
-                                    <a href="#modules">
-                                        <span className="sm:hidden">Colab Modules</span>
-                                        <span className="hidden sm:inline">Google Colab Modules</span>
-                                        <ChevronRight className="ml-1 size-4 sm:size-5" />
-                                    </a>
-                                </Button>
+                                    <span>google colab modules</span>
+                                    <ChevronRight className="ml-1 size-4 sm:size-5" />
+                                </CreepyButton>
                                 <ComingSoonDialog
                                     title="Presentation Coming Soon"
                                     description="The workshop presentation and standee are being finalized. Day 5 slides and materials are available in the Schedule section."

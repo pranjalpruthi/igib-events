@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { createFileRoute, Link, useNavigate } from '@tanstack/react-router'
 import { Footer } from '@/components/contact-section'
 import { HeroHeader } from '@/components/header'
 import { Home, Mail, BookOpen, Calendar, ArrowRight, Users, Video, MapPin, GraduationCap, Building, ExternalLink } from 'lucide-react'
@@ -13,6 +13,7 @@ import MatrixText from '@/components/kokonutui/matrix-text'
 import { FeaturedWorkshops } from '@/components/featured-workshops'
 import { TeamSection } from '@/components/team-section'
 import { OrganizersSection } from '@/components/organizers-section'
+import { CreepyButton } from '@/components/ui/creepy-button'
 
 export const Route = createFileRoute('/')({
   component: LandingPage,
@@ -23,6 +24,7 @@ const events = [] // Removed inline events, using /events page
 // ... imports cleaned up in next step if checking lint
 
 function LandingPage() {
+  const navigate = useNavigate()
   const menuItems = [
     { name: 'Portal Home', href: '/', icon: Home },
     { name: 'Workshops', href: '/events', icon: Calendar }, // Updated link
@@ -229,9 +231,13 @@ function LandingPage() {
                 transition={{ delay: 0.5 }}
                 className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-3 sm:gap-4 select-none"
               >
-                <Button size="lg" className="rounded-full px-6 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-semibold bg-cyan-500 hover:bg-cyan-400 text-white shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/40 transition-all duration-200 ease-out" asChild>
-                  <Link to="/events">Explore Workshops <ArrowRight className="ml-2 size-4 sm:size-5" /></Link>
-                </Button>
+                <CreepyButton
+                  onClick={() => navigate({ to: '/events' })}
+                  className="rounded-full shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/40"
+                  coverClassName="bg-cyan-500 text-white font-semibold py-3 sm:py-3.5"
+                >
+                  Explore Workshops <ArrowRight className="ml-2 size-4 sm:size-5" />
+                </CreepyButton>
               </motion.div>
 
               {/* Organization Links - Mobile Optimized */}

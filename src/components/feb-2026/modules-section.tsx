@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'motion/react'
 import MatrixText from '@/components/kokonutui/matrix-text'
 import { cn } from '@/lib/utils'
 import { ComingSoonDialog } from '@/components/feb-2026/coming-soon-dialog'
+import { CreepyButton } from '@/components/ui/creepy-button'
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '@/components/animate-ui/components/animate/tooltip'
 
 const modules = [
@@ -163,7 +164,7 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
     const [isExpanded, setIsExpanded] = React.useState(false)
 
     return (
-        <Card className="h-full min-h-[380px] flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-primary/15 bg-card/80 backdrop-blur-sm border-2 border-muted hover:border-primary/40 overflow-hidden group rounded-2xl">
+        <Card className="h-full min-h-[420px] flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-primary/15 bg-card/80 backdrop-blur-sm border-2 border-muted hover:border-primary/40 overflow-hidden group rounded-2xl">
             {/* Gradient Header Line */}
             <div className={`h-2 w-full bg-gradient-to-r ${module.color}`} />
 
@@ -264,15 +265,13 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
                 {/* Action Buttons */}
                 <div className="mt-3 pt-3 border-t grid grid-cols-2 gap-2">
                     {module.slidesLink ? (
-                        <Button
-                            asChild
-                            size="sm"
-                            className="w-full bg-blue-600 text-white hover:bg-blue-700 font-medium transition-all text-[10px] h-8"
+                        <CreepyButton
+                            className="w-full min-w-0 h-8"
+                            coverClassName="bg-blue-600 text-white font-medium text-[10px] py-0"
+                            onClick={() => window.open(module.slidesLink, '_blank')}
                         >
-                            <a href={module.slidesLink} target="_blank" rel="noopener noreferrer">
-                                View Slides
-                            </a>
-                        </Button>
+                            View Slides
+                        </CreepyButton>
                     ) : (
                         <ComingSoonDialog title="Slides Coming Soon" description={`Slides for ${module.title} will be uploaded soon. Check the Schedule section for available materials up to Day 5.`}>
                             <Button
@@ -307,12 +306,12 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
                     )}
                 </div>
                 {module.extraLink && (
-                    <div className="mt-2">
+                    <div className="mt-3 pt-3 border-t border-dashed">
                         <Button
                             asChild
                             size="sm"
-                            variant="ghost"
-                            className="w-full text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 hover:bg-emerald-500/5 font-medium transition-all text-[10px] h-7 gap-1"
+                            className="w-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 border-emerald-500/20 font-semibold text-[10px] h-8 gap-1.5 shadow-sm"
+                            variant="outline"
                         >
                             <a href={module.extraLink} target="_blank" rel="noopener noreferrer">
                                 <ExternalLink className="size-3" />
@@ -328,7 +327,7 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
 
 export function ModulesSection2026() {
     return (
-        <section id="modules" className="py-12 md:py-16 bg-muted/30">
+        <section id="modules" className="py-12 md:py-16 bg-transparent">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
                 <div className="text-center mb-10 select-none">
                     <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">Online Workshop</Badge>
@@ -355,8 +354,8 @@ export function ModulesSection2026() {
                     >
                         <CarouselContent className="-ml-4 pb-4">
                             {modules.map((module, index) => (
-                                <CarouselItem key={module.id} className="pl-4 basis-[85%] h-full">
-                                    <div className="h-full min-h-[400px]">
+                                <CarouselItem key={module.id} className="pl-4 basis-[85%] flex flex-col">
+                                    <div className="flex-1 flex flex-col h-full min-h-[400px]">
                                         <ModuleCard module={module} isMobile={true} />
                                     </div>
                                 </CarouselItem>
@@ -380,13 +379,13 @@ export function ModulesSection2026() {
                     >
                         <CarouselContent className="-ml-4 pb-4 items-stretch">
                             {modules.map((module, index) => (
-                                <CarouselItem key={module.id} className="pl-4 md:basis-1/2 lg:basis-1/3 h-full">
+                                <CarouselItem key={module.id} className="pl-4 md:basis-1/2 lg:basis-1/3 flex flex-col">
                                     <motion.div
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: index * 0.05 }}
-                                        className="h-full min-h-[420px]"
+                                        className="flex-1 flex flex-col h-full min-h-[420px]"
                                     >
                                         <ModuleCard module={module} />
                                     </motion.div>

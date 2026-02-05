@@ -145,7 +145,7 @@ import Autoplay from 'embla-carousel-autoplay'
 
 export function SpeakersSection2026() {
     return (
-        <section id="speakers" className="py-12 md:py-16 bg-muted/30">
+        <section id="speakers" className="py-12 md:py-16 bg-transparent">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12">
                 <div className="text-center mb-10 select-none">
                     <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">Training Team</Badge>
