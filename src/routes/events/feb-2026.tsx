@@ -13,20 +13,34 @@ export const Route = createFileRoute('/events/feb-2026')({
 
 function Feb2026Workshop() {
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen w-full bg-[#f8fafc] dark:bg-slate-950 relative">
+            {/* Bottom Fade Grid Background */}
+            <div
+                className="absolute inset-0 z-0"
+                style={{
+                    backgroundImage: `
+                        linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+                        linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)
+                    `,
+                    backgroundSize: "20px 30px",
+                    WebkitMaskImage:
+                        "radial-gradient(ellipse 70% 60% at 50% 100%, #000 60%, transparent 100%)",
+                    maskImage:
+                        "radial-gradient(ellipse 70% 60% at 50% 100%, #000 60%, transparent 100%)",
+                }}
+            />
+
             <HeroSection2026 />
-            <div className="relative">
 
-
-                {/* Content Sections */}
-                <div className="relative z-10">
-                    <ModulesSection2026 />
-                    <ScheduleSection2026 />
-                    <SpeakersSection2026 />
-                    <ContactSection fundingSource="Skill India Project (IGIB: HCP002502/2025/E-I)" />
-                    <Footer />
-                </div>
+            {/* Content Sections */}
+            <div className="relative z-10">
+                <ModulesSection2026 />
+                <ScheduleSection2026 />
+                <SpeakersSection2026 />
+                <ContactSection fundingSource="Skill India Project (IGIB: HCP002502/2025/E-I)" />
+                <Footer />
             </div>
+
             <MobileDock />
         </div>
     )
