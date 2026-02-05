@@ -173,10 +173,9 @@ export function HeroSection2026() {
                         </motion.div>
                     </div>
 
-                    {/* Background (Optional: re-use video or static image) */}
+                    {/* Background Video */}
                     <div className="absolute inset-0 -z-10 overflow-hidden">
                         <div className="absolute inset-0 bg-background/95 dark:bg-background/90" />
-                        {/* Reusing the DNA video for continuity, or can be removed */}
                         <video
                             autoPlay
                             loop
