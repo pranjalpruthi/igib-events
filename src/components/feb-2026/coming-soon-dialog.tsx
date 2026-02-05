@@ -43,7 +43,7 @@ export function ComingSoonDialog({
                         </p>
                     </div>
                     <p className="text-xs text-center text-gray-600 dark:text-gray-600">
-                        Day 1 materials are already available in the schedule section.
+                        Materials till Day 5 are already available. Check the Modules/Schedule section!
                     </p>
                 </div>
             </DialogPopup>

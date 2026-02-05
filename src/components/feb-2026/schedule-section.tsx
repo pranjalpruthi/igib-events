@@ -90,8 +90,7 @@ const schedule = [
         ],
         resources: {
             colab: 'https://drive.google.com/file/d/1zfr8ubsVQqKRnoinQ9KiP_WExlPthVNZ/view?usp=sharing',
-            slides: '',
-            customStatusText: 'Take care'
+            slides: 'https://genome-assembly-0nd3td3.gamma.site/'
         }
     },
     {
@@ -106,7 +105,11 @@ const schedule = [
             { time: '14:00 – 15:30', title: 'Genome Annotation Concepts, Structural and Functional Annotation, Annotation Tools and Databases (Prokka, RefSeq)', mode: 'Lecture', speaker: 'Nity Gritty' },
             { time: '15:45 – 16:30', title: 'Hands-on: Genome Annotation Workflow', mode: 'Hands-on', speaker: 'NityGritty' },
             { time: '16:30 – 17:00', title: 'Flash Quiz', mode: '', speaker: '' },
-        ]
+        ],
+        resources: {
+            colab: 'https://drive.google.com/file/d/1poUU5fv5A51uFiZcsRuWRF_QINSKXjk7/view?usp=drive_link',
+            slides: 'https://assembly-quality-improve-4jaewvk.gamma.site/'
+        }
     },
     {
         day: 'Day 6',

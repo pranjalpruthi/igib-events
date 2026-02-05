@@ -125,22 +125,20 @@ export function HeroSection2026() {
 
                             {/* CTA Buttons */}
                             <div className="mt-8 md:mt-10 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 w-full sm:w-auto mx-auto border-0">
-                                <ComingSoonDialog
-                                    title="Colab Modules Coming Soon"
-                                    description="All workshop Colab notebooks are being prepared. Day 1 materials are available in the Schedule section."
+                                <Button
+                                    size="lg"
+                                    className="h-11 sm:h-12 w-full sm:w-auto sm:min-w-[200px] rounded-xl px-6 sm:px-8 text-sm sm:text-base font-semibold bg-[#F9AB00] text-black hover:bg-[#E09800] shadow-[0_0_20px_rgba(249,171,0,0.4)] hover:shadow-[0_0_30px_rgba(249,171,0,0.6)] transition-all duration-200 ease-out"
+                                    asChild
                                 >
-                                    <Button
-                                        size="lg"
-                                        className="h-11 sm:h-12 w-full sm:w-auto sm:min-w-[200px] rounded-xl px-6 sm:px-8 text-sm sm:text-base font-semibold bg-[#F9AB00] text-black hover:bg-[#E09800] shadow-[0_0_20px_rgba(249,171,0,0.4)] hover:shadow-[0_0_30px_rgba(249,171,0,0.6)] transition-all duration-200 ease-out"
-                                    >
-                                        <span className="sm:hidden">Modules (Coming Soon)</span>
+                                    <a href="#modules">
+                                        <span className="sm:hidden">Colab Modules</span>
                                         <span className="hidden sm:inline">Google Colab Modules</span>
                                         <ChevronRight className="ml-1 size-4 sm:size-5" />
-                                    </Button>
-                                </ComingSoonDialog>
+                                    </a>
+                                </Button>
                                 <ComingSoonDialog
                                     title="Presentation Coming Soon"
-                                    description="The workshop presentation and standee are being finalized. Day 1 slides are available in the Schedule section."
+                                    description="The workshop presentation and standee are being finalized. Day 5 slides and materials are available in the Schedule section."
                                 >
                                     <Button
                                         size="lg"

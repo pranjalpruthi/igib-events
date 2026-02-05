@@ -106,6 +106,7 @@ const modules = [
         topics: ['De novo vs reference', 'Assembly strategies', 'SPAdes & evaluation'],
         objective: 'Compare de novo vs reference-based assembly, learn assembly strategies; hands-on SPAdes.',
         colabLink: 'https://drive.google.com/file/d/1zfr8ubsVQqKRnoinQ9KiP_WExlPthVNZ/view?usp=sharing',
+        slidesLink: 'https://genome-assembly-0nd3td3.gamma.site/',
         available: true,
         color: 'from-orange-500 to-red-500',
         className: 'md:col-span-1'
@@ -116,8 +117,9 @@ const modules = [
         icon: BookOpen,
         topics: ['Gene prediction', 'Functional databases', 'Prokka workflow'],
         objective: 'Learn gene prediction, functional databases, annotation pipelines; hands-on Prokka workflow.',
-        colabLink: '',
-        available: false,
+        colabLink: 'https://drive.google.com/file/d/1poUU5fv5A51uFiZcsRuWRF_QINSKXjk7/view?usp=drive_link',
+        slidesLink: 'https://assembly-quality-improve-4jaewvk.gamma.site/',
+        available: true,
         color: 'from-indigo-500 to-violet-500',
         className: 'md:col-span-1'
     },
@@ -270,7 +272,7 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
                             </a>
                         </Button>
                     ) : (
-                        <ComingSoonDialog title="Slides Coming Soon" description={`Slides for ${module.title} will be uploaded soon. Check Day 1 in the Schedule section for available materials.`}>
+                        <ComingSoonDialog title="Slides Coming Soon" description={`Slides for ${module.title} will be uploaded soon. Check the Schedule section for available materials up to Day 5.`}>
                             <Button
                                 size="sm"
                                 variant="outline"
@@ -291,7 +293,7 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
                             </a>
                         </Button>
                     ) : (
-                        <ComingSoonDialog title="Notebook Coming Soon" description={`The Colab notebook for ${module.title} is being prepared. Check Day 1 in the Schedule section for available materials.`}>
+                        <ComingSoonDialog title="Notebook Coming Soon" description={`The Colab notebook for ${module.title} is being prepared. Check the Schedule section for available materials up to Day 5.`}>
                             <Button
                                 size="sm"
                                 variant="outline"
