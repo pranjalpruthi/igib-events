@@ -161,10 +161,12 @@ const slideVariants = {
 function ScheduleCard({ day, index }: { day: any, index: number }) {
     return (
         <div className={cn(
-            "flex flex-col h-full rounded-2xl border bg-card overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group",
-            "hover:border-primary/20",
-            day.color.replace('bg-', 'border-').replace('500', '200') // Add subtle color border hint
+            "flex flex-col h-full rounded-2xl border-2 bg-card overflow-hidden shadow-sm hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 group",
+            "border-muted hover:border-primary/40",
+            // Subtle indicator on top instead of full border color override
         )}>
+            {/* Top color indicator */}
+            <div className={cn("h-1.5 w-full", day.color)} />
             {/* Header */}
             <div className={cn("p-4 sm:p-6 pb-4 border-b relative overflow-hidden select-none")}>
                 <div className={cn("absolute inset-0 opacity-10", day.color)} />
@@ -379,8 +381,8 @@ export function ScheduleSection2026() {
                     >
                         <CarouselContent className="-ml-4 pb-4 items-stretch">
                             {schedule.map((day, index) => (
-                                <CarouselItem key={index} className="pl-4 basis-[85%] md:basis-1/2 lg:basis-1/3 h-auto">
-                                    <div className="h-full">
+                                <CarouselItem key={index} className="pl-4 basis-[85%] md:basis-1/2 lg:basis-1/3 flex flex-col">
+                                    <div className="flex-1 flex flex-col h-full">
                                         <ScheduleCard day={day} index={index} />
                                     </div>
                                 </CarouselItem>
