@@ -73,7 +73,11 @@ const schedule = [
         ],
         resources: {
             colab: 'https://colab.research.google.com/drive/1EdY_AgsiHmqJJIS4R_JvtdKE0PkloPVs',
-            slides: 'https://nextgen-sequencing-s95rflj.gamma.site/'
+            slides: 'https://ngs-quality-control-chec-vkud7j9.gamma.site/',
+            extra: {
+                title: 'NGS Guide',
+                link: 'https://drive.google.com/file/d/1CBmq0pDH2ohN0dGirFUMBDQgVJpqiCHC/view?pli=1'
+            }
         }
     },
     {
@@ -241,6 +245,14 @@ function ScheduleCard({ day, index }: { day: any, index: number }) {
                                 {day.resources.customStatusText || 'Slides (Soon)'}
                             </Button>
                         </ComingSoonDialog>
+                    )}
+                    {day.resources.extra && (
+                        <Button size="sm" variant="outline" className="gap-1.5 text-xs h-8 bg-emerald-500/10 border-emerald-500/30 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400" asChild>
+                            <a href={day.resources.extra.link} target="_blank" rel="noopener noreferrer">
+                                <ExternalLink className="size-3.5" />
+                                {day.resources.extra.title}
+                            </a>
+                        </Button>
                     )}
                 </div>
             )}

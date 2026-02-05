@@ -94,7 +94,9 @@ const modules = [
         topics: ['Sequencing platforms', 'Read quality metrics', 'FastQC & MultiQC'],
         objective: 'Understand sequencing platforms, read quality metrics, adapter/GC issues; hands-on FastQC and MultiQC.',
         colabLink: 'https://colab.research.google.com/drive/1EdY_AgsiHmqJJIS4R_JvtdKE0PkloPVs',
-        slidesLink: 'https://nextgen-sequencing-s95rflj.gamma.site/',
+        slidesLink: 'https://ngs-quality-control-chec-vkud7j9.gamma.site/',
+        extraLink: 'https://drive.google.com/file/d/1CBmq0pDH2ohN0dGirFUMBDQgVJpqiCHC/view?pli=1',
+        extraTitle: 'NGS Guide',
         available: true,
         color: 'from-green-500 to-emerald-500',
         className: 'md:col-span-1'
@@ -304,6 +306,21 @@ function ModuleCard({ module, isMobile = false }: { module: any, isMobile?: bool
                         </ComingSoonDialog>
                     )}
                 </div>
+                {module.extraLink && (
+                    <div className="mt-2">
+                        <Button
+                            asChild
+                            size="sm"
+                            variant="ghost"
+                            className="w-full text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 hover:bg-emerald-500/5 font-medium transition-all text-[10px] h-7 gap-1"
+                        >
+                            <a href={module.extraLink} target="_blank" rel="noopener noreferrer">
+                                <ExternalLink className="size-3" />
+                                {module.extraTitle || 'Extra Resource'}
+                            </a>
+                        </Button>
+                    </div>
+                )}
             </CardContent>
         </Card>
     )
