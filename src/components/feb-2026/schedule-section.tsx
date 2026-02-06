@@ -128,7 +128,10 @@ const schedule = [
             { time: '11:45 – 13:00', title: 'AMR Databases (CARD, ResFinder, ARG-ANNOT)', mode: 'Lecture', speaker: 'Anwesha' },
             { time: '14:00 – 15:30', title: 'AMR Detection Tools & Interpretation', mode: 'Lecture', speaker: 'Anwesha' },
             { time: '15:45 – 17:00', title: 'Hands-on: AMR Gene Identification', mode: 'Hands-on', speaker: 'Anwesha' },
-        ]
+        ],
+        resources: {
+            colab: 'https://drive.google.com/file/d/1EFAbhqmj_ahr_Uv92JRzdHBL6mfsSh4X/view?usp=sharing'
+        }
     },
     {
         day: 'Day 7',

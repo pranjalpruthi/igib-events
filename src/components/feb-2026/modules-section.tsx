@@ -132,8 +132,8 @@ const modules = [
         icon: Bug,
         topics: ['AMR mechanisms', 'Resistance databases', 'Surveillance methods', 'Gene detection'],
         objective: 'Understand AMR mechanisms, databases, surveillance; hands-on AMR gene detection and interpretation.',
-        colabLink: '',
-        available: false,
+        colabLink: 'https://drive.google.com/file/d/1EFAbhqmj_ahr_Uv92JRzdHBL6mfsSh4X/view?usp=sharing',
+        available: true,
         color: 'from-rose-500 to-red-500',
         className: 'md:col-span-2'
     },
