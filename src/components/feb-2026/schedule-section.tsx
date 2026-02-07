@@ -135,8 +135,8 @@ const schedule = [
     },
     {
         day: 'Day 7',
-        date: '07',
-        fullDate: '2026-02-07',
+        date: '09',
+        fullDate: '2026-02-09',
         title: 'Enrichment & Valedictory',
         color: 'bg-amber-500',
         sessions: [
@@ -350,7 +350,7 @@ function ScheduleActions() {
 
     const handleCopy = () => {
         // Copy full schedule text
-        let text = `*${title}*\nFeb 1-7, 2026\n\n`
+        let text = `*${title}*\nFeb 1-9, 2026\n\n`
         schedule.forEach(day => {
             text += `*${day.day}: ${day.title}* (${day.fullDate})\n`
             day.sessions.forEach((s: any) => {
@@ -406,7 +406,7 @@ export function ScheduleSection2026() {
                 <div className="text-center mb-10 select-none">
                     <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">7-Day Program</Badge>
                     <h2 className="text-2xl font-bold md:text-3xl">Workshop Schedule</h2>
-                    <p className="mt-2 text-sm text-muted-foreground">Feb 1-7, 2026 • 10:00 AM – 5:00 PM daily</p>
+                    <p className="mt-2 text-sm text-muted-foreground">Feb 1-9, 2026 • 10:00 AM – 5:00 PM daily</p>
 
                     {/* Global Actions */}
                     <ScheduleActions />

@@ -88,7 +88,7 @@ export function HeroSection2026() {
                                     </div>
                                     <div className="min-w-0">
                                         <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wide">Dates</p>
-                                        <p className="text-xs sm:text-sm font-semibold whitespace-normal leading-tight">Feb 1-7, 2026</p>
+                                        <p className="text-xs sm:text-sm font-semibold whitespace-normal leading-tight">Feb 1-9, 2026</p>
                                     </div>
                                 </motion.div>
 
