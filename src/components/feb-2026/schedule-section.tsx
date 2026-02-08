@@ -144,7 +144,11 @@ const schedule = [
             { time: '11:45 – 13:00', title: 'Hands-on: Gene Enrichment Analysis', mode: 'Hands-on', speaker: 'Ajay Bhatia' },
             { time: '14:00 – 15:30', title: 'CHITRA: Hands-on', mode: 'Hands-on', speaker: 'Pranjal' },
             { time: '15:45 – 17:00', title: 'Feedback, Certificate & Valedictory', mode: '', speaker: 'Dr. Jitendra' },
-        ]
+        ],
+        resources: {
+            colab: 'https://colab.research.google.com/drive/1_o15Ccs17rD_5uhXoBKLhHPWRvmNFF3M#scrollTo=yhs7i51vorxq',
+            slides: 'https://drive.google.com/drive/folders/1T9pAKM6SEIeK32O7CwVaVG4tGzExgSl4'
+        }
     },
 ]
 

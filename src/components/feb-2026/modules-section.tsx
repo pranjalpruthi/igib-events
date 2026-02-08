@@ -143,8 +143,9 @@ const modules = [
         icon: BarChart3,
         topics: ['GO & KEGG databases', 'Enrichment statistics', 'Chitra Pipeline', 'Pathway visualization'],
         objective: 'Learn GO/KEGG databases, enrichment statistics; hands-on Chitra Pipeline for GO enrichment and pathway visualization.',
-        colabLink: '',
-        available: false,
+        colabLink: 'https://colab.research.google.com/drive/1_o15Ccs17rD_5uhXoBKLhHPWRvmNFF3M#scrollTo=yhs7i51vorxq',
+        slidesLink: 'https://drive.google.com/drive/folders/1T9pAKM6SEIeK32O7CwVaVG4tGzExgSl4',
+        available: true,
         color: 'from-amber-500 to-yellow-500',
         className: 'md:col-span-2'
     }
