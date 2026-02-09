@@ -133,6 +133,7 @@ const modules = [
         topics: ['AMR mechanisms', 'Resistance databases', 'Surveillance methods', 'Gene detection'],
         objective: 'Understand AMR mechanisms, databases, surveillance; hands-on AMR gene detection and interpretation.',
         colabLink: 'https://drive.google.com/file/d/1EFAbhqmj_ahr_Uv92JRzdHBL6mfsSh4X/view?usp=sharing',
+        slidesLink: 'https://amr-genomic-perspective-l8dr6mb.gamma.site/',
         available: true,
         color: 'from-rose-500 to-red-500',
         className: 'md:col-span-2'
@@ -145,6 +146,8 @@ const modules = [
         objective: 'Learn GO/KEGG databases, enrichment statistics; hands-on Chitra Pipeline for GO enrichment and pathway visualization.',
         colabLink: 'https://colab.research.google.com/drive/1_o15Ccs17rD_5uhXoBKLhHPWRvmNFF3M#scrollTo=yhs7i51vorxq',
         slidesLink: 'https://drive.google.com/drive/folders/1T9pAKM6SEIeK32O7CwVaVG4tGzExgSl4',
+        extraLink: 'http://chitra.bioinformaticsonline.com',
+        extraTitle: 'Chitra Pipeline',
         available: true,
         color: 'from-amber-500 to-yellow-500',
         className: 'md:col-span-2'

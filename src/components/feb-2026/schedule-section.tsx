@@ -130,7 +130,8 @@ const schedule = [
             { time: '15:45 – 17:00', title: 'Hands-on: AMR Gene Identification', mode: 'Hands-on', speaker: 'Anwesha' },
         ],
         resources: {
-            colab: 'https://drive.google.com/file/d/1EFAbhqmj_ahr_Uv92JRzdHBL6mfsSh4X/view?usp=sharing'
+            colab: 'https://drive.google.com/file/d/1EFAbhqmj_ahr_Uv92JRzdHBL6mfsSh4X/view?usp=sharing',
+            slides: 'https://amr-genomic-perspective-l8dr6mb.gamma.site/'
         }
     },
     {
@@ -147,7 +148,11 @@ const schedule = [
         ],
         resources: {
             colab: 'https://colab.research.google.com/drive/1_o15Ccs17rD_5uhXoBKLhHPWRvmNFF3M#scrollTo=yhs7i51vorxq',
-            slides: 'https://drive.google.com/drive/folders/1T9pAKM6SEIeK32O7CwVaVG4tGzExgSl4'
+            slides: 'https://drive.google.com/drive/folders/1T9pAKM6SEIeK32O7CwVaVG4tGzExgSl4',
+            extra: {
+                title: 'Chitra Pipeline',
+                link: 'http://chitra.bioinformaticsonline.com'
+            }
         }
     },
 ]
