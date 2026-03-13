@@ -9,14 +9,40 @@ import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '@/comp
 
 const events = [
     {
+        title: "Advanced Bioinformatics Skill Development Program",
+        subtitle: "Two Weeks Skill India Training Workshop",
+        date: "Mar 16-27, 2026",
+        mode: "In-Person",
+        modeIcon: MapPin,
+        location: "CSIR-IGIB, Delhi",
+        status: "Upcoming",
+        statusColor: "bg-purple-600",
+        description: "From Data to Discovery: Skills for the Genomic Era. Comprehensive 14-day advanced training.",
+        link: "/events/march-2026-advanced",
+        gradient: "from-purple-500 to-indigo-500"
+    },
+    {
+        title: "Bioinformatics for One Health",
+        subtitle: "Five-Day Hands-on Workshop",
+        date: "Mar 16-20, 2026",
+        mode: "In-Person",
+        modeIcon: MapPin,
+        location: "CSIR-IGIB, Delhi",
+        status: "Upcoming",
+        statusColor: "bg-emerald-600",
+        description: "Pathogen genomics, metagenomics, and antimicrobial resistance surveillance training with expert faculty.",
+        link: "/events/march-2026",
+        gradient: "from-emerald-500 to-teal-500"
+    },
+    {
         title: "Basic Bioinformatics Skill Development",
         subtitle: "One-Week Online Workshop",
         date: "Feb 1-7, 2026",
         mode: "Online (Live)",
         modeIcon: Video,
         location: "Virtual",
-        status: "Upcoming",
-        statusColor: "bg-green-600",
+        status: "Completed",
+        statusColor: "bg-gray-500",
         description: "Comprehensive training covering Linux basics, NGS data analysis, Genome Assembly, AMR detection, and Gene Enrichment.",
         link: "/events/feb-2026",
         gradient: "from-blue-500 to-cyan-500"
