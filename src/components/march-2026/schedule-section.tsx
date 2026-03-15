@@ -219,6 +219,23 @@ export function ScheduleSection2026March() {
                     <ScheduleActions />
                 </div>
 
+                <div className="mt-8 p-6 lg:p-8 rounded-2xl border-2 border-emerald-500/20 bg-emerald-500/5 text-left flex flex-col md:flex-row gap-6 items-center justify-between">
+                    <div>
+                        <h3 className="text-xl font-bold flex items-center gap-2 text-emerald-900 dark:text-emerald-100">
+                            <span className="text-2xl">🚀</span> Quick Access Links
+                        </h3>
+                        <p className="mt-2 text-emerald-800/80 dark:text-emerald-200/80">
+                            <strong className="text-emerald-900 dark:text-emerald-100">Workshop Participants:</strong> Click here to log in to your pre-configured HPC server environments for the hands-on sessions.
+                        </p>
+                    </div>
+                    <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white shrink-0 shadow-lg shadow-emerald-500/20">
+                        <a href="http://hpcpit.pranjal.work" target="_blank" rel="noopener noreferrer">
+                            <Laptop className="mr-2 size-5" />
+                            HPC Resource Cockpit
+                        </a>
+                    </Button>
+                </div>
+
                 <div className="mt-12">
                     <Accordion type="single" collapsible className="space-y-4">
                         {scheduleData.map((day, dayIndex) => (
