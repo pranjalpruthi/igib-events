@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { HeroSection2026March } from '@/components/march-2026/hero-section'
+import { ModulesSection2026March } from '@/components/march-2026/modules-section'
 import { ScheduleSection2026March } from '@/components/march-2026/schedule-section'
 import { ContactSection, Footer } from '@/components/contact-section'
 import { MobileDock } from '@/components/mobile-dock'
@@ -33,6 +34,7 @@ function March2026Workshop() {
         />
 
         <div className="relative z-10">
+          <ModulesSection2026March />
           <ScheduleSection2026March />
           <ContactSection fundingSource="Skill India Project (IGIB: HCP002502/2025/E-I)" />
           <Footer />

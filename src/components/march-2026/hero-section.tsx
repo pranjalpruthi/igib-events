@@ -3,7 +3,6 @@ import { Calendar, MapPin, Users, ChevronRight, Video, Home, Mail, Laptop, FileT
 import { motion } from 'motion/react'
 
 import { HeroHeader } from '@/components/header'
-import { ComingSoonDialog } from '@/components/feb-2026/coming-soon-dialog'
 import { CreepyButton } from '@/components/ui/creepy-button'
 
 export function HeroSection2026March() {
